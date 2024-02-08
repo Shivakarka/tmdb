@@ -1,24 +1,24 @@
 const SideBar = () => {
   return (
-    <div className="drawer-side bg-transparent">
+    <div className="drawer-side z-30 bg-transparent">
       <label
         htmlFor="my-drawer-3"
         aria-label="close sidebar"
         className="drawer-overlay  "
       ></label>
-      <ul className="menu  w-80 min-h-full bg-[rgb(26,56,82)] text-white">
+      <ul className="menu  min-h-full w-80 bg-[rgb(26,56,82)] text-white">
         {/* Sidebar content here */}
-        <li className="pt-[4rem] font-semibold text-xl">
+        <li className="pt-[4rem] text-xl font-semibold">
           <a>Movies</a>
         </li>
-        <li className="font-semibold text-xl">
+        <li className="text-xl font-semibold">
           <a>TV Shows</a>
         </li>
-        <li className="font-semibold text-xl">
+        <li className="text-xl font-semibold">
           <a>People</a>
         </li>
 
-        <div className="flex flex-col items-start mt-4 text-base text-zinc-400 font-semibold max-h-0.5">
+        <div className="mt-4 flex max-h-0.5 flex-col items-start text-base font-semibold text-zinc-400">
           <li>
             <a>Contribution Bible</a>
           </li>
