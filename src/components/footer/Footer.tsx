@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="flex flex-wrap gap-6 text-white">
             {footerSections.map((section, index) => (
               <div key={index} className="flex flex-col">
-                <h2 className="text-lg font-bold">{section.title}</h2>
+                <h2 className="text-lg font-bold uppercase">{section.title}</h2>
                 {section.links.map((link, index) => (
                   <p key={index} className="cursor-pointer font-normal">
                     {link}
