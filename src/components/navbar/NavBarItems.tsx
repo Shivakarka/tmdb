@@ -2,12 +2,13 @@ import Logo1 from "../../assets/images/logo1.svg";
 import Logo2 from "../../assets/images/logo2.svg";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 import SearchIcon from "../../assets/icons/search-icon.svg";
+import Dropdown from "./Dropdown";
 
 const NavBarItems = () => {
   return (
     <div className="drawer-content flex flex-col bg-[rgb(3,37,65)]">
       {/* Navbar */}
-      <div className="w-[1300px] mx-auto flex justify-center p-0 navbar z-40 bg-[rgb(3,37,65)] text-white px-3">
+      <div className="navbar z-40 mx-auto flex w-[1300px] justify-center bg-[rgb(3,37,65)] p-0 px-3 text-white">
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
@@ -18,7 +19,7 @@ const NavBarItems = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block w-6 h-6 stroke-current"
+              className="inline-block h-6 w-6 stroke-current"
             >
               <path
                 strokeLinecap="round"
@@ -29,7 +30,7 @@ const NavBarItems = () => {
             </svg>
           </label>
         </div>
-        <div className="flex-1 ms-[25vw] md:ms-[40vw] lg:px-2 lg:mx-2 bg-[rgb(3,37,65)]">
+        <div className="ms-[25vw] flex-1 bg-[rgb(3,37,65)] md:ms-[40vw] lg:mx-2 lg:px-2">
           <img
             src={Logo1}
             alt="logo"
@@ -44,25 +45,34 @@ const NavBarItems = () => {
             height={55}
             className="lg:hidden"
           />
-          <ul className="menu menu-horizontal hidden lg:flex text-base font-semibold">
+          <ul className="menu menu-horizontal hidden text-base font-semibold lg:flex">
             {/* Navbar menu content here */}
             <li>
-              <a>Movies</a>
+              <Dropdown
+                title="Movies"
+                options={["Popular", "Now Playing", "Upcoming", "Top Rated"]}
+              />
             </li>
             <li>
-              <a>TV Shows</a>
+              <Dropdown
+                title="TV Shows"
+                options={["Popular", "Airing Today", "On TV", "Top Rated"]}
+              />
             </li>
             <li>
-              <a>People</a>
+              <Dropdown title="People" options={["Popular People"]} />
             </li>
             <li>
-              <a>More</a>
+              <Dropdown
+                title="More"
+                options={["Discussions", "Leaderboard", "Support", "API"]}
+              />
             </li>
           </ul>
         </div>
-        <div className="flex-none hidden lg:flex">
-          <div className="flex-1 lg:px-2 lg:mx-2 bg-[rgb(3,37,65)]">
-            <ul className="menu menu-horizontal hidden items-center lg:flex text-base font-semibold">
+        <div className="hidden flex-none lg:flex">
+          <div className="flex-1 bg-[rgb(3,37,65)] lg:mx-2 lg:px-2">
+            <ul className="menu menu-horizontal hidden items-center text-base font-semibold lg:flex">
               <li className="me-3">
                 <a>
                   <img
@@ -74,7 +84,7 @@ const NavBarItems = () => {
                 </a>
               </li>
               <li className="me-2">
-                <div className="w-7 h-6 border flex  border-white rounded-sm p-1  transition-colors duration-100 text-white font-semibold text-[14.4px] hover:bg-white hover:text-[rgb(3,37,65)] ">
+                <div className="flex h-6 w-7 rounded-sm  border border-white p-1  text-[14.4px] font-semibold text-white transition-colors duration-100 hover:bg-white hover:text-[rgb(3,37,65)] ">
                   EN
                 </div>
               </li>
@@ -89,7 +99,7 @@ const NavBarItems = () => {
                   <img
                     src={SearchIcon}
                     alt="search-icon"
-                    className="bg-transparent p-[0px] w-6 h-6"
+                    className="h-6 w-6 bg-transparent p-[0px]"
                   />
                 </a>
               </li>
