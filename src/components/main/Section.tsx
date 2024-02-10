@@ -1,3 +1,4 @@
+import SectionDropdown from "./Dropdown/SectionDropdown";
 import Switch from "./switch/Switch";
 
 type SectionProps = {
@@ -12,6 +13,7 @@ const Section = ({ title, items, onToggle }: SectionProps) => {
       <div className="flex items-center gap-5">
         <h2 className="text-2xl font-semibold">{title}</h2>
         <Switch items={items} onToggle={onToggle} />
+        <SectionDropdown items={items} onToggle={onToggle} />
       </div>
     </section>
   );
