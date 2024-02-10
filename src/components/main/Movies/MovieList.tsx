@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import MovieBg from "../../../assets/images/movieCardBg.svg";
-
-const api_key = import.meta.env.VITE_API_KEY;
+import newRequest from "../../../utils/api";
 
 const MovieList = ({ sortBy }: { sortBy: string }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await fetch(
-        `https://api.themoviedb.org/3/trending/movie/${sortBy}?api_key=${api_key}&language=en-US&page=1`,
-      );
-      const data = await response.json();
+      const { data } = await newRequest.get(`/trending/movie/${sortBy}`);
       setMovies(data.results);
     };
     fetchMovies();
