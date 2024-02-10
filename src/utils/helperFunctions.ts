@@ -1,3 +1,5 @@
+import newRequest from "./api";
+
 const formattedReleaseDate = (release_date: string) => {
   if (!release_date) return "N/A";
 
@@ -7,4 +9,7 @@ const formattedReleaseDate = (release_date: string) => {
     year: "numeric",
   });
 };
-export { formattedReleaseDate };
+
+const fetcher = (url: string) => newRequest.get(url).then((res) => res.data);
+
+export { formattedReleaseDate, fetcher };

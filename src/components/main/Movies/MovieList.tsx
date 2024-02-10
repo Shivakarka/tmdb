@@ -1,18 +1,25 @@
-import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import MovieBg from "../../../assets/images/movieCardBg.svg";
-import newRequest from "../../../utils/api";
+import { useMovies } from "../../../utils/customHooks";
 
 const MovieList = ({ sortBy }: { sortBy: string }) => {
-  const [movies, setMovies] = useState([]);
+  const { data, isLoading, error } = useMovies(sortBy);
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const { data } = await newRequest.get(`/trending/movie/${sortBy}`);
-      setMovies(data.results);
-    };
-    fetchMovies();
-  }, [sortBy]);
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center">
+        <span className="loading loading-spinner loading-lg mx-auto"></span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <p className="mx-auto flex h-[100px] w-full justify-center text-4xl">
+        Error... Failed to load
+      </p>
+    );
+  }
 
   return (
     <div
@@ -21,10 +28,10 @@ const MovieList = ({ sortBy }: { sortBy: string }) => {
         backgroundImage: `url(${MovieBg})`,
       }}
     >
-      {movies?.map(
+      {data?.results?.map(
         (
           movie: { title: string; release_date: string; poster_path: string },
-          index,
+          index: number,
         ) => <MovieCard key={index} {...movie} />,
       )}
     </div>
