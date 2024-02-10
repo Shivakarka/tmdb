@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type SectionDropdownProps = {
   items: string[];
@@ -6,13 +6,16 @@ type SectionDropdownProps = {
 };
 
 const SectionDropdown = ({ items, onToggle }: SectionDropdownProps) => {
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
     setSelectedItem(value);
-    onToggle(value);
   };
+
+  useEffect(() => {
+    onToggle(selectedItem);
+  }, [items, onToggle, selectedItem]);
 
   return (
     <select

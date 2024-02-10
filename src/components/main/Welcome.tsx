@@ -4,7 +4,7 @@ const Welcome = () => {
   return (
     <div
       className="relative mx-auto flex h-[300px] w-full flex-col items-start justify-center gap-1 overflow-hidden bg-opacity-50 bg-cover
-       bg-center p-6 text-white lg:h-[343px]  lg:w-[1300px]
+       bg-center p-6 text-white md:w-full lg:h-[343px]  lg:w-[1300px]
      lg:gap-6 lg:p-9
     "
       style={{ backgroundImage: `url(${WelcomeImg})` }}
