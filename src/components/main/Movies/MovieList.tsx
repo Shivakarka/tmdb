@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
+import MovieBg from "../../../assets/images/movieCardBg.svg";
 
 const api_key = import.meta.env.VITE_API_KEY;
 
@@ -18,7 +19,12 @@ const MovieList = ({ sortBy }: { sortBy: string }) => {
   }, [sortBy]);
 
   return (
-    <div className="flex min-h-[420px] gap-4 overflow-x-auto pb-5">
+    <div
+      className={`flex min-h-[420px] gap-4 overflow-x-auto bg-center bg-no-repeat  pb-5`}
+      style={{
+        backgroundImage: `url(${MovieBg})`,
+      }}
+    >
       {movies?.map(
         (
           movie: { title: string; release_date: string; poster_path: string },
