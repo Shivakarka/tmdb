@@ -29,7 +29,7 @@ const Home = () => {
         items={["Today", "This Week"]}
         onToggle={handleToggleValue}
       >
-        <MovieList sortBy={sortBy} />
+        <MovieList key={sortBy} sortBy={sortBy} />
       </Section>
     </div>
   );

@@ -30,3 +30,12 @@ body {
   background-color: rgb(219, 219, 219);
   border-radius: 10px;
 }
+
+.movie-list-container {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 2s ease-in-out;
+}
+
+.movie-list-container.fade-in {
+  opacity: 1; /* Visible when faded in */
+}

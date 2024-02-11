@@ -1,6 +1,7 @@
 import MovieCard from "./MovieCard";
 import MovieBg from "../../../assets/images/movieCardBg.svg";
 import { useMovies } from "../../../utils/customHooks";
+import { useEffect, useState } from "react";
 
 export type MovieList = {
   title: string;
@@ -11,6 +12,13 @@ export type MovieList = {
 };
 
 const MovieList = ({ sortBy }: { sortBy: string }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    return () => setIsMounted(false);
+  }, []);
+
   const { data, isLoading, error } = useMovies(sortBy);
 
   if (isLoading) {
@@ -31,7 +39,7 @@ const MovieList = ({ sortBy }: { sortBy: string }) => {
 
   return (
     <div
-      className={`flex min-h-[420px] gap-4 overflow-x-auto bg-center bg-no-repeat  pb-5`}
+      className={`movie-list-container flex min-h-[420px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
       style={{
         backgroundImage: `url(${MovieBg})`,
       }}
