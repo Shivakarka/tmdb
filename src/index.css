@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --value: 0;
+  --size: 0;
+  --thickness: 0;
+}
+
 * {
   padding: 0;
   margin: 0;

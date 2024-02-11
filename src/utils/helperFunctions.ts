@@ -12,4 +12,10 @@ const formattedReleaseDate = (release_date: string) => {
 
 const fetcher = (url: string) => newRequest.get(url).then((res) => res.data);
 
-export { formattedReleaseDate, fetcher };
+const getBorderColor = (rating: number) => {
+  if (rating < 40) return "text-[rgb(219,35,96)]";
+  if (rating < 70) return "text-[rgb(210,213,49)]";
+  return "text-[rgb(33,208,122)]";
+};
+
+export { formattedReleaseDate, fetcher, getBorderColor };

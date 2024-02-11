@@ -2,6 +2,14 @@ import MovieCard from "./MovieCard";
 import MovieBg from "../../../assets/images/movieCardBg.svg";
 import { useMovies } from "../../../utils/customHooks";
 
+export type MovieList = {
+  title: string;
+  release_date: string;
+  poster_path: string;
+  id: number;
+  vote_average: number;
+};
+
 const MovieList = ({ sortBy }: { sortBy: string }) => {
   const { data, isLoading, error } = useMovies(sortBy);
 
@@ -28,12 +36,9 @@ const MovieList = ({ sortBy }: { sortBy: string }) => {
         backgroundImage: `url(${MovieBg})`,
       }}
     >
-      {data?.results?.map(
-        (
-          movie: { title: string; release_date: string; poster_path: string },
-          index: number,
-        ) => <MovieCard key={index} {...movie} />,
-      )}
+      {data?.results?.map((movie: MovieList) => (
+        <MovieCard key={movie?.id} {...movie} />
+      ))}
     </div>
   );
 };
