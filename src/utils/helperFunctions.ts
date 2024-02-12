@@ -18,4 +18,25 @@ const getBorderColor = (rating: number) => {
   return "text-[rgb(33,208,122)]";
 };
 
-export { formattedReleaseDate, fetcher, getBorderColor };
+const fetchTrailer = async (
+  id: number,
+  sortBy: string,
+  setTrailer: (key: string) => void,
+) => {
+  try {
+    let res;
+    if (sortBy === "tv") {
+      res = await newRequest.get(`/tv/${id}/videos?language=en-US`);
+    } else {
+      res = await newRequest.get(`/movie/${id}/videos?language=en-US`);
+    }
+    const trailerResult = res?.data?.results?.filter(
+      (item: { type: string }) => item.type === "Trailer",
+    )[0];
+    setTrailer(trailerResult?.key);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { formattedReleaseDate, fetcher, getBorderColor, fetchTrailer };

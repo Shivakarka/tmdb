@@ -8,7 +8,7 @@ const NavBarItems = () => {
   return (
     <div className="drawer-content flex flex-col bg-[rgb(3,37,65)]">
       {/* Navbar */}
-      <div className="navbar z-40 mx-auto flex w-[1300px] justify-center bg-[rgb(3,37,65)] p-0 px-3 text-white">
+      <div className="navbar z-40 mx-auto flex w-[100vw] justify-center bg-[rgb(3,37,65)] p-0 px-3 text-white lg:w-[1300px]">
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
