@@ -21,30 +21,33 @@ const usePopularMovieTrailers = () => {
       revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     },
   );
 };
 
 const usePopularTvTrailers = () => {
   return useSWR(
-    `https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`,
+    `https://api.themoviedb.org/3/trending/tv/week?language=en-US`,
     fetcher,
     {
       revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     },
   );
 };
 
 const useStreamingToday = () => {
   return useSWR(
-    `https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1`,
+    `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`,
     fetcher,
     {
       revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     },
   );
 };
@@ -57,6 +60,7 @@ const useInTheatres = () => {
       revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     },
   );
 };
@@ -71,6 +75,7 @@ const useTrailer = (id: number, sortBy: string) => {
       revalidateIfStale: false,
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
+      shouldRetryOnError: false,
     },
   );
 };

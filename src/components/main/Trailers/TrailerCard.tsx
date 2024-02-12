@@ -12,7 +12,7 @@ const TrailerCard = ({
   sortBy,
 }: TrailerListProps & { sortBy: string }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { data, error, isLoading } = useTrailer(id, sortBy);
+  const { data, isLoading, error } = useTrailer(id, sortBy);
 
   if (isLoading) {
     return (
@@ -23,16 +23,16 @@ const TrailerCard = ({
   }
 
   if (error) {
-    return (
-      <p className="mx-auto flex h-[100px] w-full justify-center text-4xl">
-        Error... Failed to load
-      </p>
-    );
+    console.log(error.message);
   }
 
-  const trailerKey = data.results?.find(
+  const trailerKey = data?.results?.find(
     (item: { type: string }) => item.type === "Trailer",
   )?.key;
+
+  if (!trailerKey) {
+    return null;
+  }
 
   return (
     <div
