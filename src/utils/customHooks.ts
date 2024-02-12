@@ -61,10 +61,25 @@ const useInTheatres = () => {
   );
 };
 
+const useTrailer = (id: number, sortBy: string) => {
+  return useSWR(
+    sortBy === "tv"
+      ? `/tv/${id}/videos?language=en-US`
+      : `/movie/${id}/videos?language=en-US`,
+    fetcher,
+    {
+      revalidateIfStale: false,
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+    },
+  );
+};
+
 export {
   useMovies,
   usePopularMovieTrailers,
   usePopularTvTrailers,
   useStreamingToday,
   useInTheatres,
+  useTrailer,
 };

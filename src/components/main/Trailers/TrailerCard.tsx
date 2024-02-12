@@ -1,8 +1,8 @@
 import { TrailerListProps } from "./TrailerList";
 import PlayIcon from "../../../assets/icons/play-icon.svg";
 import NoImage from "../../../assets/images/noImage.svg";
-import { useEffect, useState } from "react";
-import { fetchTrailer } from "../../../utils/helperFunctions";
+import { useTrailer } from "../../../utils/customHooks";
+import { useState } from "react";
 
 const TrailerCard = ({
   backdrop_path,
@@ -11,12 +11,28 @@ const TrailerCard = ({
   id,
   sortBy,
 }: TrailerListProps & { sortBy: string }) => {
-  const [trailer, setTrailer] = useState<string | undefined>();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { data, error, isLoading } = useTrailer(id, sortBy);
 
-  useEffect(() => {
-    fetchTrailer(id, sortBy, setTrailer);
-  }, [id, sortBy]);
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center">
+        <span className="loading loading-spinner loading-lg mx-auto"></span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <p className="mx-auto flex h-[100px] w-full justify-center text-4xl">
+        Error... Failed to load
+      </p>
+    );
+  }
+
+  const trailerKey = data.results?.find(
+    (item: { type: string }) => item.type === "Trailer",
+  )?.key;
 
   return (
     <div
@@ -35,8 +51,12 @@ const TrailerCard = ({
         className="absolute left-[100px] top-[50px] w-[100px] invert"
       />
       {isModalOpen && (
-        <dialog id="my_modal_3" className="modal" open={isModalOpen}>
-          <div className="top-15 modal-box absolute z-[10] h-[280px] w-[300px]  overflow-hidden bg-[rgb(3,37,65)] text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1200px]">
+        <dialog
+          id="my_modal_3"
+          className="modal bg-black bg-opacity-50"
+          open={isModalOpen}
+        >
+          <div className="top-15 modal-box absolute z-[10] h-[280px] w-[300px]  overflow-hidden bg-[rgb(3,37,65)] text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1300px]">
             <form method="dialog">
               <button
                 className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2"
@@ -63,7 +83,7 @@ const TrailerCard = ({
                       : 200
                 }
                 style={{ backgroundColor: "#000" }}
-                src={`https://www.youtube.com/embed/${trailer}?autoplay=0`}
+                src={`https://www.youtube.com/embed/${trailerKey}?autoplay=0`}
                 frameBorder="0"
                 allowFullScreen={true}
               ></iframe>
