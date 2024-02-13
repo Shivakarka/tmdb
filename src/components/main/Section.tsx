@@ -11,7 +11,7 @@ type SectionProps = {
 const Section = ({ title, items, onToggle, children }: SectionProps) => {
   return (
     <section
-      className={`mx-auto w-full px-10 pt-[30px] lg:w-[1300px] ${title === "Latest Trailers" ? "bg-tmdbDarkBlue bg-opacity-95" : ""}`}
+      className={`mx-auto relative w-full px-10 pt-[30px] lg:w-[1300px] ${title === "Latest Trailers" ? "bg-tmdbDarkBlue bg-opacity-95" : ""}`}
     >
       <div className="flex items-center gap-5">
         <h2

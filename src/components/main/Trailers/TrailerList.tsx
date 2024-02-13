@@ -65,12 +65,20 @@ const TrailerList = ({ sortBy }: { sortBy: string }) => {
   }
 
   return (
-    <div
-      className={`movie-list-container flex h-fit min-h-[300px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-3 ${isMounted ? "fade-in" : ""}`}
-    >
-      {data?.results?.map((movie: TrailerListProps) => (
-        <TrailerCard key={movie?.id} sortBy={sortBy} {...movie} />
-      ))}
+    <div>
+      <div
+        className={`movie-list-container flex h-fit min-h-[300px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-3 ${isMounted ? "fade-in" : ""}`}
+      >
+        {data?.results?.map((movie: TrailerListProps) => (
+          <TrailerCard key={movie?.id} sortBy={sortBy} {...movie} />
+        ))}
+      </div>
+      <div
+        className="absolute right-0 top-0 h-full w-[40px]"
+        style={{
+          backgroundImage: "linear-gradient(to right,rgba(255,255,255,0),#fff)",
+        }}
+      ></div>
     </div>
   );
 };

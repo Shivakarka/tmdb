@@ -13,7 +13,7 @@ export type MovieList = {
   first_air_date?: string;
 };
 
-const MovieList = ({ sortBy, type }: { sortBy: string,type:string }) => {
+const MovieList = ({ sortBy, type }: { sortBy: string; type: string }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string,type:string }) => {
     return () => setIsMounted(false);
   }, []);
 
-  const { data, isLoading, error } = useMovies(sortBy,type);
+  const { data, isLoading, error } = useMovies(sortBy, type);
 
   if (isLoading) {
     return (
@@ -41,7 +41,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string,type:string }) => {
 
   return (
     <div
-      className={`movie-list-container h-fit flex gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
+      className={`movie-list-container flex h-fit gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
       style={{
         backgroundImage: `url(${MovieBg})`,
       }}
@@ -49,6 +49,12 @@ const MovieList = ({ sortBy, type }: { sortBy: string,type:string }) => {
       {data?.results?.map((movie: MovieList) => (
         <MovieCard key={movie?.id} {...movie} />
       ))}
+      <div
+        className="absolute right-0 top-0 h-full w-[40px]"
+        style={{
+          backgroundImage: "linear-gradient(to right,rgba(255,255,255,0),#fff)",
+        }}
+      ></div>
     </div>
   );
 };
