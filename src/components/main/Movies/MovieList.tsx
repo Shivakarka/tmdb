@@ -41,7 +41,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string,type:string }) => {
 
   return (
     <div
-      className={`movie-list-container flex min-h-[420px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
+      className={`movie-list-container h-fit flex gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
       style={{
         backgroundImage: `url(${MovieBg})`,
       }}

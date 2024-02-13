@@ -26,7 +26,7 @@ const MovieCard = ({
         </div>
       </div>
       <RatingsBar rating={rating} />
-      <div className="flex flex-col pl-3 pt-4">
+      <div className="flex flex-col pl-3 pt-5">
         {title && <p className="font-bold">{title}</p>}
         {release_date && (
           <p className="font-normal">{formattedReleaseDate(release_date)}</p>

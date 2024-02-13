@@ -13,6 +13,7 @@ export type TrailerListProps = {
   backdrop_path: string;
   id: number;
   poster_path: string;
+  original_name?: string;
 };
 
 const TrailerList = ({ sortBy }: { sortBy: string }) => {
@@ -65,7 +66,7 @@ const TrailerList = ({ sortBy }: { sortBy: string }) => {
 
   return (
     <div
-      className={`movie-list-container flex min-h-[420px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
+      className={`movie-list-container flex h-fit gap-4 pb-3 overflow-x-auto bg-center bg-no-repeat     ${isMounted ? "fade-in" : ""}`}
     >
       {data?.results?.map((movie: TrailerListProps) => (
         <TrailerCard key={movie?.id} sortBy={sortBy} {...movie} />
