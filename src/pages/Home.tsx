@@ -4,12 +4,18 @@ import Section from "../components/main/Section.tsx";
 import MovieList from "../components/main/Movies/MovieList.tsx";
 import { useState } from "react";
 import TrailerList from "../components/main/Trailers/TrailerList.tsx";
-import { handlePopularToggleValue, handleToggleValue, handleTrailerToggleValue } from "../utils/toggleFunctions.ts";
+import {
+  handleFreeToggleValue,
+  handlePopularToggleValue,
+  handleToggleValue,
+  handleTrailerToggleValue
+} from "../utils/toggleFunctions.ts";
 
 const Home = () => {
   const [sortBy, setSortBy] = useState("day");
   const [sortTrailer, setSortTrailer] = useState("day");
   const [sortPopular, setSortPopular] = useState("tv");
+  const [sortFree, setSortFree] = useState("FreeMovies");
 
   return (
     <div>
@@ -35,6 +41,13 @@ const Home = () => {
         onToggle={(value) => handlePopularToggleValue(value, setSortPopular)}
       >
         <MovieList key={sortPopular} sortBy={sortPopular} type={"Popular"} />
+      </Section>
+      <Section
+        title="Free to Watch"
+        items={["Movies", "TV"]}
+        onToggle={(value) => handleFreeToggleValue(value, setSortFree)}
+      >
+        <MovieList key={sortFree} sortBy={sortFree} type={"Free"} />
       </Section>
     </div>
   );

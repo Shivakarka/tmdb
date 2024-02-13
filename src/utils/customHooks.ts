@@ -12,16 +12,29 @@ const useFetchData = (url: string) => {
 
 const useMovies = (sortBy: string, type: string) => {
   let url = '';
-  switch (sortBy) {
-    case "theater":
-      url = "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
-      break;
-    case "rent":
-      url = "https://api.themoviedb.org/3/trending/tv/week?language=en-US";
-      break;
-    default:
-      url = `https://api.themoviedb.org/3/${type === "Trending" ? `trending/movie/${sortBy}` : `${sortBy}/popular`}?language=en-US&page=1`;
+
+ if(type === "Trending"){
+   url = `https://api.themoviedb.org/3/trending/movie/${sortBy}?language=en-US&page=1`;
+ }
+
+  if(type === "Popular"){
+    switch (sortBy) {
+      case "theater":
+        url = "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+        break;
+      case "rent":
+        url = "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_watch_monetization_types=rent";
+        break;
+      default:
+        url = `https://api.themoviedb.org/3/${sortBy}/popular?language=en-US&page=1`;
+    }
   }
+
+  if(type === "Free"){
+    // movies / tv shows with no monetiary cost
+    url = `https://api.themoviedb.org/3/discover/${sortBy === "FreeMovies" ? "movie" : "tv"}?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_watch_monetization_types=free`;;
+  }
+
   return useFetchData(url);
 };
 

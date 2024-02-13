@@ -51,3 +51,16 @@ export const handlePopularToggleValue = (value: string, setState: React.Dispatch
       break;
   }
 };
+
+export const handleFreeToggleValue = (value: string, setState: React.Dispatch<React.SetStateAction<string>>) => {
+  switch (value) {
+    case "Movies":
+      setState("FreeMovies");
+      break;
+    case "TV":
+      setState("FreeTv");
+      break;
+    default:
+      break;
+  }
+};
