@@ -6,9 +6,9 @@ import Dropdown from "./Dropdown";
 
 const NavBarItems = () => {
   return (
-    <div className="drawer-content flex flex-col bg-[rgb(3,37,65)]">
+    <div className="bg-tmdbDarkBlue drawer-content flex flex-col">
       {/* Navbar */}
-      <div className="navbar z-40 mx-auto flex w-[100vw] justify-center bg-[rgb(3,37,65)] p-0 px-3 text-white lg:w-[1300px]">
+      <div className="bg-tmdbDarkBlue navbar z-40 mx-auto flex w-[100vw] justify-center p-0 px-3 text-white lg:w-[1300px]">
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
@@ -30,7 +30,7 @@ const NavBarItems = () => {
             </svg>
           </label>
         </div>
-        <div className="ms-[25vw] flex-1 bg-[rgb(3,37,65)] md:ms-[40vw] lg:mx-2 lg:px-2">
+        <div className="bg-tmdbDarkBlue ms-[25vw] flex-1 md:ms-[40vw] lg:mx-2 lg:px-2">
           <img
             src={Logo1}
             alt="logo"
@@ -71,7 +71,7 @@ const NavBarItems = () => {
           </ul>
         </div>
         <div className="hidden flex-none lg:flex">
-          <div className="flex-1 bg-[rgb(3,37,65)] lg:mx-2 lg:px-2">
+          <div className="bg-tmdbDarkBlue flex-1 lg:mx-2 lg:px-2">
             <ul className="menu menu-horizontal hidden items-center text-base font-semibold lg:flex">
               <li className="me-3">
                 <a>

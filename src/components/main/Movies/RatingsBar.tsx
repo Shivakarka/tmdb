@@ -4,7 +4,7 @@ const RatingsBar = ({ rating }: { rating: number }) => {
   const borderColor = getBorderColor(rating);
   return (
     <div
-      className={`${borderColor} radial-progress absolute left-3 top-[13em] border border-solid border-[rgb(3,37,65)] bg-[rgb(3,37,65)]`}
+      className={`${borderColor} border-tmdbDarkBlue bg-tmdbDarkBlue radial-progress absolute left-3 top-[13em] border border-solid`}
       style={
         {
           "--value": rating,

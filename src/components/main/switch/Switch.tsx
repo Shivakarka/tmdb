@@ -24,7 +24,7 @@ const Switch = ({ items, onToggle }: SwitchProps) => {
   };
 
   return (
-    <div className="relative z-[1] hidden items-center rounded-[30px] border border-solid border-[rgb(3,37,65)] font-semibold hover:cursor-pointer lg:flex">
+    <div className="border-tmdbDarkBlue relative z-[1] hidden items-center rounded-[30px] border border-solid font-semibold hover:cursor-pointer lg:flex">
       {items.map((item, index) => (
         <div
           key={index}

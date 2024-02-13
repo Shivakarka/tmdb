@@ -19,7 +19,7 @@ const SectionDropdown = ({ items, onToggle }: SectionDropdownProps) => {
 
   return (
     <select
-      className=" select select-bordered h-1 min-h-8 w-fit rounded-full bg-[rgb(3,37,65)] text-[#1ed5a9] focus:outline-none lg:hidden"
+      className=" bg-tmdbDarkBlue select select-bordered h-1 min-h-8 w-fit rounded-full text-[#1ed5a9] focus:outline-none lg:hidden"
       value={selectedItem || ""}
       onChange={handleChange}
     >

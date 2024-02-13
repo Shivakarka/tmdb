@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 export const NavBar = () => {
   return (
     <>
-      <div className="drawer bg-[rgb(3,37,65)]">
+      <div className="bg-tmdbDarkBlue drawer">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <NavBarItems />
         <SideBar />
