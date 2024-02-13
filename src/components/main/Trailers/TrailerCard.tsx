@@ -42,7 +42,7 @@ const TrailerCard = ({
 
   return (
     <div
-      className="relative mt-2 flex cursor-pointer flex-col gap-2"
+      className="relative mt-2 flex cursor-pointer flex-col gap-2 text-white"
       onClick={() => setIsModalOpen(true)}
     >
       <div
@@ -65,10 +65,10 @@ const TrailerCard = ({
         <p className="mt-2 text-center text-lg font-bold ">{original_name}</p>
       )}
       {title && (
-        <p className="text-center text-lg font-semibold">{trailerName}</p>
+        <p className="text-center text-lg font-normal">{trailerName}</p>
       )}
       {original_name && (
-        <p className="text-center text-lg font-semibold ">{trailerName}</p>
+        <p className="text-center text-lg font-normal ">{trailerName}</p>
       )}
       {isModalOpen && (
         <dialog
