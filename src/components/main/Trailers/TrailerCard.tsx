@@ -55,9 +55,9 @@ const TrailerCard = ({
         onClick={openModal}
       >
         <div
-          className="ml-2 mt-1 h-[169px] w-[300px] rounded-lg bg-cover bg-no-repeat object-contain"
+          className="ml-2 mt-1 h-[169px] w-[300px] rounded-lg bg-cover bg-no-repeat"
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w440_and_h660_face/${
+            backgroundImage: `url(https://image.tmdb.org/t/p/w500/${
               backdrop_path || poster_path || NoImage
             })`,
           }}
