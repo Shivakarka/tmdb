@@ -36,22 +36,30 @@ const TrailerCard = ({
     trailerItem?.name?.replace(/\[.*?\]/g, "").split("|")[0] || "Trailer"
   ).trim();
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   if (!trailerKey) {
     return null;
   }
 
   return (
-    <div
-      className="relative mt-2 flex cursor-pointer flex-col gap-2 text-white"
-      onClick={() => setIsModalOpen(true)}
-    >
+    <div className="relative mt-2 flex cursor-pointer flex-col gap-2 text-white">
       <div
         className={"transition-all duration-300 ease-in-out hover:scale-105"}
+        onClick={openModal}
       >
         <div
-          className="ml-2 mt-1 h-[200px] w-[300px] rounded-lg bg-cover bg-no-repeat object-contain "
+          className="ml-2 mt-1 h-[200px] w-[300px] rounded-lg bg-cover bg-no-repeat object-contain"
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w440_and_h660_face/${backdrop_path || poster_path || NoImage})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/w440_and_h660_face/${
+              backdrop_path || poster_path || NoImage
+            })`,
           }}
         ></div>
         <img
@@ -76,16 +84,17 @@ const TrailerCard = ({
           className="modal bg-black bg-opacity-50"
           open={isModalOpen}
         >
-          <div className="top-15 bg-tmdbDarkBlue modal-box absolute z-[10] h-[280px]  w-[300px] overflow-hidden text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1300px]">
+          <div className="top-15 bg-tmdbDarkBlue modal-box absolute z-[10] h-[280px] w-[300px] overflow-hidden text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1300px]">
             <form method="dialog">
               <button
-                className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2"
-                onClick={() => setIsModalOpen(false)}
+                className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2 hover:bg-gray-700"
+                onClick={closeModal}
               >
                 ✕
               </button>
             </form>
             <h3 className="mb-3 text-lg font-bold">{title}</h3>
+            <h3 className="mb-3 text-lg font-bold">{original_name}</h3>
             <p className="mx-auto">
               <iframe
                 width={
