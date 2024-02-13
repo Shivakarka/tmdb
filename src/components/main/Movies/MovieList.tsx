@@ -9,9 +9,11 @@ export type MovieList = {
   poster_path: string;
   id: number;
   vote_average: number;
+  original_name?: string;
+  first_air_date?: string;
 };
 
-const MovieList = ({ sortBy }: { sortBy: string }) => {
+const MovieList = ({ sortBy, type }: { sortBy: string,type:string }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -19,7 +21,7 @@ const MovieList = ({ sortBy }: { sortBy: string }) => {
     return () => setIsMounted(false);
   }, []);
 
-  const { data, isLoading, error } = useMovies(sortBy);
+  const { data, isLoading, error } = useMovies(sortBy,type);
 
   if (isLoading) {
     return (

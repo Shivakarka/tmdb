@@ -1,48 +1,15 @@
-import ThatsAWrap from "../components/main/ThatsAWrap";
-import Welcome from "../components/main/Welcome";
-import Section from "../components/main/Section";
-import MovieList from "../components/main/Movies/MovieList";
+import ThatsAWrap from "../components/main/ThatsAWrap.tsx";
+import Welcome from "../components/main/Welcome.tsx";
+import Section from "../components/main/Section.tsx";
+import MovieList from "../components/main/Movies/MovieList.tsx";
 import { useState } from "react";
-import TrailerList from "../components/main/Trailers/TrailerList";
+import TrailerList from "../components/main/Trailers/TrailerList.tsx";
+import { handlePopularToggleValue, handleToggleValue, handleTrailerToggleValue } from "../utils/toggleFunctions.ts";
 
 const Home = () => {
   const [sortBy, setSortBy] = useState("day");
   const [sortTrailer, setSortTrailer] = useState("day");
-
-  const handleToggleValue = (value: string) => {
-    switch (value) {
-      case "Today":
-        setSortBy("day");
-        break;
-      case "This Week":
-        setSortBy("week");
-        break;
-      default:
-        break;
-    }
-  };
-
-  const handleTrailerToggleValue = (value: string) => {
-    switch (value) {
-      case "Popular":
-        setSortTrailer("popular");
-        break;
-      case "Streaming":
-        setSortTrailer("streaming");
-        break;
-      case "On TV":
-        setSortTrailer("tv");
-        break;
-      case "For Rent":
-        setSortTrailer("rent");
-        break;
-      case "In Theaters":
-        setSortTrailer("theater");
-        break;
-      default:
-        break;
-    }
-  };
+  const [sortPopular, setSortPopular] = useState("tv");
 
   return (
     <div>
@@ -51,16 +18,23 @@ const Home = () => {
       <Section
         title="Trending"
         items={["Today", "This Week"]}
-        onToggle={handleToggleValue}
+        onToggle={(value) => handleToggleValue(value, setSortBy)}
       >
-        <MovieList key={sortBy} sortBy={sortBy} />
+        <MovieList key={sortBy} sortBy={sortBy} type={"Trending"} />
       </Section>
       <Section
         title="Latest Trailers"
         items={["Popular", "Streaming", "On TV", "For Rent", "In Theaters"]}
-        onToggle={handleTrailerToggleValue}
+        onToggle={(value) => handleTrailerToggleValue(value, setSortTrailer)}
       >
         <TrailerList key={sortTrailer} sortBy={sortTrailer} />
+      </Section>
+      <Section
+        title="What's Popular"
+        items={["Streaming", "On TV", "For Rent", "In Theaters"]}
+        onToggle={(value) => handlePopularToggleValue(value, setSortPopular)}
+      >
+        <MovieList key={sortPopular} sortBy={sortPopular} type={"Popular"} />
       </Section>
     </div>
   );

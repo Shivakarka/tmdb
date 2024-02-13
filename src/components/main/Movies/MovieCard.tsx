@@ -1,12 +1,14 @@
-import { formattedReleaseDate } from "../../../utils/helperFunctions";
-import { MovieList } from "./MovieList";
-import RatingsBar from "./RatingsBar";
+import { formattedReleaseDate } from "../../../utils/helperFunctions.ts";
+import { MovieList } from "./MovieList.tsx";
+import RatingsBar from "./RatingsBar.tsx";
 
 const MovieCard = ({
   poster_path,
   title,
   release_date,
   vote_average,
+  original_name,
+  first_air_date,
 }: MovieList) => {
   const rating = Math.floor(vote_average * 10);
 
@@ -25,8 +27,14 @@ const MovieCard = ({
       </div>
       <RatingsBar rating={rating} />
       <div className="flex flex-col pl-3 pt-4">
-        <h3 className="font-bold">{title}</h3>
-        <p className="font-normal">{formattedReleaseDate(release_date)}</p>
+        {title && <p className="font-bold">{title}</p>}
+        {release_date && (
+          <p className="font-normal">{formattedReleaseDate(release_date)}</p>
+        )}
+        {original_name && <p className="font-bold">{original_name}</p>}
+        {first_air_date && (
+          <p className="font-normal">{formattedReleaseDate(first_air_date)}</p>
+        )}
       </div>
     </div>
   );
