@@ -55,7 +55,7 @@ const TrailerCard = ({
         onClick={openModal}
       >
         <div
-          className="ml-2 mt-1 h-[200px] w-[300px] rounded-lg bg-cover bg-no-repeat object-contain"
+          className="ml-2 mt-1 h-[169px] w-[300px] rounded-lg bg-cover bg-no-repeat object-contain"
           style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/w440_and_h660_face/${
               backdrop_path || poster_path || NoImage
@@ -68,16 +68,21 @@ const TrailerCard = ({
           className="absolute left-[100px] top-[50px] w-[100px] cursor-pointer invert transition-all duration-300 ease-in-out hover:scale-110"
         />
       </div>
-      {title && <p className="mt-2 text-center text-lg font-bold ">{title}</p>}
-      {original_name && (
-        <p className="mt-2 text-center text-lg font-bold ">{original_name}</p>
-      )}
-      {title && (
-        <p className="text-center text-lg font-normal">{trailerName}</p>
-      )}
-      {original_name && (
-        <p className="text-center text-lg font-normal ">{trailerName}</p>
-      )}
+      <div className="flex flex-col items-center justify-center text-center">
+        {title && (
+          <p className="mt-2 text-center text-lg font-bold ">{title}</p>
+        )}
+        {original_name && (
+          <p className="mt-2 text-center text-lg font-bold ">{original_name}</p>
+        )}
+        {title && (
+          <p className="text-center text-lg font-normal">{trailerName}</p>
+        )}
+        {original_name && (
+          <p className="text-center text-lg font-normal ">{trailerName}</p>
+        )}
+      </div>
+
       {isModalOpen && (
         <dialog
           id="my_modal_3"

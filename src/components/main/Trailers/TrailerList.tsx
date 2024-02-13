@@ -66,7 +66,7 @@ const TrailerList = ({ sortBy }: { sortBy: string }) => {
 
   return (
     <div
-      className={`movie-list-container flex h-fit min-h-[342px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-3 ${isMounted ? "fade-in" : ""}`}
+      className={`movie-list-container flex h-fit min-h-[300px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-3 ${isMounted ? "fade-in" : ""}`}
     >
       {data?.results?.map((movie: TrailerListProps) => (
         <TrailerCard key={movie?.id} sortBy={sortBy} {...movie} />
