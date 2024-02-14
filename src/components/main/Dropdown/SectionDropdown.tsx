@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 type SectionDropdownProps = {
   items: string[];
   onToggle: (value: string) => void;
+  title?: string;
 };
 
-const SectionDropdown = ({ items, onToggle }: SectionDropdownProps) => {
+const SectionDropdown = ({ items, onToggle, title }: SectionDropdownProps) => {
   const [selectedItem, setSelectedItem] = useState<string>("");
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -19,7 +20,12 @@ const SectionDropdown = ({ items, onToggle }: SectionDropdownProps) => {
 
   return (
     <select
-      className=" bg-tmdbDarkBlue select select-bordered h-1 min-h-8 w-fit rounded-full text-[#1ed5a9] focus:outline-none lg:hidden"
+      className={
+        " select select-bordered h-1 min-h-8 w-fit rounded-full bg-tmdbDarkBlue text-[#1ed5a9] focus:outline-none lg:hidden " +
+        (title === "Latest Trailers"
+          ? "bg-[#1ed5a9] font-semibold text-tmdbDarkBlue"
+          : "")
+      }
       value={selectedItem || ""}
       onChange={handleChange}
     >
