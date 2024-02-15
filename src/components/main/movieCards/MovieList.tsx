@@ -2,6 +2,7 @@ import MovieCard from "./MovieCard";
 import MovieBg from "../../../assets/images/movieCardBg.svg";
 import { useMovies } from "../../../utils/customHooks";
 import { useEffect, useState } from "react";
+import LoadingShimmer from "../shimmer/LoadingShimmer";
 
 export type MovieList = {
   title: string;
@@ -24,11 +25,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string; type: string }) => {
   const { data, isLoading, error } = useMovies(sortBy, type);
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center">
-        <span className="loading loading-spinner loading-lg mx-auto"></span>
-      </div>
-    );
+    return <LoadingShimmer />;
   }
 
   if (error) {
