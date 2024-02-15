@@ -2,13 +2,13 @@ import Logo1 from "../../assets/images/logo1.svg";
 import Logo2 from "../../assets/images/logo2.svg";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 import SearchIcon from "../../assets/icons/search-icon.svg";
-import Dropdown from "./Dropdown";
+import Dropdown from "./dropdown/Dropdown";
 
 const NavBarItems = () => {
   return (
-    <div className="bg-tmdbDarkBlue drawer-content flex flex-col">
+    <div className="drawer-content flex flex-col bg-tmdbDarkBlue">
       {/* Navbar */}
-      <div className="bg-tmdbDarkBlue navbar z-40 mx-auto flex w-[100vw] justify-center p-0 px-5 text-white lg:w-[1300px]">
+      <div className="navbar z-40 mx-auto flex w-[100vw] justify-center bg-tmdbDarkBlue p-0 px-5 text-white lg:w-[1300px]">
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
@@ -30,7 +30,7 @@ const NavBarItems = () => {
             </svg>
           </label>
         </div>
-        <div className="bg-tmdbDarkBlue ms-[25vw] flex-1 md:ms-[40vw] lg:mx-2 lg:px-2">
+        <div className="ms-[25vw] flex-1 bg-tmdbDarkBlue md:ms-[40vw] lg:mx-2 lg:px-2">
           <img
             src={Logo1}
             alt="logo"
@@ -71,7 +71,7 @@ const NavBarItems = () => {
           </ul>
         </div>
         <div className="hidden flex-none lg:flex">
-          <div className="bg-tmdbDarkBlue flex-1 lg:mx-2 lg:pr-0">
+          <div className="flex-1 bg-tmdbDarkBlue lg:mx-2 lg:pr-0">
             <ul className="menu menu-horizontal hidden items-center text-base font-semibold lg:flex">
               <li className="me-3">
                 <a>

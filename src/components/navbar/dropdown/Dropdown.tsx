@@ -12,7 +12,9 @@ const Dropdown = ({ title, options }: DropdownProps) => {
       <ul className="menu dropdown-content absolute left-[-20px] top-10 z-[50] w-[12rem] rounded bg-base-100 p-2 font-sans text-gray-700 shadow">
         {options.map((option, index) => (
           <li key={index}>
-            <a>{option}</a>
+            <a href="#" title="menu dropdown item">
+              {option}
+            </a>
           </li>
         ))}
       </ul>

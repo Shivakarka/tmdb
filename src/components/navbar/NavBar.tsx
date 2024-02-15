@@ -1,10 +1,10 @@
 import NavBarItems from "./NavBarItems";
-import SideBar from "./SideBar";
+import SideBar from "./sidebar/SideBar";
 
 export const NavBar = () => {
   return (
     <>
-      <div className="bg-tmdbDarkBlue drawer">
+      <div className="drawer bg-tmdbDarkBlue">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <NavBarItems />
         <SideBar />
