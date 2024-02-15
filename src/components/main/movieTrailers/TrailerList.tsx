@@ -3,7 +3,7 @@ import {
   usePopularMovieTrailers,
   usePopularTvTrailers,
   useStreamingToday,
-} from "../../../utils/customHooks";
+} from "../../../utils/customHooks.ts";
 import { useEffect, useState } from "react";
 import TrailerCard from "./TrailerCard.tsx";
 

@@ -89,7 +89,7 @@ const TrailerCard = ({
           className="modal bg-black bg-opacity-50"
           open={isModalOpen}
         >
-          <div className="top-15 bg-tmdbDarkBlue modal-box absolute z-[10] h-[280px] w-[300px] overflow-hidden text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1300px]">
+          <div className="top-15 modal-box absolute z-[10] h-[280px] w-[300px] overflow-hidden bg-tmdbDarkBlue text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1300px]">
             <form method="dialog">
               <button
                 className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2 hover:bg-gray-700"

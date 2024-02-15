@@ -1,9 +1,9 @@
-import ThatsAWrap from "../components/main/banners/ThatsAWrap.tsx";
-import Welcome from "../components/main/banners/Welcome.tsx";
+import ThatsAWrap from "../components/main/banner/ThatsAWrap.tsx";
+import Welcome from "../components/main/banner/Welcome.tsx";
 import Section from "../components/main/Section.tsx";
-import MovieList from "../components/main/movies/MovieList.tsx";
+import MovieList from "../components/main/movieCards/MovieList.tsx";
 import { useState } from "react";
-import TrailerList from "../components/main/Trailers/TrailerList.tsx";
+import TrailerList from "../components/main/movieTrailers/TrailerList.tsx";
 import {
   handleFreeToggleValue,
   handlePopularToggleValue,
