@@ -1,5 +1,5 @@
-import ThatsAWrapImg from "../../assets/images/ThatsAWrap.jpg";
-import RightArrow from "../../assets/icons/right-arrow.svg";
+import ThatsAWrapImg from "../../../assets/images/ThatsAWrap.jpg";
+import RightArrow from "../../../assets/icons/right-arrow.svg";
 
 const ThatsAWrap = () => {
   return (

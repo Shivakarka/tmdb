@@ -1,5 +1,5 @@
-import ThatsAWrap from "../components/main/ThatsAWrap.tsx";
-import Welcome from "../components/main/Welcome.tsx";
+import ThatsAWrap from "../components/main/Banners/ThatsAWrap.tsx";
+import Welcome from "../components/main/Banners/Welcome.tsx";
 import Section from "../components/main/Section.tsx";
 import MovieList from "../components/main/Movies/MovieList.tsx";
 import { useState } from "react";
@@ -8,7 +8,7 @@ import {
   handleFreeToggleValue,
   handlePopularToggleValue,
   handleToggleValue,
-  handleTrailerToggleValue
+  handleTrailerToggleValue,
 } from "../utils/toggleFunctions.ts";
 
 const Home = () => {
