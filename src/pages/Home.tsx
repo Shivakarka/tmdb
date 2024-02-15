@@ -1,7 +1,7 @@
-import ThatsAWrap from "../components/main/Banners/ThatsAWrap.tsx";
-import Welcome from "../components/main/Banners/Welcome.tsx";
+import ThatsAWrap from "../components/main/banners/ThatsAWrap.tsx";
+import Welcome from "../components/main/banners/Welcome.tsx";
 import Section from "../components/main/Section.tsx";
-import MovieList from "../components/main/Movies/MovieList.tsx";
+import MovieList from "../components/main/movies/MovieList.tsx";
 import { useState } from "react";
 import TrailerList from "../components/main/Trailers/TrailerList.tsx";
 import {

@@ -1,4 +1,4 @@
-import SectionDropdown from "./Dropdown/SectionDropdown";
+import SectionDropdown from "./dropdown/SectionDropdown";
 import Switch from "./switch/Switch";
 
 type SectionProps = {
