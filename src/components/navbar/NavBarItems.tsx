@@ -8,7 +8,7 @@ const NavBarItems = () => {
   return (
     <div className="drawer-content flex flex-col bg-tmdbDarkBlue">
       {/* Navbar */}
-      <div className="navbar z-40 mx-auto flex w-[100vw] justify-center bg-tmdbDarkBlue p-0 px-5 text-white lg:w-[1300px]">
+      <div className="navbar z-40 mx-auto flex w-full max-w-screen justify-center bg-tmdbDarkBlue p-0 lg:px-5 text-white lg:w-[1300px]">
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
@@ -30,7 +30,7 @@ const NavBarItems = () => {
             </svg>
           </label>
         </div>
-        <div className="ms-[25vw] flex-1 bg-tmdbDarkBlue md:ms-[40vw] lg:mx-2 lg:px-2">
+        <div className=" flex-1 bg-tmdbDarkBlue md:ms-[40vw] lg:mx-2 lg:px-2">
           <img
             src={Logo1}
             alt="logo"
@@ -43,7 +43,7 @@ const NavBarItems = () => {
             alt="logo"
             width={55}
             height={55}
-            className="lg:hidden"
+            className="ml-auto mr-[42vw] md:mr-[50vw] lg:hidden"
           />
           <ul className="menu menu-horizontal hidden text-base font-semibold lg:flex">
             {/* Navbar menu content here */}
