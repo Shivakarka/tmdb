@@ -1,6 +1,6 @@
 import { formattedReleaseDate } from "../../../utils/helperFunctions.ts";
 import { MovieList } from "./MovieList.tsx";
-import RatingsBar from "./RatingsBar.tsx";
+import RatingsBar from "../RatingsBar/RatingsBar.tsx";
 
 const MovieCard = ({
   poster_path,
@@ -25,7 +25,12 @@ const MovieCard = ({
           ...
         </div>
       </div>
-      <RatingsBar rating={rating} />
+      <RatingsBar
+        rating={rating}
+        size="2.3rem"
+        thickness="3px"
+        location="movieCard"
+      />
       <div className="flex flex-col pl-3 pt-5">
         {title && <p className="font-bold">{title}</p>}
         {release_date && (
