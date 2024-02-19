@@ -3,6 +3,7 @@ import PlayIcon from "../../../assets/icons/play-icon.svg";
 import NoImage from "../../../assets/images/noImage.svg";
 import { useTrailer } from "../../../utils/customHooks";
 import { useState } from "react";
+import TrailerModal from "../../trailer/TrailerModal";
 
 const TrailerCard = ({
   backdrop_path,
@@ -38,10 +39,6 @@ const TrailerCard = ({
 
   const openModal = () => {
     setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   if (!trailerKey) {
@@ -84,46 +81,11 @@ const TrailerCard = ({
       </div>
 
       {isModalOpen && (
-        <dialog
-          id="my_modal_3"
-          className="modal bg-black bg-opacity-50"
-          open={isModalOpen}
-        >
-          <div className="top-15 modal-box absolute z-[10] h-[280px] w-[300px] overflow-hidden bg-tmdbDarkBlue text-white md:h-[500px] md:min-w-[750px] lg:h-[90%] lg:min-w-[1300px]">
-            <form method="dialog">
-              <button
-                className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2 hover:bg-gray-700"
-                onClick={closeModal}
-              >
-                ✕
-              </button>
-            </form>
-            <h3 className="mb-3 text-lg font-bold">{title}</h3>
-            <h3 className="mb-3 text-lg font-bold">{original_name}</h3>
-            <p className="mx-auto">
-              <iframe
-                width={
-                  window.innerWidth > 1200
-                    ? "100%"
-                    : window.innerWidth >= 768
-                      ? "700"
-                      : "250"
-                }
-                height={
-                  window.innerWidth > 1200
-                    ? 700
-                    : window.innerWidth >= 768
-                      ? 400
-                      : 200
-                }
-                style={{ backgroundColor: "#000" }}
-                src={`https://www.youtube.com/embed/${trailerKey}?autoplay=0`}
-                frameBorder="0"
-                allowFullScreen={true}
-              ></iframe>
-            </p>
-          </div>
-        </dialog>
+        <TrailerModal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          trailerKey={trailerKey}
+        />
       )}
     </div>
   );
