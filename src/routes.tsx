@@ -3,6 +3,7 @@ import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import MovieDetailsPage from "./pages/MovieDetailsPage.tsx";
+import TvDetailsPage from "./pages/TvDetailsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -11,8 +12,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
-      { path:"/movie/:id", element:<MovieDetailsPage/> }
-    ]
+      { path: "/movie/:id", element: <MovieDetailsPage /> },
+      { path: "/tv/:id", element: <TvDetailsPage /> },
+    ],
   },
 ]);
 

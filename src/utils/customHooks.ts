@@ -84,6 +84,10 @@ const useMovieCredits = (id: number) => {
   );
 };
 
+const useTvDetails = (id: number) => {
+  return useFetchData(`https://api.themoviedb.org/3/tv/${id}?language=en-US`);
+};
+
 export {
   useMovies,
   useStreamingToday,
@@ -93,4 +97,5 @@ export {
   usePopularTvTrailers,
   useMovieDetails,
   useMovieCredits,
+  useTvDetails,
 };
