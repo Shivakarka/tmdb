@@ -2,12 +2,14 @@ type TrailerModalProps = {
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   trailerKey: string;
+  trailerTitle?: string;
 };
 
 const TrailerModal = ({
   isModalOpen,
   setIsModalOpen,
   trailerKey,
+  trailerTitle="Play Trailer",
 }: TrailerModalProps) => {
   const closeModal = () => {
     setIsModalOpen(false);
@@ -28,7 +30,7 @@ const TrailerModal = ({
             ✕
           </button>
         </form>
-        <h3 className="mb-3 text-lg font-bold">{"Play Trailer"}</h3>
+        <h3 className="mb-3 text-lg font-bold">{trailerTitle}</h3>
         <p className="mx-auto">
           <iframe
             width={

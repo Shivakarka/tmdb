@@ -85,6 +85,7 @@ const TrailerCard = ({
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           trailerKey={trailerKey}
+          trailerTitle={title || original_name}
         />
       )}
     </div>
