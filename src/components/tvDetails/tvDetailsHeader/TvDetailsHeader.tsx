@@ -6,12 +6,14 @@ import WatchListIcon from "../../../assets/icons/watchList.svg";
 import HeartIcon from "../../../assets/icons/heartIcon.svg";
 import StarIcon from "../../../assets/icons/Star.svg";
 import PlayIcon from "../../../assets/icons/play-icon.svg";
+import ExpandIcon from "../../../assets/icons/expandIcon.svg";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal";
 
 const TvDetailsHeader = () => {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posterBlur, setPosterBlur] = useState(false);
   const { data: TrailerData } = useTrailer(Number(id), "tv");
 
   const {
@@ -73,14 +75,41 @@ const TvDetailsHeader = () => {
             backgroundImage: `url('https://image.tmdb.org/t/p/w500${TvData?.backdrop_path}')`,
           }}
         >
-          <img
-            src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${TvData?.poster_path}`}
-            alt={"poster"}
-            className={
-              " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
-            }
-            style={{ borderRadius: "8px" }}
-          />
+          <div
+            onMouseEnter={() => setPosterBlur(true)}
+            onMouseLeave={() => setPosterBlur(false)}
+          >
+            {!posterBlur && (
+              <img
+                src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${TvData?.poster_path}`}
+                alt={"poster"}
+                className={
+                  " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
+                }
+                style={{ borderRadius: "8px" }}
+              />
+            )}
+            {posterBlur && (
+              <div className="relative cursor-pointer">
+                <img
+                  src={`https://media.themoviedb.org/t/p/w300_and_h450_multi_faces_filter(blur)${TvData?.poster_path}`}
+                  alt={"poster"}
+                  className={
+                    " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
+                  }
+                  style={{ borderRadius: "8px" }}
+                />
+                <div className="absolute right-5 top-[3.8rem] flex items-center justify-center gap-2 md:right-[6rem] md:top-[10rem] lg:top-[12rem]">
+                  <img
+                    src={ExpandIcon}
+                    alt="expand icon"
+                    className="hidden h-[26px] w-[26px] md:block"
+                  />
+                  <p className=" text-xl text-white">Expand</p>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
         <div
           className={
