@@ -4,20 +4,62 @@ import WatchListIcon from "../assets/icons/watchList.svg";
 import HeartIcon from "../assets/icons/heartIcon.svg";
 import StarIcon from "../assets/icons/Star.svg";
 import PlayIcon from "../assets/icons/play-icon.svg";
+import { useMovieCredits, useMovieDetails } from "../utils/customHooks";
+import { useParams } from "react-router-dom";
 
 const MovieDetailsPage = () => {
-  const genres = [
-    {
-      id: 28,
-      name: "Action",
-    },
-    {
-      id: 878,
-      name: "Science Fiction",
-    },
-  ];
+  const { id } = useParams();
+  const {
+    data: MovieData,
+    isLoading: isMovieDetailsLoading,
+    error: MovieDetailsError,
+  } = useMovieDetails(Number(id));
+  const { data: MovieCreditsData } = useMovieCredits(Number(id));
 
-  const genreNames = genres.map((genre) => genre.name).join(", ");
+  if (isMovieDetailsLoading) {
+    return (
+      <div className="flex w-full justify-center md:h-[510px]">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (MovieDetailsError) {
+    return (
+      <div className="flex w-full flex-col items-center justify-center gap-6 text-5xl md:h-[510px]">
+        <p>Something went wrong. Please try again later.</p>
+        <button
+          className="btn btn-primary text-lg"
+          onClick={() => window.location.reload()}
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
+
+  const genreNames = MovieData?.genres
+    ?.map((genre: { name: string }) => genre.name)
+    .join(", ");
+
+  const releaseYear = new Date(MovieData?.release_date).getFullYear();
+  const releaseDateInIndia = new Date(MovieData?.release_date)
+    .toLocaleDateString("en-IN", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    })
+    .replace(/(\d+)\/(\d+)\/(\d+)/, "$2/$1/$3");
+
+  const durationInHrsMins = `${Math.floor(MovieData?.runtime / 60)}hr ${MovieData?.runtime % 60}m`;
+  const rating = Math.floor(MovieData?.vote_average * 10);
+
+  const directors = MovieCreditsData?.crew.filter(
+    (person: { job: string }) => person.job === "Director",
+  );
+  const screenwriters = MovieCreditsData?.crew.filter(
+    (person: { job: string }) => person.job === "Screenplay",
+  );
 
   return (
     <div>
@@ -27,37 +69,39 @@ const MovieDetailsPage = () => {
         }
       >
         <div
-          className={
-            "absolute inset-0 bg-cover bg-[top_left] bg-no-repeat opacity-50 md:bg-[url('https://image.tmdb.org/t/p/w500/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg')]"
-          }
+          style={{
+            backgroundImage: `url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${MovieData?.backdrop_path}')`,
+          }}
+          className={`absolute inset-0 bg-cover bg-[top_left] bg-no-repeat opacity-30 md:bg-[url('https://image.tmdb.org/t/p/w500${MovieData?.backdrop_path}')]`}
         ></div>
         <div
-          className={
-            "relative flex h-[180px] w-full gap-2 bg-[url('https://image.tmdb.org/t/p/w500/pwGmXVKUgKN13psUjlhC9zBcq1o.jpg')] md:mt-[5em] md:block md:h-full md:w-full md:bg-none lg:mt-8"
-          }
+          className={`movieBackdrop relative flex h-[180px] w-full gap-2 md:mt-[5em] md:block md:h-full md:w-full md:bg-none lg:mt-8`}
+          style={{
+            backgroundImage: `url('https://image.tmdb.org/t/p/w500${MovieData?.backdrop_path}')`,
+          }}
         >
           <img
-            src={
-              "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg"
-            }
+            src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${MovieData?.poster_path}`}
             alt={"poster"}
             className={
-              "ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
+              " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
             }
             style={{ borderRadius: "8px" }}
           />
         </div>
         <div
           className={
-            "relative mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start "
+            "movieDetailMobile relative mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
           }
         >
           <h1 className={"text-2xl font-bold md:text-4xl"}>
-            Madam Web{" "}
-            <span className={"font-normal text-gray-200"}>(2024)</span>
+            {MovieData?.title}{" "}
+            <span className={"font-normal text-gray-200"}>({releaseYear})</span>
           </h1>
           <div className={"flex flex-wrap justify-center"}>
-            <p className={"text-md me-8 font-normal"}>02/16/2024 (IN)</p>
+            <p className={"text-md me-8 font-normal"}>
+              {releaseDateInIndia} (IN)
+            </p>
             <ul
               className={
                 "order-3 me-8 inline-flex text-center md:order-2 md:list-disc"
@@ -66,14 +110,14 @@ const MovieDetailsPage = () => {
               <li>{genreNames}</li>
             </ul>
             <ul className={"order-2 me-8 inline-flex list-disc md:order-3"}>
-              <li>1hr 56m</li>
+              <li>{durationInHrsMins}</li>
             </ul>
           </div>
           <div className="mt-2 flex items-center gap-5 py-2">
             <div className="flex items-center gap-3 font-bold">
               <div className="cursor-pointer transition-all duration-300 ease-in-out hover:scale-105">
                 <RatingsBar
-                  rating={80}
+                  rating={rating || 0}
                   size={"3.7rem"}
                   thickness={"5px"}
                   location="movieDetail"
@@ -120,39 +164,33 @@ const MovieDetailsPage = () => {
             </div>
           </div>
           <p className={"self-start py-2 text-lg italic text-gray-200"}>
-            Her web connects them all.
+            {MovieData?.tagline}
           </p>
           <p className={"self-start text-xl font-bold"}>Overview</p>
           <p className={"w-[95%] self-start pt-1 text-lg"}>
-            Forced to confront revelations about her past, paramedic Cassandra
-            Webb forges a relationship with three young women destined for
-            powerful futures...if they can all survive a deadly present.
+            {MovieData?.overview}
           </p>
           <div
             className={
               "mt-4 grid w-full grid-cols-[1fr,1fr] gap-5 md:grid-cols-[1fr,1fr,1fr]"
             }
           >
-            <div>
-              <p className={"text-lg font-bold"}>S.J. Clarkson</p>
-              <p>Director, Screenplay</p>
-            </div>
-            <div>
-              <p className={"text-lg font-bold"}>S.J. Clarkson</p>
-              <p>Director, Screenplay</p>
-            </div>
-            <div>
-              <p className={"text-lg font-bold"}>S.J. Clarkson</p>
-              <p>Director, Screenplay</p>
-            </div>
-            <div>
-              <p className={"text-lg font-bold"}>S.J. Clarkson</p>
-              <p>Director, Screenplay</p>
-            </div>
-            <div>
-              <p className={"text-lg font-bold"}>S.J. Clarkson</p>
-              <p>Director, Screenplay</p>
-            </div>
+            {directors &&
+              directors.map((director: { name: string; id: number }) => (
+                <div key={director.id}>
+                  <p className="text-lg font-bold">{director.name}</p>
+                  <p>Director</p>
+                </div>
+              ))}
+            {screenwriters &&
+              screenwriters.map(
+                (screenwriter: { name: string; id: number }) => (
+                  <div key={screenwriter.id}>
+                    <p className="text-lg font-bold">{screenwriter.name}</p>
+                    <p>Screenplay</p>
+                  </div>
+                ),
+              )}
           </div>
         </div>
       </div>

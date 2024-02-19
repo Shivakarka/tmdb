@@ -39,3 +39,19 @@ body {
 .movie-list-container.fade-in {
   opacity: 1; /* Visible when faded in */
 }
+
+@media (max-width: 600px) {
+  .movieDetailMobile {
+    background-color: rgb(32, 11, 11) !important;
+  }
+
+  .movieBackdrop img {
+    box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (min-width: 600px) {
+  .movieBackdrop {
+    background-image: none !important;
+  }
+}
