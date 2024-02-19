@@ -8,7 +8,7 @@ const NavBarItems = () => {
   return (
     <div className="drawer-content flex flex-col bg-tmdbDarkBlue">
       {/* Navbar */}
-      <div className="navbar z-40 mx-auto flex w-full max-w-screen justify-center bg-tmdbDarkBlue p-0 lg:px-5 text-white lg:w-[1300px]">
+      <div className="max-w-screen navbar z-40 mx-auto flex w-full justify-center bg-tmdbDarkBlue p-0 text-white lg:px-5 xl:w-[1300px]">
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
