@@ -9,11 +9,13 @@ import PlayIcon from "../../../assets/icons/play-icon.svg";
 import ExpandIcon from "../../../assets/icons/expandIcon.svg";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal";
+import PosterModal from "../../posterModal/PosterModal";
 
 const TvDetailsHeader = () => {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [posterBlur, setPosterBlur] = useState(false);
+  const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
   const { data: TrailerData } = useTrailer(Number(id), "tv");
 
   const {
@@ -78,6 +80,7 @@ const TvDetailsHeader = () => {
           <div
             onMouseEnter={() => setPosterBlur(true)}
             onMouseLeave={() => setPosterBlur(false)}
+            onClick={() => setIsPosterModalOpen(!isPosterModalOpen)}
           >
             {!posterBlur && (
               <img
@@ -111,6 +114,13 @@ const TvDetailsHeader = () => {
             )}
           </div>
         </div>
+        {isPosterModalOpen && (
+          <PosterModal
+            isPosterModalOpen={isPosterModalOpen}
+            setIsPosterModalOpen={setIsPosterModalOpen}
+            posterUrl={TvData?.poster_path}
+          />
+        )}
         <div
           className={
             "movieDetailMobile relative mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"

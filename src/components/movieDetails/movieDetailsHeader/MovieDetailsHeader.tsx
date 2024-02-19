@@ -13,10 +13,12 @@ import ExpandIcon from "../../../assets/icons/expandIcon.svg";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal.tsx";
+import PosterModal from "../../posterModal/PosterModal.tsx";
 
 const MovieDetailsHeader = () => {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
   const [posterBlur, setPosterBlur] = useState(false);
   const { data: TrailerData } = useTrailer(Number(id), "movie");
 
@@ -98,6 +100,7 @@ const MovieDetailsHeader = () => {
           <div
             onMouseEnter={() => setPosterBlur(true)}
             onMouseLeave={() => setPosterBlur(false)}
+            onClick={() => setIsPosterModalOpen(!isPosterModalOpen)}
           >
             {!posterBlur && (
               <img
@@ -107,6 +110,7 @@ const MovieDetailsHeader = () => {
                   " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
                 }
                 style={{ borderRadius: "8px" }}
+                loading="lazy"
               />
             )}
             {posterBlur && (
@@ -118,6 +122,7 @@ const MovieDetailsHeader = () => {
                     " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
                   }
                   style={{ borderRadius: "8px" }}
+                  loading="lazy"
                 />
                 <div className="absolute right-5 top-[3.8rem] flex items-center justify-center gap-2 md:right-[6rem] md:top-[10rem] lg:top-[12rem]">
                   <img
@@ -131,6 +136,13 @@ const MovieDetailsHeader = () => {
             )}
           </div>
         </div>
+        {isPosterModalOpen && (
+          <PosterModal
+            isPosterModalOpen={isPosterModalOpen}
+            setIsPosterModalOpen={setIsPosterModalOpen}
+            posterUrl={MovieData?.poster_path}
+          />
+        )}
         <div
           className={
             "movieDetailMobile relative mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
