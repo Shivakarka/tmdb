@@ -1,14 +1,18 @@
 import { useParams } from "react-router-dom";
-import { useTvDetails } from "../../../utils/customHooks";
+import { useTrailer, useTvDetails } from "../../../utils/customHooks";
 import RatingsBar from "../../main/RatingsBar/RatingsBar";
 import AddToListIcon from "../../../assets/icons/AddToList.svg";
 import WatchListIcon from "../../../assets/icons/watchList.svg";
 import HeartIcon from "../../../assets/icons/heartIcon.svg";
 import StarIcon from "../../../assets/icons/Star.svg";
 import PlayIcon from "../../../assets/icons/play-icon.svg";
+import { useState } from "react";
+import TrailerModal from "../../trailer/TrailerModal";
 
 const TvDetailsHeader = () => {
   const { id } = useParams();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { data: TrailerData } = useTrailer(Number(id), "tv");
 
   const {
     data: TvData,
@@ -45,6 +49,10 @@ const TvDetailsHeader = () => {
   const releaseYear = new Date(TvData?.first_air_date).getFullYear();
 
   const rating = Math.floor(TvData?.vote_average * 10);
+
+  const trailerKey = TrailerData?.results?.find(
+    (item: { type: string; name?: string }) => item.type === "Trailer",
+  )?.key;
 
   return (
     <div>
@@ -134,13 +142,20 @@ const TvDetailsHeader = () => {
                 <img src={StarIcon} alt="Star Icon" />
               </div>
             </div>
-            <div className="h-9 w-[2px] bg-gray-600 md:hidden"></div>
-            <div className="flex cursor-pointer items-center gap-2 transition-all duration-300 ease-in-out hover:opacity-60">
-              <div className="h-5 w-5 invert">
-                <img src={PlayIcon} alt="Play Icon" />
+            {trailerKey && (
+              <div className="h-9 w-[2px] bg-gray-600 md:hidden"></div>
+            )}
+            {trailerKey && (
+              <div
+                className="flex cursor-pointer items-center gap-2 transition-all duration-300 ease-in-out hover:opacity-60"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <div className="h-5 w-5 invert">
+                  <img src={PlayIcon} alt="Play Icon" />
+                </div>
+                <div className="text-md font-bold">Play Trailer</div>
               </div>
-              <div className="text-md font-bold">Play Trailer</div>
-            </div>
+            )}
           </div>
           <p className={"self-start py-2 text-lg italic text-gray-200"}>
             {TvData?.tagline}
@@ -149,6 +164,13 @@ const TvDetailsHeader = () => {
           <p className={"w-[95%] self-start pt-1 text-lg"}>
             {TvData?.overview}
           </p>
+          {isModalOpen && (
+            <TrailerModal
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+              trailerKey={trailerKey}
+            />
+          )}
         </div>
       </div>
     </div>
