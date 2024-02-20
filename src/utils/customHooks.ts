@@ -78,12 +78,6 @@ const useMovieDetails = (id: number) => {
   );
 };
 
-const useMovieCredits = (id: number) => {
-  return useFetchData(
-    `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`,
-  );
-};
-
 const useTvDetails = (id: number) => {
   return useFetchData(`https://api.themoviedb.org/3/tv/${id}?language=en-US`);
 };
@@ -120,7 +114,6 @@ export {
   usePopularMovieTrailers,
   usePopularTvTrailers,
   useMovieDetails,
-  useMovieCredits,
   useTvDetails,
   useKeywords,
   useExternalIds,

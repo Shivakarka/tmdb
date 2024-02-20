@@ -1,5 +1,5 @@
 import {
-  useMovieCredits,
+  useCredits,
   useMovieDetails,
   useTrailer,
 } from "../../../utils/customHooks.ts";
@@ -28,7 +28,7 @@ const MovieDetailsHeader = () => {
     isLoading: isMovieDetailsLoading,
     error: MovieDetailsError,
   } = useMovieDetails(Number(id));
-  const { data: MovieCreditsData } = useMovieCredits(Number(id));
+  const { data: MovieCreditsData } = useCredits(Number(id), "movie");
 
   if (isMovieDetailsLoading) {
     return (
@@ -88,7 +88,7 @@ const MovieDetailsHeader = () => {
       >
         <div
           style={{
-            backgroundImage: `url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${MovieData?.backdrop_path}')`,
+            backgroundImage: `radial-gradient(circle at 20% 50%, rgba(30, 39, 44, 0.9) 0%, rgba(30, 39, 44, 0.8) 10%), url('https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/${MovieData?.backdrop_path}')`,
           }}
           className={`absolute inset-0 bg-cover bg-[top_left] bg-no-repeat opacity-30 md:bg-[url('https://image.tmdb.org/t/p/w500${MovieData?.backdrop_path}')]`}
         ></div>
