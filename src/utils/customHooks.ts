@@ -106,6 +106,12 @@ const useCredits = (id: number, type: string) => {
   );
 };
 
+const useAggregateCredits = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}/aggregate_credits?language=en-US`,
+  );
+};
+
 export {
   useMovies,
   useStreamingToday,
@@ -119,4 +125,5 @@ export {
   useExternalIds,
   useDetails,
   useCredits,
+  useAggregateCredits
 };
