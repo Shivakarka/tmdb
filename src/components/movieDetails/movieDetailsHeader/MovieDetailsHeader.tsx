@@ -83,7 +83,7 @@ const MovieDetailsHeader = () => {
     <div>
       <div
         className={
-          "relative grid w-full grid-cols-1 grid-rows-[20%,80%] content-center overflow-hidden bg-[rgb(32,11,11)] md:h-[510px] md:grid-cols-[30%,70%] md:grid-rows-1"
+          "relative grid w-full grid-cols-1 grid-rows-[20%,80%] content-center overflow-hidden bg-[rgb(32,11,11)] md:min-h-[510px] md:grid-cols-[30%,70%] md:grid-rows-1"
         }
       >
         <div
