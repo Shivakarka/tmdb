@@ -32,7 +32,7 @@ const CurrentSeason = ({ id }: { id: string | undefined }) => {
               className="h-[195px] w-[130px] rounded-bl-md rounded-tl-md"
             />
           )}
-          <div className="flex flex-col gap-3 border-l-2 px-2 py-4">
+          <div className="flex flex-col gap-3 px-2 py-4 md:border-l-2">
             <div className="flex flex-col gap-0">
               <h3 className="text-2xl font-semibold">
                 {SeasonData?.seasons?.[SeasonData?.seasons?.length - 1]?.name}
