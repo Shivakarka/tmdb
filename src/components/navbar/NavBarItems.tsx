@@ -3,6 +3,7 @@ import Logo2 from "../../assets/images/logo2.svg";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 import SearchIcon from "../../assets/icons/search-icon.svg";
 import Dropdown from "./dropdown/Dropdown";
+import { Link } from "react-router-dom";
 
 const NavBarItems = () => {
   return (
@@ -31,20 +32,24 @@ const NavBarItems = () => {
           </label>
         </div>
         <div className=" flex-1 bg-tmdbDarkBlue md:ms-[40vw] lg:mx-2 lg:px-2">
-          <img
-            src={Logo1}
-            alt="logo"
-            width={154}
-            height={20}
-            className="hidden lg:block"
-          />
-          <img
-            src={Logo2}
-            alt="logo"
-            width={55}
-            height={55}
-            className="ml-auto mr-[42vw] md:mr-[50vw] lg:hidden"
-          />
+          <Link to={"/"}>
+            <img
+              src={Logo1}
+              alt="logo"
+              width={154}
+              height={20}
+              className="hidden lg:block"
+            />
+          </Link>
+          <Link to={"/"}>
+            <img
+              src={Logo2}
+              alt="logo"
+              width={55}
+              height={55}
+              className="ml-[30vw] md:ml-auto  md:mr-[50vw] lg:hidden"
+            />
+          </Link>
           <ul className="menu menu-horizontal hidden text-base font-semibold lg:flex">
             {/* Navbar menu content here */}
             <li>
