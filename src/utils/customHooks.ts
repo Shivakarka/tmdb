@@ -104,7 +104,13 @@ const useDetails = (id: number, type: string) => {
   return useFetchData(
     `https://api.themoviedb.org/3/${type}/${id}?language=en-US`,
   );
-}
+};
+
+const useCredits = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}/credits?language=en-US`,
+  );
+};
 
 export {
   useMovies,
@@ -119,4 +125,5 @@ export {
   useKeywords,
   useExternalIds,
   useDetails,
+  useCredits,
 };
