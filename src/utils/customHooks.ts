@@ -88,6 +88,18 @@ const useTvDetails = (id: number) => {
   return useFetchData(`https://api.themoviedb.org/3/tv/${id}?language=en-US`);
 };
 
+const useKeywords = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}/keywords?language=en-US`,
+  );
+};
+
+const useExternalIds = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}/external_ids?language=en-US`,
+  );
+};
+
 export {
   useMovies,
   useStreamingToday,
@@ -98,4 +110,6 @@ export {
   useMovieDetails,
   useMovieCredits,
   useTvDetails,
+  useKeywords,
+  useExternalIds,
 };
