@@ -1,6 +1,6 @@
-import { useAggregateCredits, useCredits } from "../../utils/customHooks";
-import { useEffect, useState } from "react";
+import { useCredits } from "../../utils/customHooks";
 import CastCardItem from "./castCardItem";
+import CastDataErrorMessage from "./CastDataErrorMessage";
 
 type CastCardsProps = {
   id: string | undefined;
@@ -18,28 +18,13 @@ export type CastType = {
 };
 
 const CastCards = ({ id, platform }: CastCardsProps) => {
-  const [displayData, setDisplayData] = useState<any>(null);
-
   const {
     data: CastData,
     isLoading: CastDataLoading,
     error: CastDataError,
   } = useCredits(Number(id), platform);
-  const {
-    data: AggregateCastData,
-    isLoading: AggregateCastDataLoading,
-    error: AggregateCastError,
-  } = useAggregateCredits(Number(id), platform);
 
-  useEffect(() => {
-    if (platform === "movie") {
-      setDisplayData(CastData);
-    } else if (platform === "tv") {
-      setDisplayData(AggregateCastData);
-    }
-  }, [CastData, AggregateCastData, platform]);
-
-  if (CastDataLoading || AggregateCastDataLoading) {
+  if (CastDataLoading) {
     return (
       <div className="flex w-full justify-center md:h-[510px]">
         <span className="loading loading-spinner loading-lg"></span>
@@ -47,18 +32,8 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
     );
   }
 
-  if (CastDataError || AggregateCastError) {
-    return (
-      <div className="flex w-full flex-col items-center justify-center gap-6 text-3xl md:h-[510px]">
-        <p>Something went wrong. Please try again later.</p>
-        <button
-          className="btn btn-primary text-lg"
-          onClick={() => window.location.reload()}
-        >
-          Retry
-        </button>
-      </div>
-    );
+  if (CastDataError) {
+    return <CastDataErrorMessage />;
   }
 
   return (
@@ -71,7 +46,7 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
         )}
       </div>
       <div className="flex w-full gap-5  overflow-scroll bg-white p-2 lg:w-[800px] xl:w-[980px]">
-        {displayData?.cast?.map((cast: CastType, index: number) => {
+        {CastData?.cast?.map((cast: CastType, index: number) => {
           if (index < 9) {
             return (
               <CastCardItem key={cast?.id} cast={cast} platform={platform} />

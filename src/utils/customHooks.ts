@@ -101,14 +101,15 @@ const useDetails = (id: number, type: string) => {
 };
 
 const useCredits = (id: number, type: string) => {
-  return useFetchData(
-    `https://api.themoviedb.org/3/${type}/${id}/credits?language=en-US`,
-  );
-};
+  let creditsType = "";
+  if (type === "movie") {
+    creditsType = "credits";
+  } else {
+    creditsType = "aggregate_credits";
+  }
 
-const useAggregateCredits = (id: number, type: string) => {
   return useFetchData(
-    `https://api.themoviedb.org/3/${type}/${id}/aggregate_credits?language=en-US`,
+    `https://api.themoviedb.org/3/${type}/${id}/${creditsType}?language=en-US`,
   );
 };
 
@@ -125,5 +126,4 @@ export {
   useExternalIds,
   useDetails,
   useCredits,
-  useAggregateCredits
 };
