@@ -18,4 +18,14 @@ const getBorderColor = (rating: number) => {
   return "text-[rgb(33,208,122)]";
 };
 
-export { formattedReleaseDate, fetcher, getBorderColor };
+function formatNumberWithCommas(number: number): string {
+  if (!number) return "N/A";
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export {
+  formattedReleaseDate,
+  fetcher,
+  getBorderColor,
+  formatNumberWithCommas,
+};

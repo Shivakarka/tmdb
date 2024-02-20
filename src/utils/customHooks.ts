@@ -100,6 +100,12 @@ const useExternalIds = (id: number, type: string) => {
   );
 };
 
+const useDetails = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}?language=en-US`,
+  );
+}
+
 export {
   useMovies,
   useStreamingToday,
@@ -112,4 +118,5 @@ export {
   useTvDetails,
   useKeywords,
   useExternalIds,
+  useDetails,
 };
