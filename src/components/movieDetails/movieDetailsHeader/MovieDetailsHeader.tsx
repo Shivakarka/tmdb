@@ -10,6 +10,7 @@ import HeartIcon from "../../../assets/icons/heartIcon.svg";
 import StarIcon from "../../../assets/icons/Star.svg";
 import PlayIcon from "../../../assets/icons/play-icon.svg";
 import ExpandIcon from "../../../assets/icons/expandIcon.svg";
+import NoImage from "../../../assets/images/noImage.svg";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal.tsx";
@@ -104,10 +105,16 @@ const MovieDetailsHeader = () => {
           >
             {!posterBlur && (
               <img
-                src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${MovieData?.poster_path}`}
+                src={
+                  MovieData?.poster_path
+                    ? `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${MovieData?.poster_path}`
+                    : NoImage
+                }
                 alt={"poster"}
                 className={
-                  " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
+                  MovieData?.poster_path
+                    ? " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
+                    : "h-[150px] w-[100px] border md:ml-auto md:mt-2 md:h-[320px] md:w-[300px] lg:h-[450px]"
                 }
                 style={{ borderRadius: "8px" }}
                 loading="lazy"
@@ -228,7 +235,11 @@ const MovieDetailsHeader = () => {
             {MovieData?.tagline}
           </p>
           <p className={"self-start text-xl font-bold"}>Overview</p>
-          <p className={"w-[95%] self-start pt-1 text-lg"}>
+          <p
+            className={
+              "h-fit w-[95%] self-start pt-1 text-lg md:leading-5 lg:leading-normal"
+            }
+          >
             {MovieData?.overview}
           </p>
           <div
