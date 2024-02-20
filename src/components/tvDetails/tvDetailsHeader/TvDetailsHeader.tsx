@@ -200,7 +200,7 @@ const TvDetailsHeader = () => {
             {TvData?.tagline}
           </p>
           <p className={"self-start text-xl font-bold"}>Overview</p>
-          <p className={"w-[95%] self-start pt-1 text-lg"}>
+          <p className={"w-[95%] self-start pt-1 text-lg lg:w-[80%]"}>
             {TvData?.overview}
           </p>
           {isModalOpen && (

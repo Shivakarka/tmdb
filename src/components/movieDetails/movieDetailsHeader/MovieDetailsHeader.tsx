@@ -237,7 +237,7 @@ const MovieDetailsHeader = () => {
           <p className={"self-start text-xl font-bold"}>Overview</p>
           <p
             className={
-              "h-fit w-[95%] self-start pt-1 text-lg md:leading-5 lg:leading-normal"
+              "h-fit w-[95%] self-start pt-1 text-lg md:leading-5 lg:w-[80%] lg:leading-normal"
             }
           >
             {MovieData?.overview}
