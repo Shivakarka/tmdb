@@ -67,7 +67,7 @@ const CurrentSeason = ({ id }: { id: string | undefined }) => {
                 ?.overview ||
                 `Season 1 of ${SeasonData?.name} premiered on ${formattedReleaseDate(SeasonData?.first_air_date)}.`}
             </p>
-            {SeasonData?.next_episode_to_air && (
+            {SeasonData?.next_episode_to_air ? (
               <div className="flex items-center gap-4">
                 <img
                   src={Calender}
@@ -82,6 +82,24 @@ const CurrentSeason = ({ id }: { id: string | undefined }) => {
                   (
                   {`${SeasonData?.next_episode_to_air?.season_number}x${SeasonData?.next_episode_to_air?.episode_number}, 
                 ${formattedReleaseDate(SeasonData?.next_episode_to_air?.air_date)}`}
+                  )
+                </p>
+              </div>
+            ) : (
+              <div className="flex items-center gap-4">
+                <img
+                  src={Calender}
+                  alt="calender icon"
+                  loading="lazy"
+                  className="h-5 w-5"
+                />
+                <p className="cursor-pointer border-b-2 border-black py-[1px] hover:opacity-60">
+                  {SeasonData?.last_episode_to_air?.name}
+                </p>
+                <p>
+                  (
+                  {`${SeasonData?.last_episode_to_air?.season_number}x${SeasonData?.last_episode_to_air?.episode_number}, 
+                ${formattedReleaseDate(SeasonData?.last_episode_to_air?.air_date)}`}
                   )
                 </p>
               </div>
