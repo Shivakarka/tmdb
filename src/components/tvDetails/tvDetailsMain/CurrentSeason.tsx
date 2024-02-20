@@ -9,7 +9,9 @@ const CurrentSeason = ({ id }: { id: string | undefined }) => {
 
   const releaseYear = new Date(
     SeasonData?.seasons?.[SeasonData?.seasons?.length - 1]?.air_date,
-  ).getFullYear();
+  )
+    .getFullYear()
+    .toString();
 
   return (
     <div className="flex h-fit flex-col gap-3  ">
@@ -21,7 +23,7 @@ const CurrentSeason = ({ id }: { id: string | undefined }) => {
             <img
               src={`https://media.themoviedb.org/t/p/w130_and_h195_bestv2/${SeasonData?.seasons?.[SeasonData?.seasons?.length - 1]?.poster_path}`}
               alt={SeasonData?.seasons?.[SeasonData?.seasons?.length - 1]?.name}
-              className="h-[195px] w-[130px] rounded-bl-md rounded-tl-md"
+              className="hidden h-[195px] w-[130px] rounded-bl-md rounded-tl-md md:block"
             />
           ) : (
             <img
