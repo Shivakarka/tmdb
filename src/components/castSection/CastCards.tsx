@@ -19,8 +19,17 @@ export type CastType = {
 
 const CastCards = ({ id, platform }: CastCardsProps) => {
   const [displayData, setDisplayData] = useState<any>(null);
-  const { data: CastData } = useCredits(Number(id), platform);
-  const { data: AggregateCastData } = useAggregateCredits(Number(id), platform);
+
+  const {
+    data: CastData,
+    isLoading: CastDataLoading,
+    error: CastDataError,
+  } = useCredits(Number(id), platform);
+  const {
+    data: AggregateCastData,
+    isLoading: AggregateCastDataLoading,
+    error: AggregateCastError,
+  } = useAggregateCredits(Number(id), platform);
 
   useEffect(() => {
     if (platform === "movie") {
@@ -29,6 +38,28 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
       setDisplayData(AggregateCastData);
     }
   }, [CastData, AggregateCastData, platform]);
+
+  if (CastDataLoading || AggregateCastDataLoading) {
+    return (
+      <div className="flex w-full justify-center md:h-[510px]">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (CastDataError || AggregateCastError) {
+    return (
+      <div className="flex w-full flex-col items-center justify-center gap-6 text-3xl md:h-[510px]">
+        <p>Something went wrong. Please try again later.</p>
+        <button
+          className="btn btn-primary text-lg"
+          onClick={() => window.location.reload()}
+        >
+          Retry
+        </button>
+      </div>
+    );
+  }
 
   return (
     <>
