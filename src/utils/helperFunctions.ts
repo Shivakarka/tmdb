@@ -23,9 +23,29 @@ function formatNumberWithCommas(number: number): string {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+const truncateReviewContent = (content: string) => {
+  const words = content.split(" ");
+  const truncatedContent = words.slice(0, 100).join(" ");
+  if (words.length > 100) {
+    return truncatedContent + "... read the rest";
+  }
+  return truncatedContent;
+};
+
 export {
   formattedReleaseDate,
   fetcher,
   getBorderColor,
   formatNumberWithCommas,
+  formatDate,
+  truncateReviewContent,
 };

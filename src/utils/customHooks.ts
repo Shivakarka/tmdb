@@ -113,6 +113,12 @@ const useCredits = (id: number, type: string) => {
   );
 };
 
+const useReviews = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}/reviews?language=en-US&page=1`,
+  );
+}
+
 export {
   useMovies,
   useStreamingToday,
@@ -126,4 +132,5 @@ export {
   useExternalIds,
   useDetails,
   useCredits,
+  useReviews,
 };
