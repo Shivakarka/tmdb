@@ -20,7 +20,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
 
   return (
     <div className="my-4 flex flex-col gap-4">
-      <div className="flex flex-wrap items-start justify-start gap-10">
+      <div className="flex flex-wrap items-start justify-start gap-10 lg:flex-nowrap">
         <p className="text-2xl font-semibold">Media</p>
         <div role="tablist" className="tabs tabs-bordered relative">
           <input
@@ -34,8 +34,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className={`tab-content relative  top-1 h-fit w-[300px] bg-white  md:h-fit md:min-w-fit lg:w-[700px] xl:w-[980px] 
-            ${platform === "movie" && "lg:left-[-5rem]"}`}
+            className={`tab-content relative  top-1 h-fit w-[300px] bg-white  md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]`}
           >
             <MostPopularMedia
               mediaData={mediaData}

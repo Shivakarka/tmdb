@@ -17,18 +17,22 @@ const MostPopularMedia = ({
         {trailerKey && (
           <MediaTrailerCard trailerKey={trailerKey} trailerName={trailerName} />
         )}
-        <img
-          src={`https://image.tmdb.org/t/p/original${mediaData?.backdrop_path}`}
-          alt="poster"
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-        <img
-          src={`https://media.themoviedb.org/t/p/w220_and_h330_face/${mediaData?.poster_path}`}
-          alt="poster"
-          className="h-full w-fit "
-          loading="lazy"
-        />
+        {mediaData?.backdrop_path && (
+          <img
+            src={`https://image.tmdb.org/t/p/original${mediaData?.backdrop_path}`}
+            alt="poster"
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        )}
+        {mediaData?.poster_path && (
+          <img
+            src={`https://media.themoviedb.org/t/p/w220_and_h330_face/${mediaData?.poster_path}`}
+            alt="poster"
+            className="h-full w-fit "
+            loading="lazy"
+          />
+        )}
       </div>
     </>
   );
