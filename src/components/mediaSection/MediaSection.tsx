@@ -5,7 +5,6 @@ import MostPopularMedia from "./MostPopularMedia";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { id } = useParams<{ id: string }>();
   const { data: mediaData } = useDetails(Number(id), platform);
   const { data: TrailerData } = useTrailer(Number(id), platform);
@@ -28,21 +27,19 @@ const MediaSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_3"
             role="tab"
-            className="tab whitespace-nowrap pr-1 text-sm font-bold md:pr-0 md:text-lg"
+            className="tab whitespace-nowrap pr-1 text-sm font-bold md:pr-1 md:text-lg lg:pr-2"
             aria-label="Most Popular"
             onClick={() => setActiveMediaTab(0)}
             checked={activeMediaTab === 0}
           />
           <div
             role="tabpanel"
-            className={`tab-content relative  top-1 h-fit w-[300px] bg-white  md:h-fit   md:min-w-fit lg:w-[700px] xl:w-[980px] 
+            className={`tab-content relative  top-1 h-fit w-[300px] bg-white  md:h-fit md:min-w-fit lg:w-[700px] xl:w-[980px] 
             ${platform === "movie" && "lg:left-[-5rem]"}`}
           >
             <MostPopularMedia
               mediaData={mediaData}
               trailerKey={trailerKey}
-              setIsModalOpen={setIsModalOpen}
-              isModalOpen={isModalOpen}
               trailerName={trailerName}
             />
           </div>
