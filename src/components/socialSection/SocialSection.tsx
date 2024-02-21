@@ -4,7 +4,7 @@ import { useReviews } from "../../utils/customHooks";
 import StarIcon from "../../assets/icons/star.svg";
 import NoImage from "../../assets/images/noImage.svg";
 import { formatDate } from "../../utils/helperFunctions";
-import { truncateReviewContent } from "./TruncateReview";
+import { truncateReviewContent } from "./truncateReview";
 
 const SocialSection = ({ platform }: { platform: string }) => {
   const [activeTab, setActiveTab] = useState(0);

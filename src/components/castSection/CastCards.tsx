@@ -1,5 +1,5 @@
 import { useCredits } from "../../utils/customHooks";
-import CastCardItem from "./castCardItem";
+import CastCardItem from "./CastCardItem.tsx";
 import CastDataErrorMessage from "./CastDataErrorMessage";
 
 type CastCardsProps = {
