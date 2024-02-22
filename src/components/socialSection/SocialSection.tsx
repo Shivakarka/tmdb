@@ -15,13 +15,13 @@ const SocialSection = ({ platform }: { platform: string }) => {
   return (
     <div className="my-4 flex flex-col gap-4">
       <div className="flex items-start justify-start gap-10">
-        <p className="text-2xl font-bold">Social</p>
+        <p className="text-2xl font-semibold">Social</p>
         <div role="tablist" className="tabs tabs-bordered relative">
           <input
             type="radio"
             name="my_tabs_1"
             role="tab"
-            className="tab text-lg font-bold"
+            className="tab text-lg font-semibold"
             aria-label="Reviews"
             onClick={() => setActiveTab(0)}
             checked={activeTab === 0}
@@ -29,7 +29,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative left-[-5rem] top-1 h-fit w-[300px]  md:h-fit   md:w-[120%] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative left-[-6.5rem] top-1 mt-1 h-fit w-full min-w-[320px] sm:w-[500px] md:h-fit md:w-fit md:min-w-[400px] lg:w-[700px] xl:w-[980px]"
           >
             {ReviewsData?.results?.length > 0 ? (
               <div className="flex flex-col gap-3">
@@ -101,7 +101,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_1"
             role="tab"
-            className="tab text-lg font-bold"
+            className="tab text-lg font-semibold"
             aria-label="Discussions"
             onClick={() => setActiveTab(1)}
             checked={activeTab === 1}
