@@ -117,7 +117,11 @@ const useReviews = (id: number, type: string) => {
   return useFetchData(
     `https://api.themoviedb.org/3/${type}/${id}/reviews?language=en-US&page=1`,
   );
-}
+};
+
+const useImages = (id: number, type: string) => {
+  return useFetchData(`https://api.themoviedb.org/3/${type}/${id}/images`);
+};
 
 export {
   useMovies,
@@ -133,4 +137,5 @@ export {
   useDetails,
   useCredits,
   useReviews,
+  useImages,
 };
