@@ -34,6 +34,10 @@ const Recommendations = ({
     );
   }
 
+  if (RecommendationsData?.results?.length === 0) {
+    return null;
+  }
+
   return (
     <section className="relative mt-4 flex flex-col gap-4">
       <h2 className="text-[22.4px] font-semibold">Recommendations</h2>
