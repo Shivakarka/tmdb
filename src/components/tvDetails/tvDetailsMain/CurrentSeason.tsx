@@ -14,7 +14,7 @@ const CurrentSeason = ({ id }: { id: string | undefined }) => {
     .toString();
 
   return (
-    <div className="flex h-fit flex-col gap-3 md:w-[95%] xl:w-[980px]  ">
+    <div className="flex h-fit w-full flex-col gap-3">
       <h2 className="text-2xl font-semibold">Current Season</h2>
       <div className="flex flex-col gap-3 rounded-lg bg-white shadow-lg ">
         <div className="flex">

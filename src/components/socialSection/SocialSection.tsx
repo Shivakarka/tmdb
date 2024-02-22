@@ -29,7 +29,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative left-[-6.5rem] top-1 mt-1 h-fit w-full min-w-[320px] sm:w-[500px] md:h-fit md:w-fit md:min-w-[400px] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative left-[-6.5rem] top-1 mt-1 h-fit w-[85vw] min-w-[320px] sm:w-[88vw] md:h-fit md:w-[55vw] md:min-w-[400px] lg:w-[74vw] xl:w-[1050px]"
           >
             {ReviewsData?.results?.length > 0 ? (
               <div className="flex flex-col gap-3">
@@ -109,7 +109,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative left-[-5rem] top-1 h-[150px] w-[300px]  md:h-[150px]   md:w-[120%] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative left-[-5rem] top-1 h-[150px] w-[300px]  md:h-[150px] md:w-[120%] lg:w-[700px] xl:w-[980px]"
           >
             <div className="flex flex-col gap-4 p-3">
               <p>

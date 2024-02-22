@@ -47,7 +47,7 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
         )}
       </div>
       <WhiteBlurEffect />
-      <div className="flex w-full gap-5 overflow-scroll p-2 pb-6 lg:w-[800px] xl:w-[980px]">
+      <div className="flex w-full gap-5 overflow-scroll p-2 pb-6">
         {CastData?.cast?.map((cast: CastType, index: number) => {
           if (index < 9) {
             return (
