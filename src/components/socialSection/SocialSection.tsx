@@ -25,6 +25,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             aria-label="Reviews"
             onClick={() => setActiveTab(0)}
             checked={activeTab === 0}
+            readOnly
           />
           <div
             role="tabpanel"
@@ -104,6 +105,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             aria-label="Discussions"
             onClick={() => setActiveTab(1)}
             checked={activeTab === 1}
+            readOnly
           />
           <div
             role="tabpanel"
