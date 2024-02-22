@@ -4,6 +4,7 @@ import CastCards from "../../castSection/CastCards";
 import CurrentSeason from "./CurrentSeason";
 import SocialSection from "../../socialSection/SocialSection";
 import MediaSection from "../../mediaSection/MediaSection";
+import Recommendations from "../../recommendations/Recommendations";
 
 const TvDetailsMain = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +19,8 @@ const TvDetailsMain = () => {
         <SocialSection platform="tv" />
         <hr />
         <MediaSection platform="tv" />
+        <hr />
+        <Recommendations id={id} platform={"tv"} />
       </section>
       <StatsAndFactsSection id={id} platform={"tv"} />
     </main>

@@ -3,6 +3,7 @@ import StatsAndFactsSection from "../../statsAndFacts/StatsAndFactsSection";
 import CastCards from "../../castSection/CastCards";
 import SocialSection from "../../socialSection/SocialSection";
 import MediaSection from "../../mediaSection/MediaSection";
+import Recommendations from "../../recommendations/Recommendations";
 
 const MovieDetailsMain = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,6 +16,8 @@ const MovieDetailsMain = () => {
         <SocialSection platform="movie" />
         <hr />
         <MediaSection platform="movie" />
+        <hr />
+        <Recommendations id={id} platform={"movie"} />
       </section>
       <StatsAndFactsSection id={id} platform={"movie"} />
     </main>

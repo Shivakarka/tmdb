@@ -123,6 +123,12 @@ const useImages = (id: number, type: string) => {
   return useFetchData(`https://api.themoviedb.org/3/${type}/${id}/images`);
 };
 
+const useRecommendations = (id: number, type: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/${type}/${id}/recommendations?language=en-US&page=1`,
+  );
+};
+
 export {
   useMovies,
   useStreamingToday,
@@ -138,4 +144,5 @@ export {
   useCredits,
   useReviews,
   useImages,
+  useRecommendations,
 };
