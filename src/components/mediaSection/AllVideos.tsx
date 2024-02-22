@@ -1,9 +1,9 @@
 import MediaTrailerCard from "./MediaTrailerCard";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 
-const AllVideos = ({TrailerData}:{TrailerData:any}) => {
+const AllVideos = ({ TrailerData }: { TrailerData: any }) => {
   return (
-    <div className="flex h-[300px] w-[300px] overflow-y-hidden overflow-x-scroll md:w-[415px] lg:w-[700px] xl:w-[980px] ">
+    <div className="flex h-[300px] w-[300px] overflow-y-hidden overflow-x-scroll md:w-[53vw] lg:w-[74vw] xl:w-[995px] ">
       {TrailerData?.results?.length > 0 ? (
         TrailerData?.results?.map((item: any) => {
           return (

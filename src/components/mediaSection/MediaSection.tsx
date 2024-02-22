@@ -4,6 +4,7 @@ import { useDetails, useImages, useTrailer } from "../../utils/customHooks";
 import MostPopularMedia from "./MostPopularMedia";
 import AllVideos from "./AllVideos";
 import ImageList from "./ImageList";
+import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
@@ -23,7 +24,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
 
   return (
     <div className="my-4 flex flex-col gap-4">
-      <div className="flex flex-wrap items-start justify-start gap-10 lg:flex-nowrap">
+      <div className="flex flex-wrap items-start justify-start gap-7 lg:flex-nowrap">
         <p className="text-2xl font-semibold">Media</p>
         <div role="tablist" className="tabs tabs-bordered relative">
           <input
@@ -38,13 +39,14 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className={`tab-content relative top-1 mt-1 h-fit w-[300px] bg-white  md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]`}
+            className={`tab-content relative top-1 mt-1 h-fit w-[305px] bg-white md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[995px]`}
           >
             <MostPopularMedia
               mediaData={mediaData}
               trailerKey={trailerKey}
               trailerName={trailerName}
             />
+            <WhiteBlurEffect />
           </div>
 
           <input
@@ -59,9 +61,10 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative top-1 mt-1 h-fit w-[300px] bg-white md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[995px]"
           >
             <AllVideos TrailerData={TrailerData} />
+            <WhiteBlurEffect />
           </div>
 
           <input
@@ -76,9 +79,10 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative top-1 mt-1 h-fit w-[300px] bg-white md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[995px]"
           >
             <ImageList data={ImageData?.backdrops} type="backdrops" />
+            <WhiteBlurEffect />
           </div>
 
           <input
@@ -93,9 +97,10 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative top-1 mt-1 h-fit w-[300px] bg-white md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[995px]"
           >
             <ImageList data={ImageData?.posters} type="posters" />
+            <WhiteBlurEffect />
           </div>
         </div>
       </div>

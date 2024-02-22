@@ -1,6 +1,7 @@
 import { useRecommendations } from "../../utils/customHooks";
 import { useState } from "react";
 import RecommendationItem from "./RecommendationItem";
+import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
 
 const Recommendations = ({
   id,
@@ -34,9 +35,9 @@ const Recommendations = ({
   }
 
   return (
-    <section className="mt-4 flex flex-col gap-4">
+    <section className="relative mt-4 flex flex-col gap-4">
       <h2 className="text-[22.4px] font-semibold">Recommendations</h2>
-      <div className="flex gap-4 overflow-x-auto overflow-y-hidden lg:w-[980px]">
+      <div className="flex gap-4 overflow-x-auto overflow-y-hidden lg:w-full">
         {RecommendationsData?.results?.map((item: any, index: number) => (
           <RecommendationItem
             item={item}
@@ -47,6 +48,7 @@ const Recommendations = ({
           />
         ))}
       </div>
+      <WhiteBlurEffect />
     </section>
   );
 };

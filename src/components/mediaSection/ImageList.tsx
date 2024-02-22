@@ -10,7 +10,7 @@ const ImageList = ({ data, type }: { data: any; type: string }) => {
   }
 
   return (
-    <div className="flex h-[300px] w-[300px] overflow-y-hidden overflow-x-scroll md:w-[415px] lg:w-[700px] xl:w-[980px] ">
+    <div className="flex h-[300px] w-[300px] overflow-y-hidden overflow-x-scroll md:w-[53vw] lg:w-[74vw] xl:w-[995px]">
       {data?.length > 0 ? (
         data?.map((item: any, index: number) => {
           if (index < 6) {

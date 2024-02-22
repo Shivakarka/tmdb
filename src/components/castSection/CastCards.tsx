@@ -1,4 +1,5 @@
 import { useCredits } from "../../utils/customHooks";
+import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
 import CastCardItem from "./CastCardItem.tsx";
 import CastDataErrorMessage from "./CastDataErrorMessage";
 
@@ -37,7 +38,7 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
   }
 
   return (
-    <>
+    <div className="relative flex flex-col gap-3">
       <div>
         {platform === "movie" ? (
           <h2 className="text-2xl font-semibold">Top Billed Cast</h2>
@@ -45,7 +46,8 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
           <h2 className="text-2xl font-semibold">Series Cast</h2>
         )}
       </div>
-      <div className="flex w-full gap-5  overflow-scroll bg-white p-2 lg:w-[800px] xl:w-[980px]">
+      <WhiteBlurEffect />
+      <div className="flex w-full gap-5 overflow-scroll p-2 pb-6 lg:w-[800px] xl:w-[980px]">
         {CastData?.cast?.map((cast: CastType, index: number) => {
           if (index < 9) {
             return (
@@ -57,8 +59,10 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
           <p className=" text-lg font-bold">View More</p>
         </div>
       </div>
-      <h3 className="cursor-pointer text-xl font-semibold">Full Cast & Crew</h3>
-    </>
+      <h3 className="cursor-pointer text-[17.6px] font-semibold">
+        Full Cast & Crew
+      </h3>
+    </div>
   );
 };
 
