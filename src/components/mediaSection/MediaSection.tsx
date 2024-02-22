@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDetails, useTrailer } from "../../utils/customHooks";
 import MostPopularMedia from "./MostPopularMedia";
+import AllVideos from "./AllVideos";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
@@ -34,7 +35,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className={`tab-content relative  top-1 h-fit w-[300px] bg-white  md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]`}
+            className={`tab-content relative top-1 h-fit w-[300px] bg-white  md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]`}
           >
             <MostPopularMedia
               mediaData={mediaData}
@@ -54,9 +55,9 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative left-[-5rem] top-1 h-[150px] w-[300px] md:h-[150px] md:w-[120%] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative top-1 h-fit w-[300px] bg-white md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]"
           >
-            Tab 2
+            <AllVideos TrailerData={TrailerData} />
           </div>
 
           <input
