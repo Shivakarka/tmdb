@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useDetails, useImages, useTrailer } from "../../utils/customHooks";
 import MostPopularMedia from "./MostPopularMedia";
 import AllVideos from "./AllVideos";
-import Backdrops from "./Backdrops";
+import ImageList from "./ImageList";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
@@ -78,7 +78,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             role="tabpanel"
             className="tab-content relative top-1 mt-1 h-fit w-[300px] bg-white md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]"
           >
-            <Backdrops ImageData={ImageData} />
+            <ImageList data={ImageData?.backdrops} type="backdrops" />
           </div>
 
           <input
@@ -93,9 +93,9 @@ const MediaSection = ({ platform }: { platform: string }) => {
           />
           <div
             role="tabpanel"
-            className="tab-content relative left-[-5rem] top-1 h-[150px] w-[300px] md:h-[150px] md:w-[120%] lg:w-[700px] xl:w-[980px]"
+            className="tab-content relative top-1 mt-1 h-fit w-[300px] bg-white md:h-fit md:min-w-fit lg:left-[-6.5rem] lg:w-[700px] xl:w-[980px]"
           >
-            Tab 4
+            <ImageList data={ImageData?.posters} type="posters" />
           </div>
         </div>
       </div>
