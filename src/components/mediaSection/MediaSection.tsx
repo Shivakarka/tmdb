@@ -9,9 +9,18 @@ import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
   const { id } = useParams<{ id: string }>();
-  const { data: mediaData } = useDetails(Number(id), platform);
-  const { data: TrailerData } = useTrailer(Number(id), platform);
-  const { data: ImageData } = useImages(Number(id), platform);
+  const { data: mediaData, isLoading: mediaDataLoading } = useDetails(
+    Number(id),
+    platform,
+  );
+  const { data: TrailerData, isLoading: trailerDataLoading } = useTrailer(
+    Number(id),
+    platform,
+  );
+  const { data: ImageData, isLoading: imageDataLoading } = useImages(
+    Number(id),
+    platform,
+  );
 
   const trailerItem = TrailerData?.results?.find(
     (item: { type: string; name?: string }) => item.type === "Trailer",
@@ -21,6 +30,14 @@ const MediaSection = ({ platform }: { platform: string }) => {
   const trailerName = (
     trailerItem?.name?.replace(/\[.*?\]/g, "").split("|")[0] || "Trailer"
   ).trim();
+
+  if (mediaDataLoading || trailerDataLoading || imageDataLoading) {
+    return (
+      <div className="flex w-full justify-center md:h-[510px]">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
 
   return (
     <div className="my-4 flex flex-col gap-4">
