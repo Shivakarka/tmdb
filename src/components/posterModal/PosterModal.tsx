@@ -26,14 +26,12 @@ const PosterModal = ({
       open={isPosterModalOpen}
     >
       <div className="top-15 modal-box absolute z-[10] h-[400px] w-[280px] overflow-hidden bg-white text-black md:h-[500px] md:min-w-[600px] lg:h-[85%] lg:min-w-[900px]">
-        <form method="dialog">
-          <button
-            className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2 hover:bg-gray-700"
-            onClick={closeModal}
-          >
-            ✕
-          </button>
-        </form>
+        <button
+          className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2 hover:bg-gray-700"
+          onClick={closeModal}
+        >
+          ✕
+        </button>
         <div className="grid grid-cols-1 md:grid-cols-[60%.40%]">
           <img
             src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${posterUrl}`}
@@ -76,8 +74,9 @@ const PosterModal = ({
               <select
                 className=" select select-bordered w-full max-w-xs"
                 disabled
+                defaultValue={"English"}
               >
-                <option selected>English</option>
+                <option>English</option>
               </select>
             </div>
             <div className="flex justify-between">
