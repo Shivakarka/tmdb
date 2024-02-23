@@ -1,6 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import WelcomeImg from "../../../assets/images/welcome.jpg";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!(e.target as HTMLFormElement).querySelector("input")?.value) {
+      alert("Please enter a search query");
+      return;
+    }
+    navigate(
+      `/search/movie/1?query=${(e.target as HTMLFormElement).querySelector("input")?.value}`,
+    );
+  };
+
   return (
     <div
       className="relative mx-auto flex h-[300px] w-full flex-col items-start justify-center gap-1 overflow-hidden bg-opacity-50 bg-cover
@@ -15,7 +29,10 @@ const Welcome = () => {
           Millions of movies, TV shows and people to discover. Explore now.
         </h3>
       </div>
-      <form className=" flex w-full justify-between rounded-full bg-white lg:mb-2">
+      <form
+        className=" flex w-full justify-between rounded-full bg-white lg:mb-2"
+        onSubmit={handleSubmit}
+      >
         <input
           className="w-[80%] rounded-full  p-3 ps-5 text-gray-500 placeholder:text-[18px] placeholder:text-gray-500 focus:outline-none lg:p-[11px] lg:pl-[21px]"
           type="text"

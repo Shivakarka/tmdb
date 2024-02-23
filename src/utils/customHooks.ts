@@ -129,6 +129,17 @@ const useRecommendations = (id: number, type: string) => {
   );
 };
 
+const useSearch = (query: string, type: string | undefined, page: string | undefined) => {
+
+  if (!page) page = "1";
+
+  if (!type) type = "movie";
+
+  return useFetchData(
+    `https://api.themoviedb.org/3/search/${type}?query=${query}&language=en-US&page=${page}&include_adult=false`,
+  );
+};
+
 export {
   useMovies,
   useStreamingToday,
@@ -145,4 +156,5 @@ export {
   useReviews,
   useImages,
   useRecommendations,
+  useSearch,
 };
