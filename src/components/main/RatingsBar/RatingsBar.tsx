@@ -28,7 +28,6 @@ const RatingsBar = ({
           "--thickness": thickness,
         } as React.CSSProperties
       }
-      role="progressbar"
     >
       {rating > 0 ? (
         <span className={`${fontSize} text-white`}>

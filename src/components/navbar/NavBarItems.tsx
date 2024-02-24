@@ -32,7 +32,7 @@ const NavBarItems = () => {
           </label>
         </div>
         <div className=" flex-1 bg-tmdbDarkBlue md:ms-[40vw] lg:mx-2 lg:px-2">
-          <Link to={"/"}>
+          <Link to={"/"} aria-label="TMDB Home">
             <img
               src={Logo1}
               alt="logo"
@@ -41,7 +41,7 @@ const NavBarItems = () => {
               className="hidden lg:block"
             />
           </Link>
-          <Link to={"/"}>
+          <Link to={"/"} aria-label="TMDB Home">
             <img
               src={Logo2}
               alt="logo"
