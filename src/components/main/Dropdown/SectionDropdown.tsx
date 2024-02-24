@@ -28,6 +28,7 @@ const SectionDropdown = ({ items, onToggle, title }: SectionDropdownProps) => {
       }
       value={selectedItem || ""}
       onChange={handleChange}
+      name="section"
     >
       {items.map((item, index) => (
         <option key={index} value={item}>

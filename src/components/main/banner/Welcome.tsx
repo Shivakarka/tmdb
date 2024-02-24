@@ -41,6 +41,7 @@ const Welcome = () => {
               ? "Search..."
               : "Search for a movie, tv show, person..."
           }
+          name={"search"}
         />
         <button className="w-[100px] rounded-full bg-gradient-to-r  from-[rgb(30,213,169)]  to-[rgb(1,180,228)] p-2 font-semibold text-white hover:text-black">
           Search
