@@ -79,7 +79,7 @@ const NavBarItems = () => {
           <div className="flex-1 bg-tmdbDarkBlue lg:mx-2 lg:pr-0">
             <ul className="menu menu-horizontal hidden items-center text-base font-semibold lg:flex">
               <li className="me-3">
-                <a>
+                <a href="#">
                   <img
                     src={PlusIcon}
                     alt="plus-icon"
@@ -100,7 +100,7 @@ const NavBarItems = () => {
                 <p>Join TMDB</p>
               </li>
               <li>
-                <a>
+                <a href="#">
                   <img
                     src={SearchIcon}
                     alt="search-icon"

@@ -1,6 +1,6 @@
 const SidebarItem = ({ children }: { children: React.ReactNode }) => (
   <li>
-    <a>{children}</a>
+    <a href="#">{children}</a>
   </li>
 );
 
