@@ -21,10 +21,10 @@ const SectionDropdown = ({ items, onToggle, title }: SectionDropdownProps) => {
   return (
     <select
       className={
-        " select select-bordered h-1 min-h-8 w-fit rounded-full bg-tmdbDarkBlue text-[#1ed5a9] focus:outline-none lg:hidden " +
+        " select select-bordered h-1 min-h-8 w-fit rounded-full focus:outline-none lg:hidden " +
         (title === "Latest Trailers"
-          ? "bg-[#1ed5a9] font-semibold text-tmdbDarkBlue"
-          : "")
+          ? "bg-[#1ed5a9] font-semibold text-tmdbDarkBlue "
+          : "bg-tmdbDarkBlue text-[#1ed5a9]")
       }
       value={selectedItem || ""}
       onChange={handleChange}
