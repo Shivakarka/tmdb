@@ -34,7 +34,7 @@ const useMovies = (sortBy: string, type: string) => {
 
   if (type === "Free") {
     // movies / tv shows with no monetiary cost
-    url = `https://api.themoviedb.org/3/discover/${sortBy === "FreeMovies" ? "movie" : "tv"}?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_watch_monetization_types=free`;
+    url = `https://api.themoviedb.org/3/discover/${sortBy === "FreeMovies" ? "movie" : "tv"}?include_adult=false&include_video=false&language=en-US&page=1&sort_by=revenue.desc&with_watch_monetization_types=free`;
   }
 
   return useFetchData(url);
@@ -129,8 +129,11 @@ const useRecommendations = (id: number, type: string) => {
   );
 };
 
-const useSearch = (query: string, type: string | undefined, page: string | undefined) => {
-
+const useSearch = (
+  query: string,
+  type: string | undefined,
+  page: string | undefined,
+) => {
   if (!page) page = "1";
 
   if (!type) type = "movie";
