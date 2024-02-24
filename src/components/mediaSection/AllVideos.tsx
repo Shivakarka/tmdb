@@ -1,7 +1,8 @@
 import MediaTrailerCard from "./MediaTrailerCard";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
+import React from "react";
 
-const AllVideos = ({ TrailerData }: { TrailerData: any }) => {
+const AllVideos = React.memo(({ TrailerData }: { TrailerData: any }) => {
   return (
     <div className="flex h-[300px] w-[300px] overflow-y-hidden overflow-x-scroll md:w-[53vw] lg:w-[74vw] xl:w-[1060px] ">
       {TrailerData?.results?.length > 0 ? (
@@ -24,6 +25,6 @@ const AllVideos = ({ TrailerData }: { TrailerData: any }) => {
       )}
     </div>
   );
-};
+});
 
 export default AllVideos;

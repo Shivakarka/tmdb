@@ -1,6 +1,7 @@
+import React from "react";
 import PlusIcon from "../../assets/icons/plus-icon.svg";
 
-const ImageList = ({ data, type }: { data: any; type: string }) => {
+const ImageList = React.memo(({ data, type }: { data: any; type: string }) => {
   let imageBaseUrlPath = "";
 
   if (type === "backdrops") {
@@ -52,6 +53,6 @@ const ImageList = ({ data, type }: { data: any; type: string }) => {
       )}
     </div>
   );
-};
+});
 
 export default ImageList;
