@@ -9,18 +9,16 @@ import WatchListIcon from "../../../assets/icons/watchList.svg";
 import HeartIcon from "../../../assets/icons/heartIcon.svg";
 import StarIcon from "../../../assets/icons/Star.svg";
 import PlayIcon from "../../../assets/icons/play-icon.svg";
-import ExpandIcon from "../../../assets/icons/expandIcon.svg";
-import NoImage from "../../../assets/images/noImage.svg";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal.tsx";
-import PosterModal from "../../posterModal/PosterModal.tsx";
+import PosterModal from "../../poster/PosterModal.tsx";
+import Poster from "../../poster/Poster.tsx";
 
 const MovieDetailsHeader = () => {
   const { id } = useParams();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
-  const [posterBlur, setPosterBlur] = useState(false);
   const { data: TrailerData } = useTrailer(Number(id), "movie");
 
   const {
@@ -99,48 +97,10 @@ const MovieDetailsHeader = () => {
           }}
         >
           <div
-            onMouseEnter={() => setPosterBlur(true)}
-            onMouseLeave={() => setPosterBlur(false)}
             onClick={() => setIsPosterModalOpen(!isPosterModalOpen)}
+            className="cursor-pointer"
           >
-            {!posterBlur && (
-              <img
-                src={
-                  MovieData?.poster_path
-                    ? `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${MovieData?.poster_path}`
-                    : NoImage
-                }
-                alt={"poster"}
-                className={
-                  MovieData?.poster_path
-                    ? " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
-                    : "h-[150px] w-[100px] border md:ml-auto md:mt-2 md:h-[320px] md:w-[300px] lg:h-[450px]"
-                }
-                style={{ borderRadius: "8px" }}
-                loading="lazy"
-              />
-            )}
-            {posterBlur && (
-              <div className="relative cursor-pointer">
-                <img
-                  src={`https://media.themoviedb.org/t/p/w300_and_h450_multi_faces_filter(blur)${MovieData?.poster_path}`}
-                  alt={"poster"}
-                  className={
-                    " ml-2 mt-1 h-fit w-[100px] md:ml-auto md:mt-0 md:h-fit md:w-fit md:pl-0 "
-                  }
-                  style={{ borderRadius: "8px" }}
-                  loading="lazy"
-                />
-                <div className="absolute right-5 top-[3.8rem] flex items-center justify-center gap-2 md:right-[6rem] md:top-[10rem] lg:top-[12rem]">
-                  <img
-                    src={ExpandIcon}
-                    alt="expand icon"
-                    className="hidden h-[26px] w-[26px] md:block"
-                  />
-                  <p className=" text-xl text-white">Expand</p>
-                </div>
-              </div>
-            )}
+            <Poster poster_path={MovieData?.poster_path} />
           </div>
         </div>
         {isPosterModalOpen && (
