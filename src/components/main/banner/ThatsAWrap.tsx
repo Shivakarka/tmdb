@@ -4,7 +4,7 @@ import RightArrow from "../../../assets/icons/right-arrow.svg";
 const ThatsAWrap = () => {
   return (
     <div
-      className="h mx-auto flex h-[300px] items-center justify-start bg-cover bg-center text-white md:h-[330px] md:w-full lg:h-[360px] lg:w-[1300px]"
+      className="h mx-auto flex h-[300px] items-center justify-start bg-cover bg-center text-white md:h-[330px] md:w-full lg:h-[360px] lg:w-[1000px] xl:w-[1300px]"
       style={{ backgroundImage: `url(${ThatsAWrapImg})`, opacity: 1 }}
     >
       <div className="h-full w-full bg-black/70">
