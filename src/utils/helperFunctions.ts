@@ -41,6 +41,31 @@ const truncateReviewContent = (content: string) => {
   return truncatedContent;
 };
 
+const genres = (Data: any) => {
+  return Data?.genres?.map((genre: { name: string }) => genre.name).join(", ");
+};
+
+const releaseDateinIndia = (releaseDate: string) => {
+  return new Date(releaseDate)
+    .toLocaleDateString("en-IN", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    })
+    .replace(/(\d+)\/(\d+)\/(\d+)/, "$2/$1/$3");
+};
+
+const getCrewData = (crew: { name: string; job: string }[], job: string) => {
+  if (!crew) return;
+  return crew.filter((person: { job: string }) => person?.job === job);
+};
+
+const getTrailerKey = (results: any) => {
+  return results?.find(
+    (item: { type: string; name?: string }) => item.type === "Trailer",
+  )?.key;
+};
+
 export {
   formattedReleaseDate,
   fetcher,
@@ -48,4 +73,8 @@ export {
   formatNumberWithCommas,
   formatDate,
   truncateReviewContent,
+  genres,
+  releaseDateinIndia,
+  getCrewData,
+  getTrailerKey,
 };

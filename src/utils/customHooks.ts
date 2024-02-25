@@ -72,16 +72,6 @@ const usePopularTvTrailers = () => {
   );
 };
 
-const useMovieDetails = (id: number) => {
-  return useFetchData(
-    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
-  );
-};
-
-const useTvDetails = (id: number) => {
-  return useFetchData(`https://api.themoviedb.org/3/tv/${id}?language=en-US`);
-};
-
 const useKeywords = (id: number, type: string) => {
   return useFetchData(
     `https://api.themoviedb.org/3/${type}/${id}/keywords?language=en-US`,
@@ -150,8 +140,6 @@ export {
   useTrailer,
   usePopularMovieTrailers,
   usePopularTvTrailers,
-  useMovieDetails,
-  useTvDetails,
   useKeywords,
   useExternalIds,
   useDetails,
