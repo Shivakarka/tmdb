@@ -1,6 +1,6 @@
 import { formattedReleaseDate } from "../../../utils/helperFunctions.ts";
 import { MovieList } from "./MovieList.tsx";
-import RatingsBar from "../RatingsBar/RatingsBar.tsx";
+import RatingsBar from "../ratings/RatingsBar.tsx";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

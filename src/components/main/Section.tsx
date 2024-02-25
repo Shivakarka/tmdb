@@ -1,4 +1,4 @@
-import SectionDropdown from "./dropdown/SectionDropdown.tsx";
+import SectionDropdown from "./sectionDropdown/SectionDropdown.tsx";
 import Switch from "./switch/Switch.tsx";
 
 type SectionProps = {

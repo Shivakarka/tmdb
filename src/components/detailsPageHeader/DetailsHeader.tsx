@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RatingsBar from "../main/RatingsBar/RatingsBar.tsx";
+import RatingsBar from "../main/ratings/RatingsBar.tsx";
 import PosterModal from "../poster/PosterModal.tsx";
 import Poster from "../poster/Poster.tsx";
 import TrailerModal from "../trailer/TrailerModal.tsx";
