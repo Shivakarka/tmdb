@@ -1,10 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
-import Home from "./pages/Home";
 import Layout from "./pages/Layout";
-import MovieDetailsPage from "./pages/MovieDetailsPage.tsx";
-import TvDetailsPage from "./pages/TvDetailsPage.tsx";
-import SearchPage from "./pages/SearchPage.tsx";
+import { Suspense, lazy } from "react";
+import LoadingSpinner from "./components/loader/LoadingSpinner";
+import Home from "./pages/Home";
+
+const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"));
+const TvDetailsPage = lazy(() => import("./pages/TvDetailsPage"));
+const SearchPage = lazy(() => import("./pages/SearchPage"));
 
 const router = createBrowserRouter([
   {
@@ -12,10 +15,34 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Home /> },
-      { path: "/movie/:id", element: <MovieDetailsPage /> },
-      { path: "/tv/:id", element: <TvDetailsPage /> },
-      { path: "/search/:mediaPlatform/:page", element: <SearchPage /> },
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/movie/:id",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <MovieDetailsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/tv/:id",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <TvDetailsPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/search/:mediaPlatform/:page",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <SearchPage />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
