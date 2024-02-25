@@ -104,7 +104,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
           "movieDetailMobile relative z-[100] mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
         }
       >
-        <h1 className={"text-2xl font-bold md:text-4xl"}>
+        <h1 className={"mb-2 text-center text-2xl font-bold md:text-4xl"}>
           {Data?.title || Data?.name}{" "}
           <span className={"font-normal text-gray-200"}>
             ({movieReleaseYear || new Date(Data?.first_air_date).getFullYear()})
