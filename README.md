@@ -94,8 +94,9 @@ tmdb
 │ │ └── tvDetails
 │ ├── pages
 │ ├── utils
-│ ├── App.tsx
-│ ├── index.tsx
+│ ├── index.css
+│ ├── main.tsx
+│ ├── routes.tsx
 │ └── vite-env.d.ts
 ├── .env
 ├── .prettierrc
