@@ -1,30 +1,115 @@
-# React + TypeScript + Vite
+# TMDB Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TMDB website clone
 
-Currently, two official plugins are available:
+Deployed Live Link : [Click here](https://tmdb-clone-sk.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Note
 
-## Expanding the ESLint configuration
+- Note: Users of Jio Internet may encounter issues accessing TMDB API data due to certain network restrictions. They may need to change their DNS settings to 1.1.1.1 or utilize a VPN to bypass these restrictions.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Table of Contents
 
-- Configure the top-level `parserOptions` property like this:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- [Screenshots](#screenshots)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Introduction
+
+This project is a clone of The Movie Database (TMDB) website built using React.js, TypeScript, Tailwind CSS, Daisy UI, react-router, and SWR for data fetching and caching. It replicates the functionality and design of the original TMDB website, allowing users to browse movies, TV shows, view details, watch trailers, and more.
+
+## Features
+
+Here are some features of this project:
+
+- **Browse Movies and TV Shows**: Users can explore a vast collection of movies and TV shows.
+- **View Details**: Detailed information about each movie or TV show, including synopsis, ratings, cast, crew, and more.
+- **Watch Trailers**: Users can watch trailers of movies and TV shows directly on the website.
+- **Search Functionality**: Search for specific movies or TV shows.
+- **Responsive Design**: The website is fully responsive and works seamlessly on desktop, tablet, and mobile devices.
+- **Data Fetching and Caching**: Utilizes SWR for efficient data fetching, caching, and updating of data from the server.
+
+## Getting Started
+
+Guide for users to setup the project on their local machines.
+
+### Installation
+
+Step-by-step instructions on how to install and run the project locally.
+
+```
+# Clone the repository
+git clone https://github.com/Shivakarka/tmdb.git
+
+# Navigate to the project directory
+cd tmdb
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Additional steps required to run locally:
+
+- To run the project locally, you'll also need to obtain an API key from The Movie Database (TMDB) website. Once you have the API key, create a new file named .env in the root directory of the project and add the following line:
+
+```
+VITE_API_KEY=your-api-key-here
+```
+
+## Folder Structure
+
+```
+tmdb
+│
+├── public
+│ ├── index.html
+│ └── _redirects
+├── src
+│ ├── assets
+│ │ ├── icons
+│ │ └── images
+│ ├── components
+│ │ ├── blurEffect
+│ │ ├── castSection
+│ │ ├── detailsPageHeader
+│ │ ├── footer
+│ │ ├── loader
+│ │ ├── main
+│ │ ├── mediaSection
+│ │ ├── movieDetails
+│ │ ├── navbar
+│ │ ├── poster
+│ │ ├── recommendations
+│ │ ├── searchMedia
+│ │ ├── socialSection
+│ │ ├── statsAndFacts
+│ │ └── trailer
+│ │ └── tvDetails
+│ ├── pages
+│ ├── utils
+│ ├── App.tsx
+│ ├── index.tsx
+│ └── vite-env.d.ts
+├── .env
+├── .prettierrc
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+└── tsconfig.json
+```
+
+## Screenshots
+
+- Mobile view :
+
+- Tablet view :
+
+- Desktop view :
