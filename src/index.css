@@ -42,7 +42,7 @@ body {
 
 @media (max-width: 600px) {
   .movieDetailMobile {
-    background-color: rgb(32, 11, 11) !important;
+    background-color: rgb(3, 37, 65) !important;
   }
 
   .movieBackdrop img {

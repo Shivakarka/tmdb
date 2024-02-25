@@ -68,7 +68,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
   return (
     <section
       className={`relative grid w-full grid-cols-1 grid-rows-[20%,80%] content-center overflow-hidden 
-        bg-[rgb(32,11,11)] md:min-h-[510px] md:grid-cols-[30%,70%] md:grid-rows-1`}
+        bg-tmdbDarkBlue bg-opacity-85 md:min-h-[510px] md:grid-cols-[30%,70%] md:grid-rows-1`}
     >
       <div
         style={{
@@ -79,7 +79,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
         md:bg-[url('https://image.tmdb.org/t/p/w500${Data?.backdrop_path}')]`}
       ></div>
       <div
-        className={`movieBackdrop relative flex h-[180px] w-full gap-2 md:mt-[5em] md:block md:h-full md:w-full md:bg-none lg:mt-8`}
+        className={`movieBackdrop relative flex h-[200px] w-full gap-2 md:mt-[5em] md:block md:h-full md:w-full md:bg-none lg:mt-8`}
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w500${Data?.backdrop_path}')`,
         }}
@@ -100,7 +100,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
       )}
       <div
         className={
-          "movieDetailMobile relative mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
+          "movieDetailMobile relative z-[100] mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
         }
       >
         <h1 className={"text-2xl font-bold md:text-4xl"}>

@@ -47,7 +47,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string; type: string }) => {
         <MovieCard key={movie?.id} {...movie} />
       ))}
       <div
-        className="absolute right-0 top-0 h-full w-[40px]"
+        className="absolute right-9 top-[80px] h-[70%] w-[60px] md:right-10 lg:right-0"
         style={{
           backgroundImage: "linear-gradient(to right,rgba(255,255,255,0),#fff)",
         }}
