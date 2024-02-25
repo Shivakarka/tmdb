@@ -10,6 +10,7 @@ import {
   RightArrow,
   TickIcon,
 } from "../../utils/svgs";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 type PosterModalProps = {
   isPosterModalOpen: boolean;
@@ -30,11 +31,7 @@ const PosterModal = ({
   const { data, isLoading } = useImages(Number(id), platform);
 
   if (isLoading) {
-    return (
-      <div className="flex w-full justify-center md:h-[510px]">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   const closeModal = () => {

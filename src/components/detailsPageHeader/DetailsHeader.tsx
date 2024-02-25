@@ -14,6 +14,7 @@ import {
   releaseDateinIndia,
 } from "../../utils/helperFunctions";
 import { PlayIcon } from "../../utils/svgs";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 type DetailsHeaderProps = {
   platform: string;
@@ -35,11 +36,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
   const { data: CreditsData } = useCredits(Number(id), platform);
 
   if (DetailsLoading) {
-    return (
-      <div className="flex w-full justify-center md:h-[510px]">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (DetailsError) {

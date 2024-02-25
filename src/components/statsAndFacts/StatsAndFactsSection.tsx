@@ -7,6 +7,7 @@ import {
 } from "../../utils/customHooks";
 import Facts from "./Facts";
 import Keywords from "./Keywords";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 type StatsAndFactsSectionProps = {
   id: string | undefined;
@@ -26,11 +27,7 @@ const StatsAndFactsSection = ({ id, platform }: StatsAndFactsSectionProps) => {
     useExternalIds(Number(id), platform);
 
   if (DetailsDataLoading || KeywordsDataLoading || SocialMediaDataLoading) {
-    return (
-      <div className="flex w-full justify-center">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   return (

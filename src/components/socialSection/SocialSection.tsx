@@ -2,12 +2,17 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useReviews } from "../../utils/customHooks";
 import ReviewCard from "./ReviewCard";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 const SocialSection = ({ platform }: { platform: string }) => {
   const [activeTab, setActiveTab] = useState(0);
   const { id } = useParams<{ id: string }>();
 
-  const { data: ReviewsData } = useReviews(Number(id), platform);
+  const { data: ReviewsData, isLoading } = useReviews(Number(id), platform);
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <div className="my-4 flex flex-col gap-4">

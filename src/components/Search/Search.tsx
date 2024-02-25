@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSearch } from "../../utils/customHooks";
 import SearchMediaCard from "./SearchMediaCard";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 const Search = () => {
   const { page, mediaPlatform } = useParams<{
@@ -21,11 +22,7 @@ const Search = () => {
   );
 
   if (searchDataLoading) {
-    return (
-      <div className="flex w-full justify-center md:h-[300px]">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (SearchData?.total_results === 0) {

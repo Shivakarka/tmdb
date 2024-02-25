@@ -1,9 +1,14 @@
 import { useDetails } from "../../../utils/customHooks";
 import { formattedReleaseDate } from "../../../utils/helperFunctions";
 import { Calender, NoImage, StarIcon } from "../../../utils/svgs";
+import LoadingSpinner from "../../loader/LoadingSpinner";
 
 const CurrentSeason = ({ id }: { id: string | undefined }) => {
-  const { data: SeasonData } = useDetails(Number(id), "tv");
+  const { data: SeasonData, isLoading } = useDetails(Number(id), "tv");
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   const releaseYear = new Date(
     SeasonData?.seasons?.[SeasonData?.seasons?.length - 1]?.air_date,

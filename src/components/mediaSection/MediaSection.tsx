@@ -5,6 +5,7 @@ import MostPopularMedia from "./MostPopularMedia";
 import AllVideos from "./AllVideos";
 import ImageList from "./ImageList";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
@@ -23,11 +24,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
   );
 
   if (mediaDataLoading || trailerDataLoading || imageDataLoading) {
-    return (
-      <div className="flex w-full justify-center md:h-[510px]">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   const trailerItem = TrailerData?.results?.find(

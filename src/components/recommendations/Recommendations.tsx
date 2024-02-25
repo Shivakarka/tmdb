@@ -2,6 +2,7 @@ import { useRecommendations } from "../../utils/customHooks";
 import { useState } from "react";
 import RecommendationItem from "./RecommendationItem";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
+import LoadingSpinner from "../loader/LoadingSpinner";
 
 const Recommendations = ({
   id,
@@ -19,11 +20,7 @@ const Recommendations = ({
   const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   if (RecommendationsLoading) {
-    return (
-      <div className="flex w-full justify-center md:h-[300px]">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (RecommendationsError) {

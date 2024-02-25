@@ -1,5 +1,6 @@
 import { useCredits } from "../../utils/customHooks";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 import CastCardItem from "./CastCardItem.tsx";
 import CastDataErrorMessage from "./CastDataErrorMessage";
 
@@ -27,9 +28,7 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
 
   if (CastDataLoading) {
     return (
-      <div className="flex w-full justify-center md:h-[510px]">
-        <span className="loading loading-spinner loading-lg"></span>
-      </div>
+      <LoadingSpinner />
     );
   }
 

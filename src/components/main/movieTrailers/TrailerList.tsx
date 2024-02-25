@@ -6,6 +6,7 @@ import {
 } from "../../../utils/customHooks.ts";
 import { useEffect, useState } from "react";
 import TrailerCard from "./TrailerCard.tsx";
+import LoadingSpinner from "../../loader/LoadingSpinner.tsx";
 
 export type TrailerListProps = {
   title: string;
@@ -31,11 +32,7 @@ const TrailerList = ({ sortBy }: { sortBy: string }) => {
   const { data: InTheatres } = useInTheatres();
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center">
-        <span className="loading loading-spinner loading-lg mx-auto"></span>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (error) {
