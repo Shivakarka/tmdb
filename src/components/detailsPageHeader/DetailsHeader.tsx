@@ -96,6 +96,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
           isPosterModalOpen={isPosterModalOpen}
           setIsPosterModalOpen={setIsPosterModalOpen}
           posterUrl={Data?.poster_path}
+          platform={platform}
         />
       )}
       <div
