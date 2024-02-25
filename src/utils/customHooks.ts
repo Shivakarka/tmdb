@@ -14,7 +14,7 @@ const useMovies = (sortBy: string, type: string) => {
   let url = "";
 
   if (type === "Trending") {
-    url = `https://api.themoviedb.org/3/trending/movie/${sortBy}?language=en-US&page=1`;
+    url = `https://api.themoviedb.org/3/trending/all/${sortBy}?language=en-US&page=1`;
   }
 
   if (type === "Popular") {
