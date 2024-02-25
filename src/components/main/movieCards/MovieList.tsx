@@ -38,9 +38,10 @@ const MovieList = ({ sortBy, type }: { sortBy: string; type: string }) => {
 
   return (
     <div
-      className={`movie-list-container flex h-fit gap-4 overflow-x-auto bg-center bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
+      className={`movie-list-container flex h-fit gap-4 overflow-x-auto 
+      bg-bottom bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
       style={{
-        backgroundImage: `url(${MovieBg})`,
+        backgroundImage: type === "Trending" ? `url(${MovieBg})` : "none",
       }}
     >
       {data?.results?.map((movie: MovieList) => (
