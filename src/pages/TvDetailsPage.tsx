@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import TvDetailsHeader from "../components/tvDetails/tvDetailsHeader/TvDetailsHeader";
-import TvDetailsMain from "../components/tvDetails/tvDetailsMain/TvDetailsMain";
+import TvDetailsHeader from "../components/tvDetails/tvDetailsHeader/TvDetailsHeader.tsx";
+import TvDetailsMain from "../components/tvDetails/tvDetailsMain/TvDetailsMain.tsx";
 
 const TvDetailsPage = () => {
   useEffect(() => {

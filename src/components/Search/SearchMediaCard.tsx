@@ -1,4 +1,4 @@
-import { formatDate } from "../../utils/helperFunctions";
+import { formatDate } from "../../utils/helperFunctions.ts";
 import { useNavigate } from "react-router-dom";
 import { NoImage } from "../../utils/svgs";
 

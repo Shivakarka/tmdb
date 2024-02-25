@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import HoverOptions from "./HoverOptions";
+import HoverOptions from "./HoverOptions.tsx";
 
 type RecommendationItemProps = {
   item: any;

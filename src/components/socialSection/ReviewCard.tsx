@@ -1,6 +1,6 @@
-import { formatDate } from "../../utils/helperFunctions";
+import { formatDate } from "../../utils/helperFunctions.ts";
 import { NoImage, StarIcon } from "../../utils/svgs";
-import { truncateReviewContent } from "./truncateReview";
+import { truncateReviewContent } from "./truncateReview.tsx";
 
 type ReviewCardProps = {
   avatar_path: string;

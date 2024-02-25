@@ -1,13 +1,9 @@
-import DetailsHeader from "../../detailsPageHeader/DetailsHeader";
+import DetailsHeader from "../../detailsPageHeader/DetailsHeader.tsx";
 
 const TvDetailsHeader = () => {
-
   return (
     <div>
-      <DetailsHeader
-        platform="tv"
-        location="tvDetails"
-      />
+      <DetailsHeader platform="tv" location="tvDetails" />
     </div>
   );
 };

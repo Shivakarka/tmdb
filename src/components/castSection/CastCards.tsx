@@ -1,8 +1,8 @@
-import { useCredits } from "../../utils/customHooks";
+import { useCredits } from "../../utils/customHooks.ts";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 import CastCardItem from "./CastCardItem.tsx";
-import CastDataErrorMessage from "./CastDataErrorMessage";
+import CastDataErrorMessage from "./CastDataErrorMessage.tsx";
 
 type CastCardsProps = {
   id: string | undefined;
@@ -27,9 +27,7 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
   } = useCredits(Number(id), platform);
 
   if (CastDataLoading) {
-    return (
-      <LoadingSpinner />
-    );
+    return <LoadingSpinner />;
   }
 
   if (CastDataError) {

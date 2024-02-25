@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDetails, useImages, useTrailer } from "../../utils/customHooks";
-import MostPopularMedia from "./MostPopularMedia";
-import AllVideos from "./AllVideos";
-import ImageList from "./ImageList";
-import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
-import LoadingSpinner from "../loader/LoadingSpinner";
+import { useDetails, useImages, useTrailer } from "../../utils/customHooks.ts";
+import MostPopularMedia from "./MostPopularMedia.tsx";
+import AllVideos from "./AllVideos.tsx";
+import ImageList from "./ImageList.tsx";
+import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);

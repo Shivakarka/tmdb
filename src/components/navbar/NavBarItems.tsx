@@ -1,5 +1,5 @@
 import { Logo1, Logo2, PlusIcon, SearchIcon } from "../../utils/svgs";
-import Dropdown from "./dropdown/Dropdown";
+import Dropdown from "./dropdown/Dropdown.tsx";
 import { Link } from "react-router-dom";
 
 const NavBarItems = () => {

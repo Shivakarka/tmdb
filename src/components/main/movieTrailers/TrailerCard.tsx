@@ -1,7 +1,7 @@
-import { TrailerListProps } from "./TrailerList";
-import { useTrailer } from "../../../utils/customHooks";
+import { TrailerListProps } from "./TrailerList.tsx";
+import { useTrailer } from "../../../utils/customHooks.ts";
 import { useState } from "react";
-import TrailerModal from "../../trailer/TrailerModal";
+import TrailerModal from "../../trailer/TrailerModal.tsx";
 import { NoImage, PlayIcon } from "../../../utils/svgs";
 
 const TrailerCard = ({

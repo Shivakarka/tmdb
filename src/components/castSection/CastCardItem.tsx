@@ -1,6 +1,5 @@
 import { NoImage } from "../../utils/svgs";
-import { CastType } from "./CastCards";
-
+import { CastType } from "./CastCards.tsx";
 
 type CastCardItemProps = {
   cast: CastType;

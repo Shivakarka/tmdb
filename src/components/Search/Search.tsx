@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useSearch } from "../../utils/customHooks";
-import SearchMediaCard from "./SearchMediaCard";
-import LoadingSpinner from "../loader/LoadingSpinner";
+import { useSearch } from "../../utils/customHooks.ts";
+import SearchMediaCard from "./SearchMediaCard.tsx";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const Search = () => {
   const { page, mediaPlatform } = useParams<{

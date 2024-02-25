@@ -1,5 +1,5 @@
 import { PlusIcon } from "../../utils/svgs";
-import MediaTrailerCard from "./MediaTrailerCard";
+import MediaTrailerCard from "./MediaTrailerCard.tsx";
 import React from "react";
 
 const AllVideos = React.memo(({ TrailerData }: { TrailerData: any }) => {

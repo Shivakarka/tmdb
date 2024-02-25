@@ -1,5 +1,5 @@
 import React from "react";
-import MediaTrailerCard from "./MediaTrailerCard";
+import MediaTrailerCard from "./MediaTrailerCard.tsx";
 
 type MostPopularMediaProps = {
   mediaData: any;

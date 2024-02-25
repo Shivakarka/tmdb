@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import StatsAndFactsSection from "../../statsAndFacts/StatsAndFactsSection";
-import CastCards from "../../castSection/CastCards";
-import SocialSection from "../../socialSection/SocialSection";
-import MediaSection from "../../mediaSection/MediaSection";
-import Recommendations from "../../recommendations/Recommendations";
+import StatsAndFactsSection from "../../statsAndFacts/StatsAndFactsSection.tsx";
+import CastCards from "../../castSection/CastCards.tsx";
+import SocialSection from "../../socialSection/SocialSection.tsx";
+import MediaSection from "../../mediaSection/MediaSection.tsx";
+import Recommendations from "../../recommendations/Recommendations.tsx";
 
 const MovieDetailsMain = () => {
   const { id } = useParams<{ id: string }>();

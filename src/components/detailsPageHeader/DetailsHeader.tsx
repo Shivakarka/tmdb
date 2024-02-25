@@ -1,12 +1,12 @@
 import { useState } from "react";
-import RatingsBar from "../main/RatingsBar/RatingsBar";
-import PosterModal from "../poster/PosterModal";
-import Poster from "../poster/Poster";
-import TrailerModal from "../trailer/TrailerModal";
+import RatingsBar from "../main/RatingsBar/RatingsBar.tsx";
+import PosterModal from "../poster/PosterModal.tsx";
+import Poster from "../poster/Poster.tsx";
+import TrailerModal from "../trailer/TrailerModal.tsx";
 import { useParams } from "react-router-dom";
-import { useCredits, useDetails, useTrailer } from "../../utils/customHooks";
-import RenderCrewMembers from "./RenderCrewMembers";
-import IconsList from "./IconsList";
+import { useCredits, useDetails, useTrailer } from "../../utils/customHooks.ts";
+import RenderCrewMembers from "./RenderCrewMembers.tsx";
+import IconsList from "./IconsList.tsx";
 import {
   genres,
   getCrewData,

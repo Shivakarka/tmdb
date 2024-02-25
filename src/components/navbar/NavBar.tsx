@@ -1,5 +1,5 @@
-import NavBarItems from "./NavBarItems";
-import SideBar from "./sidebar/SideBar";
+import NavBarItems from "./NavBarItems.tsx";
+import SideBar from "./sidebar/SideBar.tsx";
 
 export const NavBar = () => {
   return (

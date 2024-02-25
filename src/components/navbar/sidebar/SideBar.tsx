@@ -1,4 +1,4 @@
-import SidebarItem from "./SideBarItem";
+import SidebarItem from "./SideBarItem.tsx";
 
 const SideBar = () => {
   const mainItems = ["Movies", "TV Shows", "People"];

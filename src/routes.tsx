@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage";
-import Layout from "./pages/Layout";
+import ErrorPage from "./pages/ErrorPage.tsx";
+import Layout from "./pages/Layout.tsx";
 import { Suspense, lazy } from "react";
-import LoadingSpinner from "./components/loader/LoadingSpinner";
-import Home from "./pages/Home";
+import LoadingSpinner from "./components/loader/LoadingSpinner.tsx";
+import Home from "./pages/Home.tsx";
 
-const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage"));
-const TvDetailsPage = lazy(() => import("./pages/TvDetailsPage"));
-const SearchPage = lazy(() => import("./pages/SearchPage"));
+const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage.tsx"));
+const TvDetailsPage = lazy(() => import("./pages/TvDetailsPage.tsx"));
+const SearchPage = lazy(() => import("./pages/SearchPage.tsx"));
 
 const router = createBrowserRouter([
   {

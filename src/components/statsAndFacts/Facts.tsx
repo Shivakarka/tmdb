@@ -1,4 +1,4 @@
-import { formatNumberWithCommas } from "../../utils/helperFunctions";
+import { formatNumberWithCommas } from "../../utils/helperFunctions.ts";
 import { Facebook, HomePage, Instagram, Twitter } from "../../utils/svgs";
 
 const Facts = ({

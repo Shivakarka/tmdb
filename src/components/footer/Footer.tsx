@@ -1,5 +1,5 @@
 import { Logo2 } from "../../utils/svgs";
-import footerSections from "./FooterItems";
+import footerSections from "./FooterItems.ts";
 
 const Footer = () => {
   return (

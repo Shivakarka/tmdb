@@ -1,5 +1,5 @@
-import SectionDropdown from "./dropdown/SectionDropdown";
-import Switch from "./switch/Switch";
+import SectionDropdown from "./dropdown/SectionDropdown.tsx";
+import Switch from "./switch/Switch.tsx";
 
 type SectionProps = {
   title: string;

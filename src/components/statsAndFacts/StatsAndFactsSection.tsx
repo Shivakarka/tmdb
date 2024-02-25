@@ -1,13 +1,13 @@
-import Contributers from "./Contributers";
+import Contributers from "./Contributers.tsx";
 import { Graph, Keyboard, ReportIcon } from "../../utils/svgs";
 import {
   useDetails,
   useExternalIds,
   useKeywords,
-} from "../../utils/customHooks";
-import Facts from "./Facts";
-import Keywords from "./Keywords";
-import LoadingSpinner from "../loader/LoadingSpinner";
+} from "../../utils/customHooks.ts";
+import Facts from "./Facts.tsx";
+import Keywords from "./Keywords.tsx";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 type StatsAndFactsSectionProps = {
   id: string | undefined;

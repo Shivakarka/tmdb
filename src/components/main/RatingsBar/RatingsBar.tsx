@@ -1,4 +1,4 @@
-import { getBorderColor } from "../../../utils/helperFunctions";
+import { getBorderColor } from "../../../utils/helperFunctions.ts";
 
 type RatingsBarProps = {
   rating: number;

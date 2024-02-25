@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useImages } from "../../utils/customHooks";
+import { useImages } from "../../utils/customHooks.ts";
 import { useState } from "react";
 import {
   CrossIcon,

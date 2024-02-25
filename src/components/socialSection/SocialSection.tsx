@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useReviews } from "../../utils/customHooks";
-import ReviewCard from "./ReviewCard";
-import LoadingSpinner from "../loader/LoadingSpinner";
+import { useReviews } from "../../utils/customHooks.ts";
+import ReviewCard from "./ReviewCard.tsx";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const SocialSection = ({ platform }: { platform: string }) => {
   const [activeTab, setActiveTab] = useState(0);

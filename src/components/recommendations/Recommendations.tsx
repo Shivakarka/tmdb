@@ -1,8 +1,8 @@
-import { useRecommendations } from "../../utils/customHooks";
+import { useRecommendations } from "../../utils/customHooks.ts";
 import { useState } from "react";
-import RecommendationItem from "./RecommendationItem";
-import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect";
-import LoadingSpinner from "../loader/LoadingSpinner";
+import RecommendationItem from "./RecommendationItem.tsx";
+import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const Recommendations = ({
   id,

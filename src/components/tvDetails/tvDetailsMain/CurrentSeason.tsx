@@ -1,7 +1,7 @@
-import { useDetails } from "../../../utils/customHooks";
-import { formattedReleaseDate } from "../../../utils/helperFunctions";
+import { useDetails } from "../../../utils/customHooks.ts";
+import { formattedReleaseDate } from "../../../utils/helperFunctions.ts";
 import { Calender, NoImage, StarIcon } from "../../../utils/svgs";
-import LoadingSpinner from "../../loader/LoadingSpinner";
+import LoadingSpinner from "../../loader/LoadingSpinner.tsx";
 
 const CurrentSeason = ({ id }: { id: string | undefined }) => {
   const { data: SeasonData, isLoading } = useDetails(Number(id), "tv");

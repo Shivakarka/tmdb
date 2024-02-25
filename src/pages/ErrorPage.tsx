@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/footer/Footer";
-import { NavBar } from "../components/navbar/NavBar";
+import Footer from "../components/footer/Footer.tsx";
+import { NavBar } from "../components/navbar/NavBar.tsx";
 
 const ErrorPage = () => {
   const navigate = useNavigate();

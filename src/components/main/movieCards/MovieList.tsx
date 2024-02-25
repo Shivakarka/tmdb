@@ -1,7 +1,7 @@
 import MovieCard from "./MovieCard";
-import { useMovies } from "../../../utils/customHooks";
+import { useMovies } from "../../../utils/customHooks.ts";
 import { useEffect, useState } from "react";
-import LoadingShimmer from "../shimmer/LoadingShimmer";
+import LoadingShimmer from "../shimmer/LoadingShimmer.tsx";
 import { MovieBg } from "../../../utils/svgs";
 
 export type MovieList = {
