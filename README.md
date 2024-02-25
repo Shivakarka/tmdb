@@ -110,6 +110,22 @@ tmdb
 
 - Mobile view :
 
+![iPhone 12 Pro-1708878779572](https://github.com/Shivakarka/tmdb/assets/64298475/d8c3e595-e962-489b-8ad0-15f1d4239b71)
+![iPhone 12 Pro-1708879067385](https://github.com/Shivakarka/tmdb/assets/64298475/703c1e71-7058-4b40-b675-e010b26e6897)
+
+
 - Tablet view :
 
+![iPad-1708878804445](https://github.com/Shivakarka/tmdb/assets/64298475/e15ed477-b3dc-40cd-ba9e-694b4e539d0b)
+![iPad-1708879034210](https://github.com/Shivakarka/tmdb/assets/64298475/110c2e8c-d5c0-4680-a676-1725e65f5cd5)
+
+
 - Desktop view :
+
+![Macbook Pro-1708879324464](https://github.com/Shivakarka/tmdb/assets/64298475/e99b5953-4c3e-4be0-a430-95bf4d127b0a)
+
+- Lighthouse Performance
+
+![lighthouse-tmdb](https://github.com/Shivakarka/tmdb/assets/64298475/37a2ad63-2973-41d6-90fc-8e82dfea3a99)
+
+
