@@ -1,4 +1,4 @@
-import ThatsAWrapImg from "../../../assets/images/ThatsAWrap.jpg";
+import ThatsAWrapImg from "../../../assets/images/ThatsAWrap.webp";
 import RightArrow from "../../../assets/icons/right-arrow.svg";
 
 const ThatsAWrap = () => {
