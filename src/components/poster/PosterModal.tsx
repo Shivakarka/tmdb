@@ -35,8 +35,6 @@ const PosterModal = ({
     );
   }
 
-  console.log(data?.posters);
-
   const closeModal = () => {
     setIsPosterModalOpen(false);
   };
