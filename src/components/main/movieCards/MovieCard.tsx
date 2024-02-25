@@ -9,7 +9,7 @@ const MovieCard = ({
   title,
   release_date,
   vote_average,
-  original_name,
+  name,
   first_air_date,
   id,
 }: MovieList) => {
@@ -17,7 +17,7 @@ const MovieCard = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (original_name) {
+    if (name) {
       setPlatform("tv");
     } else {
       setPlatform("movie");
@@ -66,12 +66,12 @@ const MovieCard = ({
         {release_date && (
           <p className="font-normal">{formattedReleaseDate(release_date)}</p>
         )}
-        {original_name && (
+        {name && (
           <p
             className="cursor-pointer font-bold hover:text-tmdbLightBlue"
             onClick={handleClick}
           >
-            {original_name}
+            {name}
           </p>
         )}
         {first_air_date && (

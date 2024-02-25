@@ -10,7 +10,7 @@ export type MovieList = {
   poster_path: string;
   id: number;
   vote_average: number;
-  original_name?: string;
+  name?: string;
   first_air_date?: string;
 };
 
