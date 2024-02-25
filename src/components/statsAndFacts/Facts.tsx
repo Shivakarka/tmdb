@@ -1,8 +1,5 @@
-import Facebook from "../../assets/icons/facebook.svg";
-import Twitter from "../../assets/icons/twitter.svg";
-import Instagram from "../../assets/icons/instagram.svg";
-import HomePage from "../../assets/icons/homePage.svg";
 import { formatNumberWithCommas } from "../../utils/helperFunctions";
+import { Facebook, HomePage, Instagram, Twitter } from "../../utils/svgs";
 
 const Facts = ({
   SocialMediaData,

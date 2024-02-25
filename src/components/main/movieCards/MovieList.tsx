@@ -1,8 +1,8 @@
 import MovieCard from "./MovieCard";
-import MovieBg from "../../../assets/images/movieCardBg.svg";
 import { useMovies } from "../../../utils/customHooks";
 import { useEffect, useState } from "react";
 import LoadingShimmer from "../shimmer/LoadingShimmer";
+import { MovieBg } from "../../../utils/svgs";
 
 export type MovieList = {
   title: string;

@@ -1,4 +1,4 @@
-import NoImage from "../../../assets/images/noImage.svg";
+import { NoImage } from "../../../utils/svgs";
 
 const LoadingShimmer = () => {
   return (

@@ -1,14 +1,13 @@
-import StarIcon from "../../assets/icons/star.svg";
-import NoImage from "../../assets/images/noImage.svg";
 import { formatDate } from "../../utils/helperFunctions";
+import { NoImage, StarIcon } from "../../utils/svgs";
 import { truncateReviewContent } from "./truncateReview";
 
 type ReviewCardProps = {
-    avatar_path: string;
-    author: string;
-    rating: number;
-    created_at: string;
-    content: string;
+  avatar_path: string;
+  author: string;
+  rating: number;
+  created_at: string;
+  content: string;
 };
 
 const ReviewCard = ({

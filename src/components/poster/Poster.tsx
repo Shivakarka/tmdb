@@ -1,5 +1,4 @@
-import NoImage from "../../assets/images/noImage.svg";
-import ExpandIcon from "../../assets/icons/expandIcon.svg";
+import { ExpandIcon, NoImage } from "../../utils/svgs";
 
 const Poster = ({ poster_path }: { poster_path: string }) => {
   return (

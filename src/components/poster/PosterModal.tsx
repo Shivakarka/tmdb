@@ -1,13 +1,15 @@
-import DislikeIcon from "../../assets/icons/dislikeIcon.svg";
-import LikeIcon from "../../assets/icons/likeIcon.svg";
-import LockIcon from "../../assets/icons/lockIcon.svg";
-import TickIcon from "../../assets/icons/tickIcon.svg";
-import PlusIcon from "../../assets/icons/plus-icon.svg";
-import RightArrow from "../../assets/icons/right-arrow.svg";
-import CrossIcon from "../../assets/icons/cross.svg";
 import { useParams } from "react-router-dom";
 import { useImages } from "../../utils/customHooks";
 import { useState } from "react";
+import {
+  CrossIcon,
+  DislikeIcon,
+  LikeIcon,
+  LockIcon,
+  PlusIcon,
+  RightArrow,
+  TickIcon,
+} from "../../utils/svgs";
 
 type PosterModalProps = {
   isPosterModalOpen: boolean;

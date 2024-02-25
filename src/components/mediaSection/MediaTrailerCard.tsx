@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import PlayIcon from "../../assets/icons/play-icon.svg";
 import TrailerModal from "../trailer/TrailerModal";
+import { PlayIcon } from "../../utils/svgs";
 
 type MediaTrailerCardProps = {
   trailerKey: string;

@@ -1,8 +1,6 @@
 import { useDetails } from "../../../utils/customHooks";
 import { formattedReleaseDate } from "../../../utils/helperFunctions";
-import StarIcon from "../../../assets/icons/star.svg";
-import Calender from "../../../assets/icons/calender.svg";
-import NoImage from "../../../assets/images/noImage.svg";
+import { Calender, NoImage, StarIcon } from "../../../utils/svgs";
 
 const CurrentSeason = ({ id }: { id: string | undefined }) => {
   const { data: SeasonData } = useDetails(Number(id), "tv");

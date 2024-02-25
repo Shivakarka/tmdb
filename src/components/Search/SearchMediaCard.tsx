@@ -1,6 +1,6 @@
 import { formatDate } from "../../utils/helperFunctions";
-import NoImage from "../../assets/images/noImage.svg";
 import { useNavigate } from "react-router-dom";
+import { NoImage } from "../../utils/svgs";
 
 const SearchMediaCard = ({ item }: { item: any }) => {
   const navigate = useNavigate();

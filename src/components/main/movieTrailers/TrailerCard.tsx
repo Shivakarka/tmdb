@@ -1,9 +1,8 @@
 import { TrailerListProps } from "./TrailerList";
-import PlayIcon from "../../../assets/icons/play-icon.svg";
-import NoImage from "../../../assets/images/noImage.svg";
 import { useTrailer } from "../../../utils/customHooks";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal";
+import { NoImage, PlayIcon } from "../../../utils/svgs";
 
 const TrailerCard = ({
   backdrop_path,

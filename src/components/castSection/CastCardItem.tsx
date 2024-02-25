@@ -1,5 +1,6 @@
+import { NoImage } from "../../utils/svgs";
 import { CastType } from "./CastCards";
-import NoImage from "../../assets/images/noImage.svg";
+
 
 type CastCardItemProps = {
   cast: CastType;

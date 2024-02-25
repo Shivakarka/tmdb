@@ -1,5 +1,5 @@
 import React from "react";
-import PlusIcon from "../../assets/icons/plus-icon.svg";
+import { PlusIcon } from "../../utils/svgs";
 
 const ImageList = React.memo(({ data, type }: { data: any; type: string }) => {
   let imageBaseUrlPath = "";

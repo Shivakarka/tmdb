@@ -1,7 +1,5 @@
-import Keyboard from "../../assets/icons/keyboard.svg";
-import Report from "../../assets/icons/report.svg";
 import Contributers from "./Contributers";
-import { Graph } from "../../utils/svgs";
+import { Graph, Keyboard, ReportIcon } from "../../utils/svgs";
 import {
   useDetails,
   useExternalIds,
@@ -75,7 +73,7 @@ const StatsAndFactsSection = ({ id, platform }: StatsAndFactsSectionProps) => {
         <p>Keyboard Shortcuts</p>
       </div>
       <div className="flex cursor-pointer items-center gap-2 opacity-60">
-        <img src={Report} alt="Report icon" width={20} height={20} />
+        <img src={ReportIcon} alt="Report icon" width={20} height={20} />
         <p>Report an issue</p>
       </div>
     </div>

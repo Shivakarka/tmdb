@@ -1,7 +1,4 @@
-import Logo1 from "../../assets/images/logo1.svg";
-import Logo2 from "../../assets/images/logo2.svg";
-import PlusIcon from "../../assets/icons/plus-icon.svg";
-import SearchIcon from "../../assets/icons/search-icon.svg";
+import { Logo1, Logo2, PlusIcon, SearchIcon } from "../../utils/svgs";
 import Dropdown from "./dropdown/Dropdown";
 import { Link } from "react-router-dom";
 
@@ -9,7 +6,10 @@ const NavBarItems = () => {
   return (
     <div className="drawer-content flex flex-col bg-tmdbDarkBlue">
       {/* Navbar */}
-      <div className="max-w-screen navbar z-40 mx-auto flex w-full justify-center bg-tmdbDarkBlue p-0 text-white lg:px-5 xl:w-[1300px]">
+      <div
+        className="max-w-screen navbar z-40 mx-auto flex w-full justify-center bg-tmdbDarkBlue 
+      p-0 text-white lg:px-5 xl:w-[1300px]"
+      >
         <div className="flex-none lg:hidden ">
           <label
             htmlFor="my-drawer-3"
@@ -89,7 +89,10 @@ const NavBarItems = () => {
                 </a>
               </li>
               <li className="me-2">
-                <div className="flex h-6 w-7 rounded-sm  border border-white p-1  text-[14.4px] font-semibold text-white transition-colors duration-100 hover:bg-white hover:text-[rgb(3,37,65)] ">
+                <div
+                  className="flex h-6 w-7 rounded-sm  border border-white p-1  text-[14.4px] font-semibold 
+                text-white transition-colors duration-100 hover:bg-white hover:text-[rgb(3,37,65)] "
+                >
                   EN
                 </div>
               </li>

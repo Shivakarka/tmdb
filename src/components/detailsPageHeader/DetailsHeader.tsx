@@ -2,7 +2,6 @@ import { useState } from "react";
 import RatingsBar from "../main/RatingsBar/RatingsBar";
 import PosterModal from "../poster/PosterModal";
 import Poster from "../poster/Poster";
-import PlayIcon from "../../assets/icons/play-icon.svg";
 import TrailerModal from "../trailer/TrailerModal";
 import { useParams } from "react-router-dom";
 import { useCredits, useDetails, useTrailer } from "../../utils/customHooks";
@@ -14,6 +13,7 @@ import {
   getTrailerKey,
   releaseDateinIndia,
 } from "../../utils/helperFunctions";
+import { PlayIcon } from "../../utils/svgs";
 
 type DetailsHeaderProps = {
   platform: string;
