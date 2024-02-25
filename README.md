@@ -131,6 +131,7 @@ tmdb
 
 - Lighthouse Performance
 
-![lighthouse-tmdb](https://github.com/Shivakarka/tmdb/assets/64298475/37a2ad63-2973-41d6-90fc-8e82dfea3a99)
+![lighthouse-tmdb](https://github.com/Shivakarka/tmdb/assets/64298475/9106b0d3-feb4-479a-a09c-c2cfc5c62d9b)
+
 
 
