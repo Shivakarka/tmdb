@@ -38,7 +38,7 @@ const MovieCard = ({
     <div className="relative flex flex-col gap-2">
       <img
         src={`https://image.tmdb.org/t/p/w440_and_h660_face/${poster_path}`}
-        alt={title}
+        alt={title || name}
         loading="lazy"
         className="h-[225px] min-w-[150px] cursor-pointer rounded-lg object-cover shadow-sm"
         onClick={handleClick}
