@@ -52,14 +52,15 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
             );
           }
         })}
-        {CastData?.cast.length > 0 && (
+        {CastData?.cast.length > 7 && (
           <div className="flex w-full cursor-pointer items-center justify-center whitespace-nowrap">
             <p className=" text-lg font-bold">View More</p>
           </div>
         )}
         {CastData?.cast.length === 0 && (
           <p className="text-lg font-normal">
-            We don't have any cast added to this TV Show. You can help by adding
+            We don't have any cast added to this{" "}
+            {platform === "tv" ? "TV Show" : "movie"}. You can help by adding
             some!
           </p>
         )}
