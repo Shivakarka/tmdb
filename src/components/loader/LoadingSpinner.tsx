@@ -1,6 +1,6 @@
 const LoadingSpinner = () => {
   return (
-    <div className="flex w-full justify-center md:h-[510px]">
+    <div className="flex h-[250px] w-full justify-center md:h-[510px]">
       <span className="loading loading-spinner loading-lg"></span>
     </div>
   );

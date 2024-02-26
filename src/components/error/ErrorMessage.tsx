@@ -5,7 +5,7 @@ type ErrorMessageProps = {
 const ErrorMessage = ({ location }: ErrorMessageProps) => {
   return (
     <div
-      className={`flex w-full flex-col items-center justify-center gap-6 text-3xl md:h-[510px] ${location && "text-white"}`}
+      className={`flex h-[250px] w-full flex-col items-center justify-center gap-6 text-xl md:h-[510px] md:text-3xl ${location && "text-white"}`}
     >
       <p>Something went wrong. Please try again later.</p>
       <button
