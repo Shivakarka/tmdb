@@ -1,49 +1,30 @@
+import { useDetails, useExternalIds } from "../../utils/customHooks.ts";
 import { formatNumberWithCommas } from "../../utils/helperFunctions.ts";
-import { Facebook, HomePage, Instagram, Twitter } from "../../utils/svgs";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
+import SocialMediaIcons from "./SocialMediaIcons.tsx";
 
 const Facts = ({
-  SocialMediaData,
-  DetailsData,
+  id,
+  platform,
 }: {
-  SocialMediaData: any;
-  DetailsData: any;
+  id: string | undefined;
+  platform: string;
 }) => {
+  const { data: DetailsData, isLoading: DetailsDataLoading } = useDetails(
+    Number(id),
+    platform,
+  );
+
+  const { data: SocialMediaData, isLoading: SocialMediaDataLoading } =
+    useExternalIds(Number(id), platform);
+
+  if (DetailsDataLoading || SocialMediaDataLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <section className="flex flex-col gap-8" title="facts">
-      <div className="flex items-center gap-4">
-        {SocialMediaData?.facebook_id && (
-          <a
-            href={`https://www.facebook.com/${SocialMediaData?.facebook_id}`}
-            target="_blank"
-          >
-            <img src={Facebook} alt="facebook" />
-          </a>
-        )}
-        {SocialMediaData?.twitter_id && (
-          <a
-            href={`https://twitter.com/${SocialMediaData?.twitter_id}`}
-            target="_blank"
-          >
-            <img src={Twitter} alt="twitter" />
-          </a>
-        )}
-        {SocialMediaData?.instagram_id && (
-          <a
-            href={`https://instagram.com/${SocialMediaData?.instagram_id}`}
-            target="_blank"
-          >
-            <img src={Instagram} alt="instagram" />
-          </a>
-        )}
-        {DetailsData?.homepage && (
-          <>
-            <div className="h-[25px] w-[1px] bg-gray-400"></div>
-            <a href={`${DetailsData?.homepage}`} target="_blank">
-              <img src={HomePage} alt="homepage" />
-            </a>
-          </>
-        )}
-      </div>
+      <SocialMediaIcons {...SocialMediaData} {...DetailsData}  />
       <div className="leading-5">
         <p>
           <strong>Status</strong>

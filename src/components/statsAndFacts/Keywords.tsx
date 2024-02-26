@@ -1,4 +1,23 @@
-const Keywords = ({ KeywordsData }: { KeywordsData: any }) => {
+import { useKeywords } from "../../utils/customHooks.ts";
+import LoadingSpinner from "../loader/LoadingSpinner.tsx";
+
+const Keywords = ({
+  id,
+  platform,
+}: {
+  id: string | undefined;
+  platform: string;
+}) => {
+
+  const { data: KeywordsData, isLoading: KeywordsDataLoading } = useKeywords(
+    Number(id),
+    platform,
+  );
+
+  if (KeywordsDataLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <section title="keywords">
       <p>

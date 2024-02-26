@@ -1,13 +1,7 @@
 import Contributers from "./Contributers.tsx";
 import { Graph, Keyboard, ReportIcon } from "../../utils/svgs";
-import {
-  useDetails,
-  useExternalIds,
-  useKeywords,
-} from "../../utils/customHooks.ts";
 import Facts from "./Facts.tsx";
 import Keywords from "./Keywords.tsx";
-import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 type StatsAndFactsSectionProps = {
   id: string | undefined;
@@ -15,25 +9,10 @@ type StatsAndFactsSectionProps = {
 };
 
 const StatsAndFactsSection = ({ id, platform }: StatsAndFactsSectionProps) => {
-  const { data: DetailsData, isLoading: DetailsDataLoading } = useDetails(
-    Number(id),
-    platform,
-  );
-  const { data: KeywordsData, isLoading: KeywordsDataLoading } = useKeywords(
-    Number(id),
-    platform,
-  );
-  const { data: SocialMediaData, isLoading: SocialMediaDataLoading } =
-    useExternalIds(Number(id), platform);
-
-  if (DetailsDataLoading || KeywordsDataLoading || SocialMediaDataLoading) {
-    return <LoadingSpinner />;
-  }
-
   return (
     <div className="flex flex-col gap-8 bg-white px-[20px] py-[30px]">
-      <Facts SocialMediaData={SocialMediaData} DetailsData={DetailsData} />
-      <Keywords KeywordsData={KeywordsData} />
+      <Facts id={id} platform={platform} />
+      <Keywords id={id} platform={platform} />
       <hr />
       <section title="content_score">
         <h4>
