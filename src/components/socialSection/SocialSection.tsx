@@ -39,7 +39,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             readOnly
           />
           <div
-            role="tabpanel"
+            role="tab"
             className="tab-content relative left-[-5rem] top-1 mt-1 h-fit w-[85vw] min-w-[320px] sm:w-[88vw] 
             md:left-[-6.5rem] md:h-fit md:w-[55vw] md:min-w-[400px] lg:w-[74vw] xl:w-[1050px]"
           >
@@ -76,7 +76,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             readOnly
           />
           <div
-            role="tabpanel"
+            role="tab"
             className="tab-content relative left-[-5rem] top-1 h-[150px] w-[300px] 
             md:h-[150px] md:w-[120%] lg:w-[700px] xl:w-[980px]"
           >

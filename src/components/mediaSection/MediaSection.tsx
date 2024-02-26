@@ -25,7 +25,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             readOnly
           />
           <div
-            role="tabpanel"
+            role="tab"
             className={`tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]`}
           >
@@ -44,7 +44,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             readOnly
           />
           <div
-            role="tabpanel"
+            role="tab"
             className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]"
           >
@@ -63,7 +63,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             readOnly
           />
           <div
-            role="tabpanel"
+            role="tab"
             className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]"
           >
@@ -82,7 +82,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             readOnly
           />
           <div
-            role="tabpanel"
+            role="tab"
             className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]"
           >
