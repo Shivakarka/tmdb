@@ -1,39 +1,13 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDetails, useImages, useTrailer } from "../../utils/customHooks.ts";
 import MostPopularMedia from "./MostPopularMedia.tsx";
 import AllVideos from "./AllVideos.tsx";
 import ImageList from "./ImageList.tsx";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
-import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const MediaSection = ({ platform }: { platform: string }) => {
   const [activeMediaTab, setActiveMediaTab] = useState(0);
   const { id } = useParams<{ id: string }>();
-  const { data: mediaData, isLoading: mediaDataLoading } = useDetails(
-    Number(id),
-    platform,
-  );
-  const { data: TrailerData, isLoading: trailerDataLoading } = useTrailer(
-    Number(id),
-    platform,
-  );
-  const { data: ImageData, isLoading: imageDataLoading } = useImages(
-    Number(id),
-    platform,
-  );
-
-  if (mediaDataLoading || trailerDataLoading || imageDataLoading) {
-    return <LoadingSpinner />;
-  }
-
-  const trailerItem = TrailerData?.results?.find(
-    (item: { type: string; name?: string }) => item.type === "Trailer",
-  );
-  const trailerKey = trailerItem?.key;
-  const trailerName = (
-    trailerItem?.name?.replace(/\[.*?\]/g, "").split("|")[0] || "Trailer"
-  ).trim();
 
   return (
     <div className="my-4 flex flex-col gap-4">
@@ -55,11 +29,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             className={`tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]`}
           >
-            <MostPopularMedia
-              mediaData={mediaData}
-              trailerKey={trailerKey}
-              trailerName={trailerName}
-            />
+            <MostPopularMedia id={id} platform={platform} />
             <WhiteBlurEffect />
           </div>
 
@@ -78,7 +48,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]"
           >
-            <AllVideos TrailerData={TrailerData} />
+            <AllVideos id={id} platform={platform} />
             <WhiteBlurEffect />
           </div>
 
@@ -97,7 +67,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]"
           >
-            <ImageList data={ImageData?.backdrops} type="backdrops" />
+            <ImageList id={id} platform={platform} type="backdrops" />
             <WhiteBlurEffect />
           </div>
 
@@ -116,7 +86,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             className="tab-content relative top-1 mt-1 h-fit w-[305px] bg-white 
             md:h-fit md:w-[53vw] md:min-w-fit lg:left-[-6.5rem] lg:w-[74vw] xl:w-[1060px]"
           >
-            <ImageList data={ImageData?.posters} type="posters" />
+            <ImageList id={id} platform={platform} type="posters" />
             <WhiteBlurEffect />
           </div>
         </div>
