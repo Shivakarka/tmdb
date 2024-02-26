@@ -78,6 +78,7 @@ tmdb
 │ ├── components
 │ │ ├── blurEffect
 │ │ ├── castSection
+│ │ ├── currentSeason
 │ │ ├── detailsPageHeader
 │ │ ├── footer
 │ │ ├── loader
@@ -126,7 +127,8 @@ tmdb
 
 - Desktop view :
 
-![Macbook Pro-1708879324464](https://github.com/Shivakarka/tmdb/assets/64298475/e99b5953-4c3e-4be0-a430-95bf4d127b0a)
+
+![Macbook Pro-tmdb](https://github.com/Shivakarka/tmdb/assets/64298475/93163cdd-32fc-47e8-8bd3-f0fafee143d8)
 
 
 - Lighthouse Performance
