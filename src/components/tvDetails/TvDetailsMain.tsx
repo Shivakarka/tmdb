@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import StatsAndFactsSection from "../statsAndFacts/StatsAndFactsSection.tsx";
 import CastCards from "../castSection/CastCards.tsx";
-import CurrentSeason from "./CurrentSeason.tsx";
+import CurrentSeason from "../currentSeason/CurrentSeason.tsx";
 import SocialSection from "../socialSection/SocialSection.tsx";
 import MediaSection from "../mediaSection/MediaSection.tsx";
 import Recommendations from "../recommendations/Recommendations.tsx";
