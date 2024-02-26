@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import TvDetailsHeader from "../components/tvDetails/tvDetailsHeader/TvDetailsHeader.tsx";
-import TvDetailsMain from "../components/tvDetails/tvDetailsMain/TvDetailsMain.tsx";
+import TvDetailsMain from "../components/tvDetails/TvDetailsMain.tsx";
+import DetailsHeader from "../components/detailsPageHeader/DetailsHeader.tsx";
 
 const TvDetailsPage = () => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const TvDetailsPage = () => {
 
   return (
     <>
-      <TvDetailsHeader />
+      <DetailsHeader platform="tv" location="tvDetails" />
       <TvDetailsMain />
     </>
   );

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import StatsAndFactsSection from "../../statsAndFacts/StatsAndFactsSection.tsx";
-import CastCards from "../../castSection/CastCards.tsx";
+import StatsAndFactsSection from "../statsAndFacts/StatsAndFactsSection.tsx";
+import CastCards from "../castSection/CastCards.tsx";
 import CurrentSeason from "./CurrentSeason.tsx";
-import SocialSection from "../../socialSection/SocialSection.tsx";
-import MediaSection from "../../mediaSection/MediaSection.tsx";
-import Recommendations from "../../recommendations/Recommendations.tsx";
+import SocialSection from "../socialSection/SocialSection.tsx";
+import MediaSection from "../mediaSection/MediaSection.tsx";
+import Recommendations from "../recommendations/Recommendations.tsx";
 
 const TvDetailsMain = () => {
   const { id } = useParams<{ id: string }>();
