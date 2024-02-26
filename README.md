@@ -111,6 +111,8 @@ tmdb
 
 ## Project Demo
 
+- Click on the below image to view the demo video on youtube
+
 [![Project Demo](https://img.youtube.com/vi/wmSLXi3hk7c/0.jpg)](https://www.youtube.com/watch?v=wmSLXi3hk7c)
 
 
