@@ -38,7 +38,7 @@ const ReviewCard = ({
           )}
           <div className="flex flex-col gap-0">
             <h3 className="text-xl font-bold">A review by {author}</h3>
-            <div className="flex w-fit items-center gap-3   text-black ">
+            <div className="flex w-fit items-center gap-3 text-black ">
               <div className="flex h-4 items-center justify-center gap-1 rounded-full bg-black px-1 py-[1px] text-white">
                 <img
                   src={StarIcon}

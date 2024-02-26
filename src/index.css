@@ -6,6 +6,8 @@
   --value: 0;
   --size: 0;
   --thickness: 0;
+  background-color: #fff;
+  color: black;
 }
 
 * {

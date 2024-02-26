@@ -32,7 +32,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_1"
             role="tab"
-            className="tab text-lg font-semibold"
+            className="tab text-lg font-semibold text-black"
             aria-label="Reviews"
             onClick={() => setActiveTab(0)}
             checked={activeTab === 0}
@@ -69,7 +69,7 @@ const SocialSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_1"
             role="tab"
-            className="tab text-lg font-semibold"
+            className="tab text-lg font-semibold text-black"
             aria-label="Discussions"
             onClick={() => setActiveTab(1)}
             checked={activeTab === 1}

@@ -34,7 +34,7 @@ const Welcome = () => {
         onSubmit={handleSubmit}
       >
         <input
-          className="w-[80%] rounded-full  p-3 ps-5 text-gray-500 placeholder:text-[18px] placeholder:text-gray-500 focus:outline-none lg:p-[11px] lg:pl-[21px]"
+          className="w-[80%] rounded-full bg-white p-3 ps-5 text-gray-500 placeholder:text-[18px] placeholder:text-gray-500 focus:outline-none lg:p-[11px] lg:pl-[21px]"
           type="text"
           placeholder={
             window.innerWidth < 768

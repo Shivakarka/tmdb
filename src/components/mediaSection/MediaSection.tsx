@@ -18,7 +18,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_3"
             role="tab"
-            className="tab whitespace-nowrap pr-1 text-sm font-semibold md:pr-2 md:text-lg"
+            className="tab whitespace-nowrap pr-1 text-sm font-semibold text-black md:pr-2 md:text-lg"
             aria-label="Most Popular"
             onClick={() => setActiveMediaTab(0)}
             checked={activeMediaTab === 0}
@@ -37,7 +37,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_3"
             role="tab"
-            className="tab pr-1 text-sm font-semibold md:pr-2 md:text-lg"
+            className="tab pr-1 text-sm font-semibold text-black md:pr-2 md:text-lg"
             aria-label="Videos"
             onClick={() => setActiveMediaTab(1)}
             checked={activeMediaTab === 1}
@@ -56,7 +56,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_3"
             role="tab"
-            className="tab pr-1 text-sm font-semibold md:pr-2 md:text-lg"
+            className="tab pr-1 text-sm font-semibold text-black md:pr-2 md:text-lg"
             aria-label="Backdrops"
             onClick={() => setActiveMediaTab(2)}
             checked={activeMediaTab === 2}
@@ -75,7 +75,7 @@ const MediaSection = ({ platform }: { platform: string }) => {
             type="radio"
             name="my_tabs_3"
             role="tab"
-            className="tab pr-1 text-sm font-semibold md:pr-2 md:text-lg"
+            className="tab pr-1 text-sm font-semibold text-black md:pr-2 md:text-lg"
             aria-label="Posters"
             onClick={() => setActiveMediaTab(3)}
             checked={activeMediaTab === 3}
