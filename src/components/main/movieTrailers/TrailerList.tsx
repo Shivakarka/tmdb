@@ -9,16 +9,22 @@ import TrailerCard from "./TrailerCard.tsx";
 import LoadingSpinner from "../../loader/LoadingSpinner.tsx";
 import ErrorMessage from "../../error/ErrorMessage.tsx";
 
-export type TrailerListProps = {
+export type TrailerCardProps = {
   title: string;
   release_date: string;
   backdrop_path: string;
   id: number;
   poster_path: string;
   original_name?: string;
+  setTrailerBackground?: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const TrailerList = ({ sortBy }: { sortBy: string }) => {
+type TrailerListProps = {
+  setTrailerBackground?: React.Dispatch<React.SetStateAction<string>>;
+  sortBy: string;
+};
+
+const TrailerList = ({ sortBy, setTrailerBackground }: TrailerListProps) => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -63,8 +69,8 @@ const TrailerList = ({ sortBy }: { sortBy: string }) => {
       <div
         className={`movie-list-container flex h-fit min-h-[300px] gap-4 overflow-x-auto bg-center bg-no-repeat pb-3 ${isMounted ? "fade-in" : ""}`}
       >
-        {data?.results?.map((movie: TrailerListProps) => (
-          <TrailerCard key={movie?.id} sortBy={sortBy} {...movie} />
+        {data?.results?.map((movie: TrailerCardProps) => (
+          <TrailerCard key={movie?.id} sortBy={sortBy} setTrailerBackground={setTrailerBackground} {...movie} />
         ))}
       </div>
       <div

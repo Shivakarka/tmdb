@@ -1,4 +1,4 @@
-import { TrailerListProps } from "./TrailerList.tsx";
+import { TrailerCardProps } from "./TrailerList.tsx";
 import { useTrailer } from "../../../utils/customHooks.ts";
 import { useState } from "react";
 import TrailerModal from "../../trailer/TrailerModal.tsx";
@@ -11,7 +11,8 @@ const TrailerCard = ({
   id,
   sortBy,
   original_name,
-}: TrailerListProps & { sortBy: string }) => {
+  setTrailerBackground,
+}: TrailerCardProps & { sortBy: string }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { data, isLoading, error } = useTrailer(id, sortBy);
 
@@ -44,6 +45,16 @@ const TrailerCard = ({
     return null;
   }
 
+  const handleMouseEnter = () => {
+    if (trailerKey) {
+      if (setTrailerBackground) {
+        setTrailerBackground(
+          `https://image.tmdb.org/t/p/original/${backdrop_path || poster_path}`,
+        );
+      }
+    }
+  };
+
   return (
     <div className="relative mt-2 flex cursor-pointer flex-col gap-2 text-white">
       <div
@@ -57,6 +68,7 @@ const TrailerCard = ({
               backdrop_path || poster_path || NoImage
             })`,
           }}
+          onMouseEnter={handleMouseEnter}
         ></div>
         <img
           src={PlayIcon}

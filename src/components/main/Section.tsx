@@ -7,15 +7,29 @@ type SectionProps = {
   items: string[];
   onToggle: (value: string) => void;
   children: React.ReactNode;
+  bgImage?: string;
 };
 
-const Section = ({ title, items, onToggle, children }: SectionProps) => {
+const Section = ({
+  title,
+  items,
+  onToggle,
+  children,
+  bgImage,
+}: SectionProps) => {
   return (
     <section
-      className={`relative mx-auto w-full bg-[length:1700px_60%] bg-bottom bg-no-repeat px-10 pt-[30px] lg:w-[1000px] lg:bg-bottom xl:w-[1300px] xl:bg-contain 
-      ${title === "Latest Trailers" ? "bg-tmdbDarkBlue bg-opacity-95" : ""}`}
+      className={`relative mx-auto w-full  bg-bottom bg-no-repeat px-10 pt-[30px] lg:w-[1000px] lg:bg-bottom xl:w-[1300px] xl:bg-contain 
+      ${title === "Latest Trailers" ? "bg-cover bg-center sm:bg-cover md:bg-cover lg:bg-top xl:bg-cover" : "bg-[length:1700px_60%]"}`}
       style={{
-        backgroundImage: title === "Trending" ? `url(${MovieBg})` : "none",
+        backgroundImage:
+          title === "Trending"
+            ? `url(${MovieBg})`
+            : title === "Latest Trailers"
+              ? `radial-gradient(circle at 20% 50%, rgba(30, 39, 44, 0.9) 0%, rgba(30, 39, 44, 0.8) 10%),url(${bgImage})`
+              : "",
+        backgroundColor:
+          title === "Latest Trailers" ? "rgb(3, 37, 65)" : "#fff",
       }}
     >
       <div className="flex items-center gap-5">

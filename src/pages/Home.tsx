@@ -16,6 +16,7 @@ const Home = () => {
   const [sortTrailer, setSortTrailer] = useState("day");
   const [sortPopular, setSortPopular] = useState("tv");
   const [sortFree, setSortFree] = useState("FreeMovies");
+  const [trailerBackground, setTrailerBackground] = useState("bg-tmdbDarkBlue");
 
   return (
     <div>
@@ -32,8 +33,13 @@ const Home = () => {
         title="Latest Trailers"
         items={["Popular", "Streaming", "On TV", "For Rent", "In Theaters"]}
         onToggle={(value) => handleTrailerToggleValue(value, setSortTrailer)}
+        bgImage={trailerBackground}
       >
-        <TrailerList key={sortTrailer} sortBy={sortTrailer} />
+        <TrailerList
+          key={sortTrailer}
+          sortBy={sortTrailer}
+          setTrailerBackground={setTrailerBackground}
+        />
       </Section>
       <Section
         title="What's Popular"
