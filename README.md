@@ -111,7 +111,8 @@ tmdb
 
 ## Project Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wmSLXi3hk7c?si=1Ni1MR39jcsrdea8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Project Demo](https://img.youtube.com/vi/wmSLXi3hk7c/0.jpg)](https://www.youtube.com/watch?v=wmSLXi3hk7c)
+
 
 ## Screenshots
 
