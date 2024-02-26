@@ -1,8 +1,8 @@
 import { useCredits } from "../../utils/customHooks.ts";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 import CastCardItem from "./CastCardItem.tsx";
-import CastDataErrorMessage from "./CastDataErrorMessage.tsx";
 
 type CastCardsProps = {
   id: string | undefined;
@@ -31,7 +31,7 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
   }
 
   if (CastDataError) {
-    return <CastDataErrorMessage />;
+    return <ErrorMessage />;
   }
 
   return (
@@ -52,12 +52,22 @@ const CastCards = ({ id, platform }: CastCardsProps) => {
             );
           }
         })}
-        <div className="flex w-full cursor-pointer items-center justify-center whitespace-nowrap">
-          <p className=" text-lg font-bold">View More</p>
-        </div>
+        {CastData?.cast.length > 0 && (
+          <div className="flex w-full cursor-pointer items-center justify-center whitespace-nowrap">
+            <p className=" text-lg font-bold">View More</p>
+          </div>
+        )}
+        {CastData?.cast.length === 0 && (
+          <p className="text-lg font-normal">
+            We don't have any cast added to this TV Show. You can help by adding
+            some!
+          </p>
+        )}
       </div>
-      <h3 className="cursor-pointer text-[17.6px] font-semibold">
-        Full Cast & Crew
+      <h3 className="mb-4 cursor-pointer text-[17.6px] font-semibold hover:opacity-60">
+        {CastData?.cast.length > 0
+          ? "Full Cast & Crew"
+          : "Add Missing Cast & Crew"}
       </h3>
     </div>
   );

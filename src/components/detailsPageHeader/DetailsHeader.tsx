@@ -158,6 +158,8 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
           }
         >
           {Data?.overview}
+          {!Data?.overview &&
+            "We don't have an overview translated in English. Help us expand our database by adding one."}
         </p>
         <div className="mt-4 grid w-full grid-cols-[1fr,1fr] gap-5 md:grid-cols-[1fr,1fr,1fr]">
           {directors && <RenderCrewMembers crew={directors} />}
