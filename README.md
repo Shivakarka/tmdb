@@ -15,11 +15,12 @@ Deployed Live Link : [Click here](https://tmdb-clone-sk.vercel.app/)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
 - [Folder Structure](#folder-structure)
+- [Project Demo](#project-demo)
 - [Screenshots](#screenshots)
 
 ## Introduction
 
-This project is a clone of The Movie Database (TMDB) website built using React.js, TypeScript, Tailwind CSS, Daisy UI, react-router, and SWR for data fetching and caching. It replicates the functionality and design of the original TMDB website, allowing users to browse movies, TV shows, view details, watch trailers, and more.
+This project is a clone of The Movie Database (TMDB) website built using React.js, TypeScript, Tailwind CSS, Daisy UI, react-router and SWR for data fetching and caching. It replicates the functionality and design of the original TMDB website, allowing users to browse movies, TV shows, view details, watch trailers, and more.
 
 ## Features
 
@@ -107,6 +108,10 @@ tmdb
 ├── README.md
 └── tsconfig.json
 ```
+
+## Project Demo
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wmSLXi3hk7c?si=1Ni1MR39jcsrdea8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Screenshots
 
