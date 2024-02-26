@@ -2,7 +2,6 @@ import MovieCard from "./MovieCard";
 import { useMovies } from "../../../utils/customHooks.ts";
 import { useEffect, useState } from "react";
 import LoadingShimmer from "../../loader/LoadingShimmer.tsx";
-import { MovieBg } from "../../../utils/svgs";
 import ErrorMessage from "../../error/ErrorMessage.tsx";
 
 export type MovieList = {
@@ -36,10 +35,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string; type: string }) => {
   return (
     <div
       className={`movie-list-container flex h-fit gap-4 overflow-x-auto 
-      bg-bottom bg-no-repeat pb-5 ${isMounted ? "fade-in" : ""}`}
-      style={{
-        backgroundImage: type === "Trending" ? `url(${MovieBg})` : "none",
-      }}
+       pb-5 ${isMounted ? "fade-in" : ""}`}
     >
       {data?.results?.map((movie: MovieList) => (
         <MovieCard key={movie?.id} {...movie} />
