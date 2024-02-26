@@ -15,6 +15,7 @@ import {
 } from "../../utils/helperFunctions";
 import { PlayIcon } from "../../utils/svgs";
 import LoadingSpinner from "../loader/LoadingSpinner";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 
 type DetailsHeaderProps = {
   platform: string;
@@ -40,17 +41,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
   }
 
   if (DetailsError) {
-    return (
-      <div className="flex w-full flex-col items-center justify-center gap-6 text-5xl md:h-[510px]">
-        <p>Something went wrong. Please try again later.</p>
-        <button
-          className="btn btn-primary text-lg"
-          onClick={() => window.location.reload()}
-        >
-          Retry
-        </button>
-      </div>
-    );
+    return <ErrorMessage />;
   }
 
   const genreNames = genres(Data);

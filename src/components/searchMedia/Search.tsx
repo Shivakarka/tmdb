@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useSearch } from "../../utils/customHooks.ts";
 import SearchMediaCard from "./SearchMediaCard.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 
 const Search = () => {
   const { page, mediaPlatform } = useParams<{
@@ -15,14 +16,18 @@ const Search = () => {
   const query = new URLSearchParams(location.search).get("query")!;
   const navigate = useNavigate();
 
-  const { data: SearchData, isLoading: searchDataLoading } = useSearch(
-    query,
-    platform,
-    page,
-  );
+  const {
+    data: SearchData,
+    isLoading: searchDataLoading,
+    error,
+  } = useSearch(query, platform, page);
 
   if (searchDataLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
   }
 
   if (SearchData?.total_results === 0) {

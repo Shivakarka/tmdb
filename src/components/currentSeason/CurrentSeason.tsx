@@ -1,13 +1,18 @@
 import { useDetails } from "../../utils/customHooks.ts";
 import { formattedReleaseDate } from "../../utils/helperFunctions.ts";
 import { Calender, NoImage, StarIcon } from "../../utils/svgs.tsx";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const CurrentSeason = ({ id }: { id: string | undefined }) => {
-  const { data: SeasonData, isLoading } = useDetails(Number(id), "tv");
+  const { data: SeasonData, isLoading, error } = useDetails(Number(id), "tv");
 
   if (isLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
   }
 
   const currentSeason = SeasonData?.seasons?.[SeasonData?.seasons?.length - 1];

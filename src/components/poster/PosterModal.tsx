@@ -11,6 +11,7 @@ import {
   TickIcon,
 } from "../../utils/svgs";
 import LoadingSpinner from "../loader/LoadingSpinner";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 
 type PosterModalProps = {
   isPosterModalOpen: boolean;
@@ -28,10 +29,14 @@ const PosterModal = ({
   const { id } = useParams();
   const [posterUrlCount, setPosterUrlCount] = useState(0);
   const [poster, setPoster] = useState(posterUrl);
-  const { data, isLoading } = useImages(Number(id), platform);
+  const { data, isLoading, error } = useImages(Number(id), platform);
 
   if (isLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
   }
 
   const closeModal = () => {

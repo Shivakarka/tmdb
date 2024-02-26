@@ -1,5 +1,6 @@
 import { useDetails, useExternalIds } from "../../utils/customHooks.ts";
 import { formatNumberWithCommas } from "../../utils/helperFunctions.ts";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 import SocialMediaIcons from "./SocialMediaIcons.tsx";
 
@@ -10,7 +11,7 @@ const Facts = ({
   id: string | undefined;
   platform: string;
 }) => {
-  const { data: DetailsData, isLoading: DetailsDataLoading } = useDetails(
+  const { data: DetailsData, isLoading: DetailsDataLoading, error } = useDetails(
     Number(id),
     platform,
   );
@@ -20,6 +21,10 @@ const Facts = ({
 
   if (DetailsDataLoading || SocialMediaDataLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
   }
 
   return (

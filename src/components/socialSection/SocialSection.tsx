@@ -3,15 +3,24 @@ import { useParams } from "react-router-dom";
 import { useReviews } from "../../utils/customHooks.ts";
 import ReviewCard from "./ReviewCard.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 
 const SocialSection = ({ platform }: { platform: string }) => {
   const [activeTab, setActiveTab] = useState(0);
   const { id } = useParams<{ id: string }>();
 
-  const { data: ReviewsData, isLoading } = useReviews(Number(id), platform);
+  const {
+    data: ReviewsData,
+    isLoading,
+    error,
+  } = useReviews(Number(id), platform);
 
   if (isLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
   }
 
   return (

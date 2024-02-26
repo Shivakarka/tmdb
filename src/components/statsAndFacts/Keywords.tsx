@@ -1,4 +1,5 @@
 import { useKeywords } from "../../utils/customHooks.ts";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
 
 const Keywords = ({
@@ -9,13 +10,17 @@ const Keywords = ({
   platform: string;
 }) => {
 
-  const { data: KeywordsData, isLoading: KeywordsDataLoading } = useKeywords(
+  const { data: KeywordsData, isLoading: KeywordsDataLoading, error } = useKeywords(
     Number(id),
     platform,
   );
 
   if (KeywordsDataLoading) {
     return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage />;
   }
 
   return (

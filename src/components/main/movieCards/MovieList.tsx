@@ -3,6 +3,7 @@ import { useMovies } from "../../../utils/customHooks.ts";
 import { useEffect, useState } from "react";
 import LoadingShimmer from "../../loader/LoadingShimmer.tsx";
 import { MovieBg } from "../../../utils/svgs";
+import ErrorMessage from "../../error/ErrorMessage.tsx";
 
 export type MovieList = {
   title: string;
@@ -29,11 +30,7 @@ const MovieList = ({ sortBy, type }: { sortBy: string; type: string }) => {
   }
 
   if (error) {
-    return (
-      <p className="mx-auto flex h-[100px] w-full justify-center text-4xl">
-        Error... Failed to load
-      </p>
-    );
+    return <ErrorMessage />;
   }
 
   return (

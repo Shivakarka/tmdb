@@ -7,6 +7,7 @@ import {
 import { useEffect, useState } from "react";
 import TrailerCard from "./TrailerCard.tsx";
 import LoadingSpinner from "../../loader/LoadingSpinner.tsx";
+import ErrorMessage from "../../error/ErrorMessage.tsx";
 
 export type TrailerListProps = {
   title: string;
@@ -36,11 +37,7 @@ const TrailerList = ({ sortBy }: { sortBy: string }) => {
   }
 
   if (error) {
-    return (
-      <p className="mx-auto flex h-[100px] w-full justify-center text-4xl">
-        Error... Failed to load
-      </p>
-    );
+    return <ErrorMessage location="trailer" />;
   }
 
   switch (sortBy) {

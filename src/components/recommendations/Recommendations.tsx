@@ -3,6 +3,7 @@ import { useState } from "react";
 import RecommendationItem from "./RecommendationItem.tsx";
 import WhiteBlurEffect from "../blurEffect/WhiteBlurEffect.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
+import ErrorMessage from "../error/ErrorMessage.tsx";
 
 const Recommendations = ({
   id,
@@ -24,11 +25,7 @@ const Recommendations = ({
   }
 
   if (RecommendationsError) {
-    return (
-      <div className="flex w-full justify-center md:h-[300px]">
-        <h3 className="text-xl font-bold">Error... Failed to Load Data</h3>
-      </div>
-    );
+    return <ErrorMessage />;
   }
 
   if (RecommendationsData?.results?.length === 0) {
