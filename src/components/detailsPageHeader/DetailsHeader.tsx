@@ -89,7 +89,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
       )}
       <div
         className={
-          "movieDetailMobile relative z-[100] mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
+          "movieDetailMobile relative z-[20] mt-5 flex w-full flex-col items-center px-6 py-10 text-white md:items-start"
         }
       >
         <h1 className={"mb-2 text-center text-2xl font-bold md:text-4xl"}>
