@@ -15,11 +15,12 @@ Deployed Live Link : [Click here](https://tmdb-clone-sk.vercel.app/)
 - [Getting Started](#getting-started)
   - [Installation](#installation)
 - [Folder Structure](#folder-structure)
+- [Project Demo](#project-demo)
 - [Screenshots](#screenshots)
 
 ## Introduction
 
-This project is a clone of The Movie Database (TMDB) website built using React.js, TypeScript, Tailwind CSS, Daisy UI, react-router, and SWR for data fetching and caching. It replicates the functionality and design of the original TMDB website, allowing users to browse movies, TV shows, view details, watch trailers, and more.
+This project is a clone of The Movie Database (TMDB) website built using React.js, TypeScript, Tailwind CSS, Daisy UI, react-router and SWR for data fetching and caching. It replicates the functionality and design of the original TMDB website, allowing users to browse movies, TV shows, view details, watch trailers, and more.
 
 ## Features
 
@@ -78,6 +79,7 @@ tmdb
 │ ├── components
 │ │ ├── blurEffect
 │ │ ├── castSection
+│ │ ├── currentSeason
 │ │ ├── detailsPageHeader
 │ │ ├── footer
 │ │ ├── loader
@@ -107,6 +109,13 @@ tmdb
 └── tsconfig.json
 ```
 
+## Project Demo
+
+- Click on the below image to view the demo video on youtube
+
+[![Project Demo](https://img.youtube.com/vi/wmSLXi3hk7c/0.jpg)](https://www.youtube.com/watch?v=wmSLXi3hk7c)
+
+
 ## Screenshots
 
 - Mobile view :
@@ -126,7 +135,8 @@ tmdb
 
 - Desktop view :
 
-![Macbook Pro-1708879324464](https://github.com/Shivakarka/tmdb/assets/64298475/e99b5953-4c3e-4be0-a430-95bf4d127b0a)
+
+![Macbook Pro-tmdb](https://github.com/Shivakarka/tmdb/assets/64298475/93163cdd-32fc-47e8-8bd3-f0fafee143d8)
 
 
 - Lighthouse Performance
