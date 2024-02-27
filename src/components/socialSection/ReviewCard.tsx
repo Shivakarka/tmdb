@@ -59,7 +59,7 @@ const ReviewCard = ({
         </div>
       </div>
       <p className="cursor-pointer text-lg font-bold hover:opacity-50">
-        See all Reviews
+        Read All Reviews
       </p>
     </div>
   );
