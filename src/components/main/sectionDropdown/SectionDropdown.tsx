@@ -26,6 +26,7 @@ const SectionDropdown = ({ items, onToggle, title }: SectionDropdownProps) => {
           ? "bg-[#1ed5a9] font-semibold text-tmdbDarkBlue "
           : "bg-tmdbDarkBlue text-[#1ed5a9]")
       }
+      title={title}
       value={selectedItem || ""}
       onChange={handleChange}
       name="section"
