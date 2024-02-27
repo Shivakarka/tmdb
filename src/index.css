@@ -23,6 +23,10 @@ body {
   font-family: "source-sans-pro", Helvetica, Arial, sans-serif;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
