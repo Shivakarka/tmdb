@@ -58,7 +58,7 @@ const ReviewCard = ({
           <p className="text-md">{truncateReviewContent(content)}</p>
         </div>
       </div>
-      <p className="cursor-pointer text-lg font-bold hover:opacity-50">
+      <p className="cursor-pointer text-lg font-semibold hover:opacity-50">
         Read All Reviews
       </p>
     </div>
