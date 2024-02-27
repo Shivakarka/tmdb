@@ -67,7 +67,7 @@ const DetailsHeader = ({ platform, location }: DetailsHeaderProps) => {
         md:bg-[url('https://image.tmdb.org/t/p/w500${Data?.backdrop_path}')]`}
       ></div>
       <div
-        className={`movieBackdrop relative flex h-[200px] w-full gap-2 md:mt-[5em] md:block md:h-full md:w-full md:bg-none lg:mt-8`}
+        className={`movieBackdrop relative flex h-[200px] w-full gap-2 bg-cover bg-no-repeat md:mt-[5em] md:block md:h-full md:w-full md:bg-none lg:mt-8`}
         style={{
           backgroundImage: `url('https://image.tmdb.org/t/p/w500${Data?.backdrop_path}')`,
         }}
