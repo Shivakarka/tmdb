@@ -57,6 +57,16 @@ const MostPopularMedia = React.memo(
               loading="lazy"
             />
           )}
+          {!trailerKey &&
+            !mediaData?.backdrop_path &&
+            !mediaData?.poster_path && (
+              <div className="flex h-full w-full items-center justify-center ">
+                <p className="ms-5 text-lg ">
+                  No videos, backdrops or posters have been added to{" "}
+                  {mediaData?.title || mediaData?.name}
+                </p>
+              </div>
+            )}
         </div>
       </>
     );
