@@ -20,7 +20,7 @@ const Poster = ({ poster_path }: { poster_path: string }) => {
           loading="lazy"
         />
       }
-      {
+      {poster_path && (
         <div className="relative ">
           <img
             src={`https://media.themoviedb.org/t/p/w300_and_h450_multi_faces_filter(blur)${poster_path}`}
@@ -40,7 +40,7 @@ const Poster = ({ poster_path }: { poster_path: string }) => {
             <p className=" text-xl text-white">Expand</p>
           </div>
         </div>
-      }
+      )}
     </>
   );
 };

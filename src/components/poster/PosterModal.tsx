@@ -78,12 +78,18 @@ const PosterModal = ({
           ✕
         </button>
         <div className="grid grid-cols-1 md:grid-cols-[60%.40%]">
-          <img
-            src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${poster}`}
-            alt="poster"
-            className="h-[370px] md:h-[450px] lg:h-full"
-            loading="lazy"
-          />
+          {poster ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${poster}`}
+              alt="poster"
+              className="h-[370px] md:h-[450px] lg:h-full"
+              loading="lazy"
+            />
+          ) : (
+            <p className="m-auto py-10 text-lg font-semibold">
+              No Poster Available
+            </p>
+          )}
           <div className="mx-auto flex flex-col gap-3 p-3 md:flex md:flex-col md:justify-center md:gap-3 lg:gap-5">
             <div className="flex justify-between md:w-[220px] lg:w-[340px]">
               <img
