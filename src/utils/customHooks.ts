@@ -133,6 +133,24 @@ const useSearch = (
   );
 };
 
+const usePerson = (id: number) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/person/${id}?language=en-US`,
+  );
+};
+
+const usePersonCredits = (id: number) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/person/${id}/combined_credits?language=en-US`,
+  );
+};
+
+const usePersonExternalIds = (id: number) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/person/${id}/external_ids?language=en-US`,
+  );
+};
+
 export {
   useMovies,
   useStreamingToday,
@@ -148,4 +166,7 @@ export {
   useImages,
   useRecommendations,
   useSearch,
+  usePerson,
+  usePersonCredits,
+  usePersonExternalIds,
 };

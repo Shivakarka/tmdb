@@ -66,6 +66,13 @@ const getTrailerKey = (results: any) => {
   )?.key;
 };
 
+const calculateAge = (birthday: string) => {
+  const birthDate = new Date(birthday);
+  const difference = Date.now() - birthDate.getTime();
+  const ageDate = new Date(difference);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+};
+
 export {
   formattedReleaseDate,
   fetcher,
@@ -77,4 +84,5 @@ export {
   releaseDateinIndia,
   getCrewData,
   getTrailerKey,
+  calculateAge,
 };

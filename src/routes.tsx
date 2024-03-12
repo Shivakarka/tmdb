@@ -4,6 +4,7 @@ import Layout from "./pages/Layout.tsx";
 import { Suspense, lazy } from "react";
 import LoadingSpinner from "./components/loader/LoadingSpinner.tsx";
 import Home from "./pages/Home.tsx";
+import Person from "./pages/Person.tsx";
 
 const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage.tsx"));
 const TvDetailsPage = lazy(() => import("./pages/TvDetailsPage.tsx"));
@@ -40,6 +41,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <SearchPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/person/:id",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <Person />
           </Suspense>
         ),
       },
