@@ -5,6 +5,8 @@ import { Suspense, lazy } from "react";
 import LoadingSpinner from "./components/loader/LoadingSpinner.tsx";
 import Home from "./pages/Home.tsx";
 import Person from "./pages/Person.tsx";
+import Reviews from "./pages/Reviews.tsx";
+import ReviewDetail from "./pages/ReviewDetail.tsx";
 
 const MovieDetailsPage = lazy(() => import("./pages/MovieDetailsPage.tsx"));
 const TvDetailsPage = lazy(() => import("./pages/TvDetailsPage.tsx"));
@@ -49,6 +51,22 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <Person />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/reviews/:mediaPlatform/:id",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <Reviews />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/review/:id",
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <ReviewDetail />
           </Suspense>
         ),
       },

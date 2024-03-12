@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useReviews } from "../../utils/customHooks.ts";
 import ReviewCard from "./ReviewCard.tsx";
 import LoadingSpinner from "../loader/LoadingSpinner.tsx";
@@ -44,15 +44,14 @@ const SocialSection = ({ platform }: { platform: string }) => {
             md:left-[-6.5rem] md:h-fit md:w-[55vw] md:min-w-[400px] lg:w-[74vw] xl:w-[1050px]"
           >
             {ReviewsData?.results?.length > 0 ? (
-              <ReviewCard
-                avatar_path={
-                  ReviewsData?.results?.[0]?.author_details?.avatar_path
-                }
-                author={ReviewsData?.results?.[0]?.author}
-                rating={ReviewsData?.results?.[0]?.author_details?.rating}
-                created_at={ReviewsData?.results?.[0]?.created_at}
-                content={ReviewsData?.results?.[0]?.content}
-              />
+              <>
+                <ReviewCard {...ReviewsData?.results[0]} />
+                <Link to={`/reviews/${platform}/${id}`}>
+                  <p className="mt-5 cursor-pointer text-lg font-semibold hover:opacity-50">
+                    Read All Reviews
+                  </p>
+                </Link>
+              </>
             ) : (
               <div className="flex flex-col gap-4 p-3">
                 <p>

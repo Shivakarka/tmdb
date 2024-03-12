@@ -109,6 +109,12 @@ const useReviews = (id: number, type: string) => {
   );
 };
 
+const useReview = (id: string) => {
+  return useFetchData(
+    `https://api.themoviedb.org/3/review/${id}?language=en-US`,
+  );
+};
+
 const useImages = (id: number, type: string) => {
   return useFetchData(`https://api.themoviedb.org/3/${type}/${id}/images`);
 };
@@ -169,4 +175,5 @@ export {
   usePerson,
   usePersonCredits,
   usePersonExternalIds,
+  useReview,
 };
