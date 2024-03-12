@@ -3,9 +3,14 @@ import { useReviews } from "../utils/customHooks";
 import ReviewCard from "../components/socialSection/ReviewCard";
 import LoadingSpinner from "../components/loader/LoadingSpinner";
 import ErrorMessage from "../components/error/ErrorMessage";
+import { useEffect } from "react";
 
 const Reviews = () => {
   const { mediaPlatform, id } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const {
     data: Reviews,
