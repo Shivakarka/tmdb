@@ -1,4 +1,4 @@
-import { NoImage } from "../../utils/svgs";
+import noImage from "../../assets/images/noImage.svg";
 
 const LoadingShimmer = () => {
   return (
@@ -14,7 +14,7 @@ const LoadingShimmer = () => {
                 <div
                   className=" h-[225px] w-[150px] rounded-lg border-2 border-gray-200 bg-center bg-no-repeat"
                   style={{
-                    backgroundImage: `url(${NoImage})`,
+                    backgroundImage: `url(${noImage})`,
                     backgroundColor: "#f5f5f5",
                     backgroundSize: "100% 40%",
                   }}
